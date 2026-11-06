@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queue Status | PLMUN Registrar</title>
+  <link rel="stylesheet" href="studentstatus.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="images/plmun-logo.png" alt="PLMUN Logo" class="brand-logo">
+      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
+      <h1 class="brand-name">PLMUN</h1>
+      <span class="brand-role">Student Account</span>
+    </div>
+
+    <nav class="nav">
+      <a href="studentdashboard.html" class="nav-link">Dashboard</a>
+      <a href="joinqueue.html" class="nav-link">Join Queue</a>
+      <a href="queuestatus.html" class="nav-link active">Queue Status</a>
+      <a href="studentbookappointment.html" class="nav-link">Book Appointment</a>
+      <a href="notification.html" class="nav-link">Notification</a>
+      <a href="requirements.html" class="nav-link">Requirements</a>
+    </nav>
+
+    <a href="login.html" class="logout">Log Out</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="page-header">
+      <h2>QUEUE STATUS</h2>
+      <p>Track your queue number in real time</p>
+    </header>
+
+    <!-- Stat cards -->
+    <section class="stats">
+      <div class="stat-card">
+        <span class="stat-label">Now serving</span>
+        <strong class="stat-value">Q-011</strong>
+        <small class="stat-note">At the window</small>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Your number</span>
+        <strong class="stat-value">Q-014</strong>
+        <small class="stat-note">TOR</small>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">People ahead</span>
+        <strong class="stat-value">3</strong>
+        <small class="stat-note">Before you</small>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Est. wait time</span>
+        <strong class="stat-value">15 mins</strong>
+        <small class="stat-note">Varies by service</small>
+      </div>
+    </section>
+
+    <section class="content">
+
+      <!-- Ticket panel -->
+      <div class="panel">
+        <div class="panel-header">YOUR TICKET</div>
+        <div class="panel-body">
+
+          <div class="ticket-status">
+            <span class="status-pill">Waiting</span>
+            <p>You are number <strong>3</strong> in line.</p>
+          </div>
+
+          <ol class="steps">
+            <li class="step done"><span class="dot">1</span>Joined</li>
+            <li class="step current"><span class="dot">2</span>Waiting</li>
+            <li class="step"><span class="dot">3</span>Called</li>
+            <li class="step"><span class="dot">4</span>Done</li>
+          </ol>
+
+          <div class="info-card">
+            <div class="info-card-title">Ticket Information</div>
+            <dl class="info-list">
+              <dt>Your Current Number</dt><dd>Q-014</dd>
+              <dt>Service Type</dt><dd>TOR</dd>
+              <dt>Transaction Type</dt><dd>New Request</dd>
+              <dt>Purpose</dt><dd>Scholarship</dd>
+              <dt>Time Joined</dt><dd>9:42 AM</dd>
+            </dl>
+          </div>
+
+          <div class="actions">
+            <a href="joinqueue.html" class="btn-secondary">Edit request</a>
+            <button type="button" class="btn-danger" id="leaveBtn">Leave queue</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live queue list -->
+      <div class="panel">
+        <div class="panel-header">LIVE QUEUE</div>
+        <div class="panel-body table-wrap">
+          <table class="queue-table">
+            <thead>
+              <tr><th>Number</th><th>Service</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Q-011</td><td>COE</td><td><span class="pill pill-serving">Serving</span></td></tr>
+              <tr><td>Q-012</td><td>COG</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
+              <tr><td>Q-013</td><td>Good Moral</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
+              <tr class="mine"><td>Q-014</td><td>TOR</td><td><span class="pill pill-you">You</span></td></tr>
+              <tr><td>Q-015</td><td>Enrollment</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Replace with your real cancel logic
+    document.getElementById('leaveBtn').addEventListener('click', () => {
+      if (confirm('Leave the queue? You will lose your number.')) {
+        window.location.href = 'joinqueue.html';
+      }
+    });
+  </script>
+</body>
+</html>

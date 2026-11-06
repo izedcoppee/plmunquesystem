@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notification | PLMUN Registrar</title>
+  <link rel="stylesheet" href="studentnotification.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="images/plmun-logo.png" alt="PLMUN Logo" class="brand-logo">
+      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
+      <h1 class="brand-name">PLMUN</h1>
+      <span class="brand-role">Student Account</span>
+    </div>
+
+    <nav class="nav">
+      <a href="studentdashboard.html" class="nav-link">Dashboard</a>
+      <a href="joinqueue.html" class="nav-link">Join Queue</a>
+      <a href="queuestatus.html" class="nav-link">Queue Status</a>
+      <a href="studentbookappointment.html" class="nav-link">Book Appointment</a>
+      <a href="notification.html" class="nav-link active">Notification</a>
+      <a href="requirements.html" class="nav-link">Requirements</a>
+    </nav>
+
+    <a href="login.html" class="logout">Log Out</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="page-header">
+      <div>
+        <h2>NOTIFICATION</h2>
+        <p>Official announcements from the Registrar's Office</p>
+      </div>
+      <button type="button" class="btn-secondary" id="markAll">Mark all as read</button>
+    </header>
+
+    <!-- Stat cards -->
+    <section class="stats">
+      <div class="stat-card">
+        <strong class="stat-value">8</strong>
+        <span class="stat-label">Total announcement</span>
+      </div>
+      <div class="stat-card">
+        <strong class="stat-value">0</strong>
+        <span class="stat-label">Unread</span>
+      </div>
+      <div class="stat-card">
+        <strong class="stat-value">0</strong>
+        <span class="stat-label">Urgent</span>
+      </div>
+      <div class="stat-card">
+        <strong class="stat-value">May 20</strong>
+        <span class="stat-label">Next Appointment</span>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+
+      <!-- Left: categories -->
+      <aside class="filter-panel">
+        <button type="button" class="filter-all active" data-category="all">
+          <span>ALL</span><span>8</span>
+        </button>
+        <button type="button" class="filter-item" data-category="General">
+          <span>General</span><span>4</span>
+        </button>
+        <button type="button" class="filter-item" data-category="Event">
+          <span>Event</span><span>0</span>
+        </button>
+        <button type="button" class="filter-item" data-category="Reminder">
+          <span>Reminder</span><span>1</span>
+        </button>
+      </aside>
+
+      <!-- Right: announcements -->
+      <div class="feed">
+        <div class="feed-toolbar">
+          <button type="button" class="chip active">All</button>
+          <button type="button" class="chip">Latest</button>
+          <button type="button" class="chip">Oldest</button>
+        </div>
+
+        <div class="feed-list" id="feedList">
+
+          <article class="note" data-category="General">
+            <div class="note-top">
+              <span class="note-meta">May 19, 2026 - 8:02 PM · Registrar's Office</span>
+              <span class="tag tag-general">General</span>
+            </div>
+            <p class="note-text">Enrollment for the next term opens next week. Please prepare your requirements.</p>
+            <span class="note-status">Read.</span>
+          </article>
+
+          <article class="note" data-category="Urgent">
+            <div class="note-top">
+              <span class="note-meta">May 19, 2026 - 8:02 PM · Registrar's Office</span>
+              <span class="tag tag-urgent">Urgent</span>
+            </div>
+            <p class="note-text">The registrar window is closed this afternoon. Please come back tomorrow.</p>
+            <span class="note-status">Read.</span>
+          </article>
+
+          <article class="note" data-category="General">
+            <div class="note-top">
+              <span class="note-meta">May 18, 2026 - 10:17 PM · Registrar's Office</span>
+              <span class="tag tag-general">General</span>
+            </div>
+            <p class="note-text">Cut off for today: dear students, we apologize that we cut off early due to unforeseen events.</p>
+            <span class="note-status">Read.</span>
+          </article>
+
+          <article class="note" data-category="Document">
+            <div class="note-top">
+              <span class="note-meta">May 18, 2026 - 12:31 PM · Registrar's Office</span>
+              <span class="tag tag-document">Document</span>
+            </div>
+            <p class="note-text">Your TOR request is now ready for pickup at the registrar office.</p>
+            <span class="note-status">Read.</span>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Category filter (left panel)
+    const filters = document.querySelectorAll('[data-category].filter-all, [data-category].filter-item');
+    const notes = document.querySelectorAll('.note');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        notes.forEach(n => {
+          n.hidden = !(cat === 'all' || n.dataset.category === cat);
+        });
+      });
+    });
+
+    // All / Latest / Oldest (top of the feed)
+    const chips = document.querySelectorAll('.chip');
+    const list = document.getElementById('feedList');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const label = chip.textContent.trim();
+        if (label === 'Oldest') {
+          [...list.children].reverse().forEach(n => list.appendChild(n));
+        }
+        // "Latest" and "All" keep the original order (newest first).
+        // Replace with real sorting once your data has timestamps.
+      });
+    });
+
+    // Mark all as read
+    document.getElementById('markAll').addEventListener('click', () => {
+      document.querySelectorAll('.note.unread').forEach(n => {
+        n.classList.remove('unread');
+        n.querySelector('.note-status').textContent = 'Read.';
+      });
+    });
+  </script>
+</body>
+</html>
