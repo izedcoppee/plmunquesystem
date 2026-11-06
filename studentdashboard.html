@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMUN Student Dashboard</title>
+    <!-- Bootstrap CSS for instant mobile responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <span class="navbar-brand fw-bold">PLMUN Student Dashboard</span>
+            <span class="text-white small">Welcome, Student</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container my-4">
+        
+        <!-- Live Queue Status Card -->
+        <div class="card shadow-sm border-0 rounded-4 p-4 mb-4 text-center bg-white">
+            <h5 class="text-secondary fw-semibold">Now Serving in Registrar</h5>
+            <h1 class="display-3 text-primary fw-bold my-2">Q-014</h1>
+            <p class="text-muted mb-0">Window 3: Diploma & Transcript Requests</p>
+        </div>
+
+        <!-- Action Grid / Buttons -->
+        <div class="row g-3">
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm border-0 rounded-4 p-4 h-100 text-center">
+                    <h5 class="fw-bold text-dark">Get New Queue Ticket</h5>
+                    <p class="text-muted small">Select your transaction type and get your digital queue number instantly.</p>
+                    <button class="btn btn-primary mt-auto rounded-pill py-2">Get Ticket</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm border-0 rounded-4 p-4 h-100 text-center">
+                    <h5 class="fw-bold text-dark">My Active Ticket</h5>
+                    <p class="text-muted small">You currently have no active queue tickets.</p>
+                    <button class="btn btn-outline-secondary mt-auto rounded-pill py-2" disabled>View Status</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
