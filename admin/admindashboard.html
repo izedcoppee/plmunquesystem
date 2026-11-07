@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMUN Registrar - Admin Dashboard</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="header-top-inner">
+                <div class="brand-info">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <span class="brand-title">PLMUN</span>
+                        <span class="brand-subtitle">PAMANTSAN NG LUNGSOD NG MUNTINLUPA</span>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Centered Horizontal Navigation -->
+        <nav class="desktop-navbar">
+            <div class="navbar-inner">
+                <a href="admindashboard.html" class="nav-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                <a href="adminmanageappointments.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
+                <a href="adminqueuemanagement.html" class="nav-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
+                <a href="adminnotification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
+                <a href="adminreports.html" class="nav-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
+                <a href="loginform.html" class="nav-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Overlay & Mobile Slide-Out Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <div class="brand-info">
+                <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+<span class="brand-title">PLMUN</span>
+            </div>
+            <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
+        </div>
+        <nav class="drawer-menu">
+            <a href="admindashboard.html" class="drawer-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+            <a href="adminmanageappointments.html" class="drawer-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
+            <a href="adminqueuemanagement.html" class="drawer-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
+            <a href="adminnotification.html" class="drawer-item"><i class="fa-solid fa-bell"></i> Notification</a>
+            <a href="adminreports.html" class="drawer-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
+            <a href="loginform.html" class="drawer-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Centered Page Content Container -->
+    <div class="container">
+        
+        <!-- Breadcrumb / Portal Header -->
+        <section class="portal-banner">
+            <div class="banner-title">
+                <i class="fa-solid fa-house banner-icon"></i>
+                <div>
+                    <h2>Admin Dashboard</h2>
+                    
+                </div>
+            </div>
+            <div class="banner-breadcrumb">
+                <i class="fa-solid fa-user-shield"></i> <span class="highlight">Admin Officer</span>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <main class="main-content">
+            <!-- Stats Overview Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-details">
+                        <h3>142</h3>
+                        <p>Total Queued Today</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="fa-solid fa-clock"></i></div>
+                    <div class="stat-details">
+                        <h3>18</h3>
+                        <p>Currently Waiting</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fa-solid fa-spinner"></i></div>
+                    <div class="stat-details">
+                        <h3>4</h3>
+                        <p>Serving at Counters</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon dark-green"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-details">
+                        <h3>120</h3>
+                        <p>Completed Transactions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Queue Management Table -->
+            <section class="content-card">
+                <div class="card-header">
+                    <h2>Active Live Queue</h2>
+                    <button class="btn-primary" onclick="alert('Calling next student...')">
+                        <i class="fa-solid fa-bullhorn"></i> Call Next Student
+                    </button>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table class="queue-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket #</th>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Service Request</th>
+                                <th>Window</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ticket-badge">A-101</span></td>
+                                <td>Juan Dela Cruz</td>
+                                <td>22-01452</td>
+                                <td>Transcript of Records (TOR)</td>
+                                <td>Window 1</td>
+                                <td><span class="status-badge serving">Serving</span></td>
+                                <td>
+                                    <button class="action-btn complete" title="Complete"><i class="fa-solid fa-check"></i></button>
+                                    <button class="action-btn skip" title="Skip"><i class="fa-solid fa-forward"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="ticket-badge">A-102</span></td>
+                                <td>Maria Santos</td>
+                                <td>21-03891</td>
+                                <td>Certificate of Grades (COG)</td>
+                                <td>Window 2</td>
+                                <td><span class="status-badge serving">Serving</span></td>
+                                <td>
+                                    <button class="action-btn complete" title="Complete"><i class="fa-solid fa-check"></i></button>
+                                    <button class="action-btn skip" title="Skip"><i class="fa-solid fa-forward"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="ticket-badge">B-201</span></td>
+                                <td>Mark Anthony Reyes</td>
+                                <td>23-00912</td>
+                                <td>Honorable Dismissal</td>
+                                <td>--</td>
+                                <td><span class="status-badge waiting">Waiting</span></td>
+                                <td>
+                                    <button class="action-btn call" title="Call Ticket"><i class="fa-solid fa-phone"></i></button>
+                                    <button class="action-btn cancel" title="Cancel"><i class="fa-solid fa-xmark"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="ticket-badge">B-202</span></td>
+                                <td>Angelica Ramos</td>
+                                <td>22-05114</td>
+                                <td>Diploma Verification</td>
+                                <td>--</td>
+                                <td><span class="status-badge waiting">Waiting</span></td>
+                                <td>
+                                    <button class="action-btn call" title="Call Ticket"><i class="fa-solid fa-phone"></i></button>
+                                    <button class="action-btn cancel" title="Cancel"><i class="fa-solid fa-xmark"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile Drawer JS -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            mobileOverlay.classList.add('show');
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            mobileOverlay.classList.remove('show');
+        }
+
+        mobileMenuBtn.addEventListener('click', openDrawer);
+        closeDrawerBtn.addEventListener('click', closeDrawer);
+        mobileOverlay.addEventListener('click', closeDrawer);
+    </script>
+</body>
+</html>
