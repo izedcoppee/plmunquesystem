@@ -339,3 +339,40 @@ body {
   .logout { margin-top: 14px; }
   .page-header { flex-direction: column; }
 }
+
+/* ===== Icons ===== */
+.nav-link,
+.logout,
+.chip,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-link { display: flex; justify-content: flex-start; gap: 10px; }
+.nav-link .badge { margin-left: auto; }
+
+.nav-link i,
+.logout i,
+.chip i,
+.btn-secondary i {
+  width: 16px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.filter-all > span:first-child,
+.filter-item > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-all i,
+.filter-item i {
+  width: 16px;
+  text-align: center;
+  font-size: 13px;
+}

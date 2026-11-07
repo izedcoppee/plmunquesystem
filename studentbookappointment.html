@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Appointment - PLMUN</title>
   <link rel="stylesheet" href="studentbookappointment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <div class="app">
     <aside class="sidebar">
       <div class="brand">
-        <img src="logo.png" alt="PLMUN Logo" class="brand-logo">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
         <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
         <h2 class="brand-short">PLMUN</h2>
         <span class="brand-role">Student Account</span>
       </div>
 
       <nav class="menu">
-        <a href="dashboard.html" class="menu-item">Dashboard</a>
-        <a href="join-queue.html" class="menu-item">Join Queue</a>
-        <a href="queue-status.html" class="menu-item">Queue Status</a>
-        <a href="book-appointment.html" class="menu-item active">Book Appointment</a>
-        <a href="notification.html" class="menu-item">Notification <span class="dot">2</span></a>
-        <a href="requirements.html" class="menu-item">Requirements</a>
+        <a href="studentdashboard.html" class="menu-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="joinqueue.html" class="menu-item"><i class="fa-solid fa-list-check"></i> Join Queue</a>
+        <a href="queuestatus.html" class="menu-item"><i class="fa-solid fa-spinner"></i> Queue Status</a>
+        <a href="studentbookappointment.html" class="menu-item active"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+        <a href="notification.html" class="menu-item"><i class="fa-solid fa-bell"></i> Notification <span class="dot">2</span></a>
+        <a href="requirements.html" class="menu-item"><i class="fa-solid fa-file-lines"></i> Requirements</a>
       </nav>
 
-      <a href="studentbookappointment.html" class="logout">Log Out</a>
+      <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
     </aside>
 
     <main class="content">
       <header class="topbar">
-        <h1>Book Appointment</h1>
-        <span class="welcome">Welcome, Student</span>
+        <h1><i class="fa-solid fa-calendar-check"></i> Book Appointment</h1>
+        <span class="welcome"><i class="fa-solid fa-user"></i> Welcome, Student</span>
       </header>
 
       <section class="panel form-panel">
@@ -70,12 +71,12 @@
           <div class="form-group">
             <label>Available Time</label>
             <div class="time-slots" id="timeSlots">
-              <button type="button" class="slot">9:00 AM</button>
-              <button type="button" class="slot">10:00 AM</button>
-              <button type="button" class="slot disabled" disabled>11:00 AM</button>
-              <button type="button" class="slot">1:00 PM</button>
-              <button type="button" class="slot">2:00 PM</button>
-              <button type="button" class="slot">3:00 PM</button>
+              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 9:00 AM</button>
+              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 10:00 AM</button>
+              <button type="button" class="slot disabled" disabled><i class="fa-solid fa-clock"></i> 11:00 AM</button>
+              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 1:00 PM</button>
+              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 2:00 PM</button>
+              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 3:00 PM</button>
             </div>
           </div>
 
@@ -84,7 +85,7 @@
             <textarea id="notes" placeholder="Additional details..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Book Appointment</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Appointment</button>
         </form>
       </section>
 
@@ -96,14 +97,14 @@
               <div class="title">Request for Transcript of Records</div>
               <div class="meta">Nov 12, 2026 &bull; 10:00 AM</div>
             </div>
-            <span class="badge badge-approved">Approved</span>
+            <span class="badge badge-approved"><i class="fa-solid fa-circle-check"></i> Approved</span>
           </li>
           <li class="appointment-item">
             <div>
               <div class="title">Certificate of Enrollment</div>
               <div class="meta">Nov 15, 2026 &bull; 2:00 PM</div>
             </div>
-            <span class="badge badge-pending">Pending</span>
+            <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span>
           </li>
         </ul>
       </section>
@@ -123,7 +124,7 @@
       slot.addEventListener("click", function () {
         slots.forEach(function (s) { s.classList.remove("selected"); });
         slot.classList.add("selected");
-        selectedTime = slot.textContent;
+        selectedTime = slot.textContent.trim();
       });
     });
 
@@ -147,7 +148,7 @@
       item.innerHTML =
         "<div><div class='title'>" + service + "</div>" +
         "<div class='meta'>" + date + " &bull; " + selectedTime + "</div></div>" +
-        "<span class='badge badge-pending'>Pending</span>";
+        "<span class='badge badge-pending'><i class='fa-solid fa-clock'></i> Pending</span>";
 
       list.prepend(item);
       form.reset();

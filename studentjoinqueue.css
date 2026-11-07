@@ -336,3 +336,28 @@ body {
   .logout { margin-top: 14px; }
   .stats { grid-template-columns: 1fr; }
 }
+
+/* ===== Icons ===== */
+.nav-link,
+.logout,
+.service-btn,
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-link { display: flex; justify-content: flex-start; gap: 10px; }
+.nav-link .badge { margin-left: auto; }
+
+.nav-link i,
+.logout i,
+.service-btn i,
+.btn-primary i,
+.btn-secondary i {
+  width: 16px;
+  text-align: center;
+  font-size: 13px;
+}
