@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMUN Student Portal - Student Profile</title>
+    <link rel="stylesheet" href="studentprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="header-bar">
+        <div class="header-brand">
+            <img src="../frontpages/plmunlogo.png" alt="PLMUN Logo">
+            <div>
+                <h1>PLMUN STUDENT PORTAL</h1>
+                <p>PAMANTASAN NG LUNGSOD NG MUNTINLUPA</p>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="../frontpages/loginform.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- Profile Banner Header -->
+        <div class="profile-banner">
+            <div class="banner-title">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                    <h2>Student Profile</h2>
+                    <span>BSIT</span>
+                </div>
+            </div>
+            <div class="breadcrumb">
+                <a href="studentdashboard.html"><i class="fa-solid fa-house"></i></a> / <span>Nina Rose Abucayon</span>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tab-bar">
+            <button class="tab-item active" onclick="openTab(event, 'contactInfo')">Contact Info</button>
+            <button class="tab-item" onclick="openTab(event, 'security')">Security</button>
+            <button class="tab-item" onclick="openTab(event, 'qrCode')">QR Code</button>
+            <button class="tab-item" onclick="openTab(event, 'setPhoto')">Set Profile Photo</button>
+        </div>
+
+        <!-- Tab Body Content -->
+        <div class="content-panel">
+            <p class="notice-text">Contact the Office of the University Registrar if you need to update your data.</p>
+
+            <!-- TAB 1: Contact Info -->
+            <div id="contactInfo" class="tab-content active">
+                <div class="profile-grid">
+                    
+                    <!-- Column 1: Personal Details -->
+                    <div class="grid-column">
+                        <h3>Personal Details</h3>
+                        <div class="data-item">
+                            <div class="data-label">Firstname</div>
+                            <div class="data-value">Nina Rose</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Middlename</div>
+                            <div class="data-value">--</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Lastname</div>
+                            <div class="data-value">Abucayon</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Suffix</div>
+                            <div class="data-value">--</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Gender</div>
+                            <div class="data-value">Female</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Birth Date</div>
+                            <div class="data-value">--</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Birth Place</div>
+                            <div class="data-value">Muntinlupa City</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Civil Status</div>
+                            <div class="data-value">Single</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Citizenship</div>
+                            <div class="data-value">Filipino</div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Contact Details -->
+                    <div class="grid-column">
+                        <h3>Contact Details</h3>
+                        <div class="data-item">
+                            <div class="data-label">Contact Number</div>
+                            <div class="data-value">+63 912 345 6789</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Email Address</div>
+                            <div class="data-value">abucayon.nina@plmun.edu.ph</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Recovery Email Address</div>
+                            <div class="data-value">--</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Present Address</div>
+                            <div class="data-value">Muntinlupa City, Metro Manila</div>
+                        </div>
+                        
+                        <h3 class="section-divider-title">Standing</h3>
+                        <div class="data-item">
+                            <div class="data-label">Status</div>
+                            <div class="data-value status-highlight">Officially Enrolled</div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Program of Study -->
+                    <div class="grid-column">
+                        <h3>Program of Study</h3>
+                        <div class="data-item">
+                            <div class="data-label">Major</div>
+                            <div class="data-value">Bachelor of Science in Information Technology</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Curriculum</div>
+                            <div class="data-value">BSIT 2024-2025</div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Student Number</div>
+                            <div class="data-value student-number-highlight">24175178</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TAB 2: Security -->
+            <div id="security" class="tab-content">
+                <div class="security-container">
+                    <h3>Update/Change PIN Number</h3>
+                    <p class="security-desc">Passwords provide the first line of defense against unauthorized access to your account. You should maintain strong passwords for all accounts.</p>
+
+                    <form onsubmit="event.preventDefault(); alert('PIN number successfully updated!');">
+                        <div class="form-group">
+                            <label for="currentPin">Current PIN Number</label>
+                            <input type="password" id="currentPin" placeholder="••••" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPin">New PIN Number</label>
+                            <input type="password" id="newPin" placeholder="Enter new PIN" required>
+                            <small class="pin-hint">*Minimum of 6 digits</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPin">Confirm New PIN Number</label>
+                            <input type="password" id="confirmPin" placeholder="Re-enter new PIN" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Captcha Challenge</label>
+                            <div class="captcha-box">
+                                <div class="captcha-img">92699</div>
+                                <input type="text" placeholder="Enter code" class="captcha-input" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-save">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- TAB 3: QR Code -->
+            <div id="qrCode" class="tab-content">
+                <div class="center-card">
+                    <div class="qr-placeholder">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3 class="qr-title">Student Number: 24175178</h3>
+                    <p class="qr-sub">Use this QR Code at registrar queue kiosks for quick verification.</p>
+                </div>
+            </div>
+
+            <!-- TAB 4: Set Profile Photo -->
+            <div id="setPhoto" class="tab-content">
+                <div class="center-card">
+                    <div class="avatar-preview">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <form onsubmit="event.preventDefault(); alert('Profile photo updated successfully!');">
+                        <input type="file" accept="image/*" class="file-input" required>
+                        <br>
+                        <button type="submit" class="btn-save">Upload Photo</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Tab Switching Script -->
+    <script>
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            const tabItems = document.getElementsByClassName("tab-item");
+            for (let i = 0; i < tabItems.length; i++) {
+                tabItems[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
