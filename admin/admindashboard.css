@@ -35,7 +35,7 @@ body {
 
 .header-top {
     background-color: var(--primary-green);
-    background-image: url('schoolbg.jpg');
+    background-image: url('schoolbg.webp');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 55% auto; /* Zooms image to fill ~half the header */

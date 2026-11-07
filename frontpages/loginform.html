@@ -18,7 +18,7 @@
         <!-- Header Brand Section -->
         <div class="card-header">
             <img src="plmunlogo.png" alt="PLMUN Logo" class="login-logo">
-            <h2>PLMun Student Portal</h2>
+            <h2 id="portalTitle">PLMUN Student Portal</h2>
             <p>Queue and Appointment System</p>
         </div>
 
@@ -35,7 +35,7 @@
         <!-- Form Section -->
         <form id="loginForm" onsubmit="handleLogin(event)">
             
-            <!-- Student Number / ID Field -->
+            <!-- Username / ID Field -->
             <div class="input-group">
                 <label id="idLabel" for="username">Student Number</label>
                 <div class="input-wrapper">
@@ -60,9 +60,9 @@
 
         </form>
 
-        <!-- Footer Links -->
+        <!-- Dynamic Footer Registration Link -->
         <div class="card-footer">
-            <p id="registerPrompt">Don't have an account? <a href="studentregistration.html">Register here</a></p>
+            <p>Don't have an account? <a href="studentregistration.html" id="registerLink">Register here</a></p>
         </div>
 
     </div>
@@ -75,32 +75,33 @@
             currentRole = role;
             const studentBtn = document.getElementById('studentTabBtn');
             const adminBtn = document.getElementById('adminTabBtn');
+            const portalTitle = document.getElementById('portalTitle');
             const idLabel = document.getElementById('idLabel');
             const usernameInput = document.getElementById('username');
-            const registerPrompt = document.getElementById('registerPrompt');
+            const registerLink = document.getElementById('registerLink');
 
             if (role === 'student') {
                 studentBtn.classList.add('active');
                 adminBtn.classList.remove('active');
+                portalTitle.textContent = 'PLMUN Student Portal';
                 idLabel.textContent = 'Student Number';
                 usernameInput.placeholder = 'Enter Student Number';
-                registerPrompt.style.display = 'block';
+                registerLink.href = 'studentregistration.html'; // Connects to Student Registration Page
             } else {
                 adminBtn.classList.add('active');
                 studentBtn.classList.remove('active');
+                portalTitle.textContent = 'PLMUN Admin Portal';
                 idLabel.textContent = 'Admin Username / Email';
                 usernameInput.placeholder = 'Enter Admin Account';
-                registerPrompt.style.display = 'none';
+                registerLink.href = 'adminregistration.html'; // Connects to Admin Registration Page
             }
         }
 
         function handleLogin(event) {
             event.preventDefault();
             if (currentRole === 'admin') {
-                // Navigate to Admin Dashboard
                 window.location.href = '../admin/admindashboard.html';
             } else {
-                // Navigate to Student Dashboard
                 window.location.href = '../student/studentdashboard.html';
             }
         }
