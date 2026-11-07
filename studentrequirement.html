@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Requirements | PLMUN Registrar</title>
   <link rel="stylesheet" href="studentrequirement.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
-      <img src="images/plmun-logo.png" alt="PLMUN Logo" class="brand-logo">
+      <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
       <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
       <h1 class="brand-name">PLMUN</h1>
       <span class="brand-role">Student Account</span>
     </div>
 
     <nav class="nav">
-      <a href="studentdashboard.html" class="nav-link">Dashboard</a>
-      <a href="joinqueue.html" class="nav-link">Join Queue</a>
-      <a href="queuestatus.html" class="nav-link">Queue Status</a>
-      <a href="studentbookappointment.html" class="nav-link">Book Appointment</a>
-      <a href="notification.html" class="nav-link">Notification</a>
-      <a href="requirements.html" class="nav-link active">Requirements</a>
+      <a href="studentdashboard.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+      <a href="joinqueue.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Join Queue</a>
+      <a href="queuestatus.html" class="nav-link"><i class="fa-solid fa-spinner"></i> Queue Status</a>
+      <a href="studentbookappointment.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+      <a href="notification.html" class="nav-link"><i class="fa-solid fa-bell"></i> Notification <span class="badge">2</span></a>
+      <a href="requirements.html" class="nav-link active"><i class="fa-solid fa-file-lines"></i> Requirements</a>
     </nav>
 
-    <a href="login.html" class="logout">Log Out</a>
+    <a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
   </aside>
 
   <!-- MAIN -->
@@ -39,12 +40,12 @@
 
     <!-- Service filters -->
     <div class="filters" id="filters">
-      <button type="button" class="filter-btn active" data-service="all">All Services</button>
-      <button type="button" class="filter-btn" data-service="TOR">TOR</button>
-      <button type="button" class="filter-btn" data-service="COE">COE</button>
-      <button type="button" class="filter-btn" data-service="COG">COG</button>
-      <button type="button" class="filter-btn" data-service="Good Moral">Good Moral</button>
-      <button type="button" class="filter-btn" data-service="Inquiry">Inquiry</button>
+      <button type="button" class="filter-btn active" data-service="all"><i class="fa-solid fa-border-all"></i> All Services</button>
+      <button type="button" class="filter-btn" data-service="TOR"><i class="fa-solid fa-file-lines"></i> TOR</button>
+      <button type="button" class="filter-btn" data-service="COE"><i class="fa-solid fa-briefcase"></i> COE</button>
+      <button type="button" class="filter-btn" data-service="COG"><i class="fa-solid fa-graduation-cap"></i> COG</button>
+      <button type="button" class="filter-btn" data-service="Good Moral"><i class="fa-solid fa-shield-halved"></i> Good Moral</button>
+      <button type="button" class="filter-btn" data-service="Inquiry"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
     </div>
 
     <!-- Requirement cards -->

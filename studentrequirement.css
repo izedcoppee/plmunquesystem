@@ -231,3 +231,36 @@ body {
   .logout { margin-top: 14px; }
   .grid { grid-template-columns: 1fr; }
 }
+
+/* ===== Icons ===== */
+.nav-link,
+.logout,
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-link { display: flex; justify-content: flex-start; gap: 10px; }
+.nav-link .badge { margin-left: auto; }
+
+.nav-link i,
+.logout i,
+.filter-btn i {
+  width: 16px;
+  text-align: center;
+  font-size: 13px;
+}
+.badge {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #dc2626;
+  border-radius: 999px;
+}

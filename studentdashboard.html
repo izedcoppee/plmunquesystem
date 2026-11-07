@@ -5,33 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLMUN Student Dashboard</title>
   <link rel="stylesheet" href="studentdashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <div class="app">
     <aside class="sidebar">
       <div class="brand">
-        <img src="logo.png" alt="PLMUN Logo" class="brand-logo">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
         <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
         <h2 class="brand-short">PLMUN</h2>
         <span class="brand-role">Student Account</span>
       </div>
 
       <nav class="menu">
-        <a href="dashboard.html" class="menu-item active">Dashboard</a>
-        <a href="join-queue.html" class="menu-item">Join Queue</a>
-        <a href="queue-status.html" class="menu-item">Queue Status</a>
-        <a href="book-appointment.html" class="menu-item">Book Appointment</a>
-        <a href="notification.html" class="menu-item">Notification <span class="dot">2</span></a>
-        <a href="requirements.html" class="menu-item">Requirements</a>
+        <a href="studentdashboard.html" class="menu-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="joinqueue.html" class="menu-item"><i class="fa-solid fa-list-check"></i> Join Queue</a>
+        <a href="queuestatus.html" class="menu-item"><i class="fa-solid fa-spinner"></i> Queue Status</a>
+        <a href="studentbookappointment.html" class="menu-item"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+        <a href="notification.html" class="menu-item"><i class="fa-solid fa-bell"></i> Notification <span class="dot">2</span></a>
+        <a href="requirements.html" class="menu-item"><i class="fa-solid fa-file-lines"></i> Requirements</a>
       </nav>
 
-      <a href="index.html" class="logout">Log Out</a>
+      <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
     </aside>
 
     <main class="content">
       <header class="topbar">
-        <h1>Student Dashboard</h1>
-        <span class="welcome">Welcome, Student</span>
+        <h1><i class="fa-solid fa-house"></i> Student Dashboard</h1>
+        <span class="welcome"><i class="fa-solid fa-user"></i> Welcome, Student</span>
       </header>
 
       <section class="panel now-serving">
@@ -46,7 +47,7 @@
             <h3>Get New Queue Ticket</h3>
             <p>Select your transaction type and get your digital queue number instantly.</p>
           </div>
-          <button class="btn btn-primary">Get Ticket</button>
+          <a href="joinqueue.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Get Ticket</a>
         </div>
 
         <div class="panel">
@@ -54,21 +55,21 @@
             <h3>My Active Ticket</h3>
             <p>You currently have no active queue tickets.</p>
           </div>
-          <button class="btn btn-outline" disabled>View Status</button>
+          <button class="btn btn-outline" disabled><i class="fa-solid fa-eye"></i> View Status</button>
         </div>
       </section>
 
       <section class="stats">
         <div class="stat">
-          <span class="stat-label">Waiting in Queue</span>
+          <span class="stat-label"><i class="fa-solid fa-user-group"></i> Waiting in Queue</span>
           <span class="stat-value">12</span>
         </div>
         <div class="stat">
-          <span class="stat-label">My Ticket</span>
+          <span class="stat-label"><i class="fa-solid fa-ticket"></i> My Ticket</span>
           <span class="stat-value">None</span>
         </div>
         <div class="stat">
-          <span class="stat-label">Appointments</span>
+          <span class="stat-label"><i class="fa-solid fa-calendar-check"></i> Appointments</span>
           <span class="stat-value">0</span>
         </div>
       </section>
