@@ -1,160 +1,55 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Appointment - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentbookappointment.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand">
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
         <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h2 class="brand-short">PLMUN</h2>
-        <span class="brand-role">Student Account</span>
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
       </div>
-
-      <nav class="menu">
-        <a href="studentdashboard.html" class="menu-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-        <a href="joinqueue.html" class="menu-item"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-        <a href="queuestatus.html" class="menu-item"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-        <a href="studentbookappointment.html" class="menu-item active"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-        <a href="notification.html" class="menu-item"><i class="fa-solid fa-bell"></i> Notification <span class="dot">2</span></a>
-        <a href="requirements.html" class="menu-item"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-      </nav>
-
-      <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-    </aside>
-
-    <main class="content">
-      <header class="topbar">
-        <h1><i class="fa-solid fa-calendar-check"></i> Book Appointment</h1>
-        <span class="welcome"><i class="fa-solid fa-user"></i> Welcome, Student</span>
-      </header>
-
-      <section class="panel form-panel">
-        <h2 class="panel-title">Schedule a Registrar Visit</h2>
-
-        <form id="appointmentForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" placeholder="Juan Dela Cruz" required>
-            </div>
-            <div class="form-group">
-              <label for="studentId">Student ID</label>
-              <input type="text" id="studentId" placeholder="22-00000" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="service">Service</label>
-              <select id="service" required>
-                <option value="">Select a service</option>
-                <option>Request for Transcript of Records</option>
-                <option>Request for Diploma</option>
-                <option>Certificate of Enrollment</option>
-                <option>Certificate of Grades</option>
-                <option>Enrollment Concern</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="date">Preferred Date</label>
-              <input type="date" id="date" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Available Time</label>
-            <div class="time-slots" id="timeSlots">
-              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 9:00 AM</button>
-              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 10:00 AM</button>
-              <button type="button" class="slot disabled" disabled><i class="fa-solid fa-clock"></i> 11:00 AM</button>
-              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 1:00 PM</button>
-              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 2:00 PM</button>
-              <button type="button" class="slot"><i class="fa-solid fa-clock"></i> 3:00 PM</button>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="notes">Notes (optional)</label>
-            <textarea id="notes" placeholder="Additional details..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Appointment</button>
-        </form>
-      </section>
-
-      <section class="panel form-panel">
-        <h2 class="panel-title">My Appointments</h2>
-        <ul class="appointment-list" id="appointmentList">
-          <li class="appointment-item">
-            <div>
-              <div class="title">Request for Transcript of Records</div>
-              <div class="meta">Nov 12, 2026 &bull; 10:00 AM</div>
-            </div>
-            <span class="badge badge-approved"><i class="fa-solid fa-circle-check"></i> Approved</span>
-          </li>
-          <li class="appointment-item">
-            <div>
-              <div class="title">Certificate of Enrollment</div>
-              <div class="meta">Nov 15, 2026 &bull; 2:00 PM</div>
-            </div>
-            <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span>
-          </li>
-        </ul>
-      </section>
-    </main>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html" class="active"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
   </div>
 
-  <script>
-    const slots = document.querySelectorAll(".slot:not(.disabled)");
-    const form = document.getElementById("appointmentForm");
-    const list = document.getElementById("appointmentList");
-    const dateInput = document.getElementById("date");
-    let selectedTime = "";
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment</h2>
+      <span>Schedule a visit for document release or consultation</span>
+    </div>
 
-    dateInput.min = new Date().toISOString().split("T")[0];
-
-    slots.forEach(function (slot) {
-      slot.addEventListener("click", function () {
-        slots.forEach(function (s) { s.classList.remove("selected"); });
-        slot.classList.add("selected");
-        selectedTime = slot.textContent.trim();
-      });
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      if (!selectedTime) {
-        alert("Please select a time slot.");
-        return;
-      }
-
-      const service = document.getElementById("service").value;
-      const date = new Date(dateInput.value + "T00:00:00").toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-      });
-
-      const item = document.createElement("li");
-      item.className = "appointment-item";
-      item.innerHTML =
-        "<div><div class='title'>" + service + "</div>" +
-        "<div class='meta'>" + date + " &bull; " + selectedTime + "</div></div>" +
-        "<span class='badge badge-pending'><i class='fa-solid fa-clock'></i> Pending</span>";
-
-      list.prepend(item);
-      form.reset();
-      slots.forEach(function (s) { s.classList.remove("selected"); });
-      selectedTime = "";
-    });
-  </script>
+    <div class="card form-card">
+      <h3 class="card-title mb-20"><i class="fa-solid fa-calendar-check"></i> Schedule Details</h3>
+      <div class="form-group">
+        <label for="app-date"><i class="fa-solid fa-calendar"></i> Select Date</label>
+        <input type="date" id="app-date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="app-time"><i class="fa-solid fa-clock"></i> Select Time Slot</label>
+        <select id="app-time" class="form-control">
+          <option>09:00 AM - 10:00 AM</option>
+          <option>10:00 AM - 11:00 AM</option>
+          <option>01:00 PM - 02:00 PM</option>
+        </select>
+      </div>
+      <button class="btn-primary mt-15"><i class="fa-solid fa-check"></i> Confirm Appointment</button>
+    </div>
+  </div>
 </body>
 </html>

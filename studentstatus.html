@@ -2,133 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Queue Status | PLMUN Registrar</title>
+  <title>Queue Status - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentstatus.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html" class="active"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+  </div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-      <h1 class="brand-name">PLMUN</h1>
-      <span class="brand-role">Student Account</span>
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-clock"></i> Live Queue Status</h2>
+      <span>Track live transactions in real-time</span>
     </div>
 
-    <nav class="nav">
-      <a href="studentdashboard.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-      <a href="joinqueue.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-      <a href="queuestatus.html" class="nav-link active"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-      <a href="studentbookappointment.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-      <a href="notification.html" class="nav-link"><i class="fa-solid fa-bell"></i> Notification <span class="badge">2</span></a>
-      <a href="requirements.html" class="nav-link"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-    </nav>
-
-    <a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <header class="page-header">
-      <h2>QUEUE STATUS</h2>
-      <p>Track your queue number in real time</p>
-    </header>
-
-    <!-- Stat cards -->
-    <section class="stats">
-      <div class="stat-card">
-        <span class="stat-label">Now serving</span>
-        <strong class="stat-value">Q-011</strong>
-        <small class="stat-note">At the window</small>
+    <div class="card live-status-card">
+      <div class="icon-box bg-orange icon-large">
+        <i class="fa-solid fa-ticket"></i>
       </div>
-      <div class="stat-card">
-        <span class="stat-label">Your number</span>
-        <strong class="stat-value">Q-014</strong>
-        <small class="stat-note">TOR</small>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">People ahead</span>
-        <strong class="stat-value">3</strong>
-        <small class="stat-note">Before you</small>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">Est. wait time</span>
-        <strong class="stat-value">15 mins</strong>
-        <small class="stat-note">Varies by service</small>
-      </div>
-    </section>
-
-    <section class="content">
-
-      <!-- Ticket panel -->
-      <div class="panel">
-        <div class="panel-header">YOUR TICKET</div>
-        <div class="panel-body">
-
-          <div class="ticket-status">
-            <span class="status-pill">Waiting</span>
-            <p>You are number <strong>3</strong> in line.</p>
-          </div>
-
-          <ol class="steps">
-            <li class="step done"><span class="dot">1</span>Joined</li>
-            <li class="step current"><span class="dot">2</span>Waiting</li>
-            <li class="step"><span class="dot">3</span>Called</li>
-            <li class="step"><span class="dot">4</span>Done</li>
-          </ol>
-
-          <div class="info-card">
-            <div class="info-card-title">Ticket Information</div>
-            <dl class="info-list">
-              <dt>Your Current Number</dt><dd>Q-014</dd>
-              <dt>Service Type</dt><dd>TOR</dd>
-              <dt>Transaction Type</dt><dd>New Request</dd>
-              <dt>Purpose</dt><dd>Scholarship</dd>
-              <dt>Time Joined</dt><dd>9:42 AM</dd>
-            </dl>
-          </div>
-
-          <div class="actions">
-            <a href="joinqueue.html" class="btn-secondary"><i class="fa-solid fa-pen"></i> Edit request</a>
-            <button type="button" class="btn-danger" id="leaveBtn"><i class="fa-solid fa-circle-xmark"></i> Leave queue</button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Live queue list -->
-      <div class="panel">
-        <div class="panel-header">LIVE QUEUE</div>
-        <div class="panel-body table-wrap">
-          <table class="queue-table">
-            <thead>
-              <tr><th>Number</th><th>Service</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Q-011</td><td>COE</td><td><span class="pill pill-serving">Serving</span></td></tr>
-              <tr><td>Q-012</td><td>COG</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
-              <tr><td>Q-013</td><td>Good Moral</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
-              <tr class="mine"><td>Q-014</td><td>TOR</td><td><span class="pill pill-you">You</span></td></tr>
-              <tr><td>Q-015</td><td>Enrollment</td><td><span class="pill pill-waiting">Waiting</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <script>
-    // Replace with your real cancel logic
-    document.getElementById('leaveBtn').addEventListener('click', () => {
-      if (confirm('Leave the queue? You will lose your number.')) {
-        window.location.href = 'joinqueue.html';
-      }
-    });
-  </script>
+      <div class="stat-title">Your Active Queue Number</div>
+      <div class="queue-display">Q-006</div>
+      <div class="status-badge"><i class="fa-solid fa-spinner fa-spin"></i> Waiting in Line (2 people ahead)</div>
+    </div>
+  </div>
 </body>
 </html>

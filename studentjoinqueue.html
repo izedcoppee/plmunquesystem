@@ -2,143 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Join Queue | PLMUN Registrar</title>
+  <title>Join Queue - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentjoinqueue.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html" class="active"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+  </div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-      <h1 class="brand-name">PLMUN</h1>
-      <span class="brand-role">Student Account</span>
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-list-check"></i> Join Queue</h2>
+      <span>Get a virtual queue number for registrar services</span>
     </div>
 
-    <nav class="nav">
-      <a href="studentdashboard.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-      <a href="joinqueue.html" class="nav-link active"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-      <a href="queuestatus.html" class="nav-link"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-      <a href="studentbookappointment.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-      <a href="notification.html" class="nav-link"><i class="fa-solid fa-bell"></i> Notification <span class="badge">2</span></a>
-      <a href="requirements.html" class="nav-link"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-    </nav>
-
-    <a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <header class="page-header">
-      <h2>JOIN QUEUE</h2>
-      <p>Get a virtual queue number for registrar services</p>
-    </header>
-
-    <section class="stats">
-      <div class="stat-card">
-        <span class="stat-label">Now serving</span>
-        <strong class="stat-value">Q-011</strong>
-        <small class="stat-note">At the window</small>
+    <!-- Header Stats Row -->
+    <div class="metrics-grid">
+      <div class="card metric-card">
+        <div class="icon-box bg-blue"><i class="fa-solid fa-desktop"></i></div>
+        <div>
+          <div class="metric-value">Q-011</div>
+          <div class="metric-label">Now Serving</div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-label">Queue status</span>
-        <strong class="stat-value">Open</strong>
-        <small class="stat-note">Accepting walk-ins</small>
+      <div class="card metric-card">
+        <div class="icon-box bg-green"><i class="fa-solid fa-door-open"></i></div>
+        <div>
+          <div class="metric-value">Open</div>
+          <div class="metric-label">Queue Status</div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-label">Est. wait time</span>
-        <strong class="stat-value">0 mins</strong>
-        <small class="stat-note">Varies by service</small>
+      <div class="card metric-card">
+        <div class="icon-box bg-orange"><i class="fa-solid fa-hourglass-half"></i></div>
+        <div>
+          <div class="metric-value">0 mins</div>
+          <div class="metric-label">Est. Wait Time</div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="panel">
-      <div class="panel-header">TRANSACTION REQUEST</div>
-
-      <div class="panel-body">
-
-        <!-- Left: form -->
-        <form class="request-form" id="queueForm">
-          <label class="field-label">Service type</label>
-          <div class="service-buttons" id="serviceButtons">
-            <button type="button" class="service-btn" data-service="TOR"><i class="fa-solid fa-file-lines"></i> TOR</button>
-            <button type="button" class="service-btn" data-service="COE"><i class="fa-solid fa-briefcase"></i> COE</button>
-            <button type="button" class="service-btn" data-service="COG"><i class="fa-solid fa-graduation-cap"></i> COG</button>
-            <button type="button" class="service-btn" data-service="Good Moral"><i class="fa-solid fa-shield-halved"></i> Good Moral</button>
-            <button type="button" class="service-btn" data-service="Enrollment"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
-            <button type="button" class="service-btn" data-service="Inquiry"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
-          </div>
-
-          <label class="field-label" for="transactionType">Transaction type</label>
-          <select id="transactionType" class="select">
-            <option value="" selected disabled>Select type...</option>
-            <option>New Request</option>
-            <option>Follow-up</option>
-            <option>Claiming</option>
-          </select>
-
-          <label class="field-label" for="purpose">Purpose</label>
-          <select id="purpose" class="select">
-            <option value="" selected disabled>Select purpose...</option>
-            <option>Scholarship</option>
-            <option>Employment</option>
-            <option>Transfer</option>
-            <option>Board Exam</option>
-            <option>Others</option>
-          </select>
-
-          <button type="submit" class="btn-primary"><i class="fa-solid fa-ticket"></i> Get Queue Number</button>
-        </form>
-
-        <!-- Right: queue info -->
-        <div class="queue-side">
-          <div class="info-card">
-            <div class="info-card-title">Current Queue Information</div>
-            <dl class="info-list">
-              <dt>Your Current Number</dt><dd id="infoNumber">Q-006</dd>
-              <dt>Service Type</dt><dd id="infoService">TOR</dd>
-              <dt>Transaction Type</dt><dd id="infoTransaction">New Request</dd>
-              <dt>Purpose</dt><dd id="infoPurpose">Scholarship</dd>
-            </dl>
-          </div>
-
-          <label class="field-label" for="remarks">Remarks (optional)</label>
-          <div class="remarks-row">
-            <input type="text" id="remarks" class="input" placeholder="Add a note for the registrar">
-            <button type="button" class="btn-secondary"><i class="fa-solid fa-paper-plane"></i> Send</button>
+    <!-- Split Content Area -->
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> Transaction Request</h3>
+        
+        <!-- Service Type -->
+        <div class="form-group">
+          <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
+          <div class="service-grid">
+            <button class="service-btn selected"><i class="fa-solid fa-file-contract"></i> TOR</button>
+            <button class="service-btn"><i class="fa-solid fa-certificate"></i> COE</button>
+            <button class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
+            <button class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
+            <button class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
+            <button class="service-btn"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
           </div>
         </div>
 
+        <!-- Transaction Type -->
+        <div class="form-group">
+          <label for="trans-type"><i class="fa-solid fa-list"></i> Transaction Type</label>
+          <select id="trans-type" class="form-control">
+            <option value="">Select type...</option>
+            <option selected>New Request</option>
+            <option>Follow-up</option>
+          </select>
+        </div>
+
+        <!-- Purpose (Updated 3 Options) -->
+        <div class="form-group">
+          <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
+          <select id="purpose" class="form-control">
+            <option value="">Select purpose...</option>
+            <option value="transfer">Transfer</option>
+            <option value="scholarship" selected>Scholarship</option>
+            <option value="graduation">Graduation</option>
+          </select>
+        </div>
+
+        <button class="btn-primary mt-15"><i class="fa-solid fa-ticket"></i> Get Queue Number</button>
       </div>
-    </section>
 
-  </main>
+      <div class="card flex-column-between">
+        <div>
+          <h3 class="card-title mb-20"><i class="fa-solid fa-id-card"></i> Current Queue Information</h3>
+          <div class="ticket-box">
+            <span class="ticket-label">Your Current Number</span>
+            <span class="ticket-number">Q-006</span>
+          </div>
+          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Service Type:</strong> TOR</p>
+          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Transaction Type:</strong> New Request</p>
+          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Purpose:</strong> Scholarship</p>
+        </div>
 
-  <script>
-    const buttons = document.querySelectorAll('.service-btn');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        document.getElementById('infoService').textContent = btn.dataset.service;
-      });
-    });
-
-    document.getElementById('transactionType').addEventListener('change', e => {
-      document.getElementById('infoTransaction').textContent = e.target.value;
-    });
-    document.getElementById('purpose').addEventListener('change', e => {
-      document.getElementById('infoPurpose').textContent = e.target.value;
-    });
-
-    // Replace with your real queue-number logic
-    document.getElementById('queueForm').addEventListener('submit', e => {
-      e.preventDefault();
-    });
-  </script>
+        <div class="mt-20">
+          <label class="input-label mb-5">Remarks (optional)</label>
+          <div class="remarks-row">
+            <input type="text" class="form-control" placeholder="Enter remarks...">
+            <button class="btn-primary btn-auto"><i class="fa-solid fa-paper-plane"></i> Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
