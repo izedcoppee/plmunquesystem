@@ -2,168 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Notification | PLMUN Registrar</title>
+  <title>Notifications - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentnotification.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html" class="active"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+  </div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-      <h1 class="brand-name">PLMUN</h1>
-      <span class="brand-role">Student Account</span>
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-bell"></i> Notifications</h2>
+      <span>Stay updated with queue alerts and announcements</span>
     </div>
 
-    <nav class="nav">
-      <a href="studentdashboard.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-      <a href="joinqueue.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-      <a href="queuestatus.html" class="nav-link"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-      <a href="studentbookappointment.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-      <a href="notification.html" class="nav-link active"><i class="fa-solid fa-bell"></i> Notification <span class="badge">2</span></a>
-      <a href="requirements.html" class="nav-link"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-    </nav>
-
-    <a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <header class="page-header">
-      <div>
-        <h2>NOTIFICATION</h2>
-        <p>Official announcements from the Registrar's Office</p>
-      </div>
-      <button type="button" class="btn-secondary" id="markAll"><i class="fa-solid fa-check-double"></i> Mark all as read</button>
-    </header>
-
-    <!-- Stat cards -->
-    <section class="stats">
-      <div class="stat-card">
-        <strong class="stat-value">8</strong>
-        <span class="stat-label">Total announcement</span>
-      </div>
-      <div class="stat-card">
-        <strong class="stat-value">0</strong>
-        <span class="stat-label">Unread</span>
-      </div>
-      <div class="stat-card">
-        <strong class="stat-value">0</strong>
-        <span class="stat-label">Urgent</span>
-      </div>
-      <div class="stat-card">
-        <strong class="stat-value">May 20</strong>
-        <span class="stat-label">Next Appointment</span>
-      </div>
-    </section>
-
-    <!-- Content -->
-    <section class="content">
-
-      <!-- Left: categories -->
-      <aside class="filter-panel">
-        <button type="button" class="filter-all active" data-category="all"><span><i class="fa-solid fa-list"></i> ALL</span><span>8</span></button>
-        <button type="button" class="filter-item" data-category="General"><span><i class="fa-solid fa-bullhorn"></i> General</span><span>4</span></button>
-        <button type="button" class="filter-item" data-category="Event"><span><i class="fa-solid fa-calendar-days"></i> Event</span><span>0</span></button>
-        <button type="button" class="filter-item" data-category="Reminder"><span><i class="fa-solid fa-clock"></i> Reminder</span><span>1</span></button>
-      </aside>
-
-      <!-- Right: announcements -->
-      <div class="feed">
-
-        <div class="feed-toolbar">
-          <button type="button" class="chip active"><i class="fa-solid fa-list"></i> All</button>
-          <button type="button" class="chip"><i class="fa-solid fa-arrow-down"></i> Latest</button>
-          <button type="button" class="chip"><i class="fa-solid fa-arrow-up"></i> Oldest</button>
-        </div>
-
-        <div class="feed-list" id="feedList">
-
-          <article class="note" data-category="General">
-            <div class="note-top">
-              <span class="note-meta">May 19, 2026 - 8:02 PM · Registrar's Office</span>
-              <span class="tag tag-general">General</span>
-            </div>
-            <p class="note-text">Enrollment for the next term opens next week. Please prepare your requirements.</p>
-            <span class="note-status">Read.</span>
-          </article>
-
-          <article class="note" data-category="Urgent">
-            <div class="note-top">
-              <span class="note-meta">May 19, 2026 - 8:02 PM · Registrar's Office</span>
-              <span class="tag tag-urgent">Urgent</span>
-            </div>
-            <p class="note-text">The registrar window is closed this afternoon. Please come back tomorrow.</p>
-            <span class="note-status">Read.</span>
-          </article>
-
-          <article class="note" data-category="General">
-            <div class="note-top">
-              <span class="note-meta">May 18, 2026 - 10:17 PM · Registrar's Office</span>
-              <span class="tag tag-general">General</span>
-            </div>
-            <p class="note-text">Cut off for today: dear students, we apologize that we cut off early due to unforeseen events.</p>
-            <span class="note-status">Read.</span>
-          </article>
-
-          <article class="note" data-category="Document">
-            <div class="note-top">
-              <span class="note-meta">May 18, 2026 - 12:31 PM · Registrar's Office</span>
-              <span class="tag tag-document">Document</span>
-            </div>
-            <p class="note-text">Your TOR request is now ready for pickup at the registrar office.</p>
-            <span class="note-status">Read.</span>
-          </article>
-
+    <div class="card notification-list">
+      <div class="notification-item">
+        <div class="icon-badge bg-green"><i class="fa-solid fa-ticket"></i></div>
+        <div>
+          <strong>Your Queue Ticket is Ready</strong>
+          <p class="notification-desc">You were issued ticket Q-006 for TOR request.</p>
         </div>
       </div>
-
-    </section>
-  </main>
-
-  <script>
-    // Category filter (left panel)
-    const filters = document.querySelectorAll('[data-category].filter-all, [data-category].filter-item');
-    const notes = document.querySelectorAll('.note');
-
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.dataset.category;
-        notes.forEach(n => {
-          n.hidden = !(cat === 'all' || n.dataset.category === cat);
-        });
-      });
-    });
-
-    // All / Latest / Oldest (top of the feed)
-    const chips = document.querySelectorAll('.chip');
-    const list = document.getElementById('feedList');
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const label = chip.textContent.trim();
-        if (label === 'Oldest') {
-          [...list.children].reverse().forEach(n => list.appendChild(n));
-        }
-        // "Latest" and "All" keep the original order (newest first).
-        // Replace with real sorting once your data has timestamps.
-      });
-    });
-
-    // Mark all as read
-    document.getElementById('markAll').addEventListener('click', () => {
-      document.querySelectorAll('.note.unread').forEach(n => {
-        n.classList.remove('unread');
-        n.querySelector('.note-status').textContent = 'Read.';
-      });
-    });
-  </script>
+      
+      <div class="notification-item border-none">
+        <div class="icon-badge bg-blue"><i class="fa-solid fa-bullhorn"></i></div>
+        <div>
+          <strong>Registrar Queue Open</strong>
+          <p class="notification-desc">Walk-in queue is now open for all students.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

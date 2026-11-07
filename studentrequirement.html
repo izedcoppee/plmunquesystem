@@ -2,131 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Requirements | PLMUN Registrar</title>
+  <title>Requirements - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentrequirement.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
+        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html" class="active"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+  </div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-      <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-      <h1 class="brand-name">PLMUN</h1>
-      <span class="brand-role">Student Account</span>
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-file-lines"></i> Document Requirements</h2>
+      <span>Check prerequisites before requesting documents</span>
     </div>
 
-    <nav class="nav">
-      <a href="studentdashboard.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-      <a href="joinqueue.html" class="nav-link"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-      <a href="queuestatus.html" class="nav-link"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-      <a href="studentbookappointment.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-      <a href="notification.html" class="nav-link"><i class="fa-solid fa-bell"></i> Notification <span class="badge">2</span></a>
-      <a href="requirements.html" class="nav-link active"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-    </nav>
-
-    <a href="login.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <header class="page-header">
-      <h2>REQUIREMENTS</h2>
-      <p>What to bring for each registrar service</p>
-    </header>
-
-    <!-- Service filters -->
-    <div class="filters" id="filters">
-      <button type="button" class="filter-btn active" data-service="all"><i class="fa-solid fa-border-all"></i> All Services</button>
-      <button type="button" class="filter-btn" data-service="TOR"><i class="fa-solid fa-file-lines"></i> TOR</button>
-      <button type="button" class="filter-btn" data-service="COE"><i class="fa-solid fa-briefcase"></i> COE</button>
-      <button type="button" class="filter-btn" data-service="COG"><i class="fa-solid fa-graduation-cap"></i> COG</button>
-      <button type="button" class="filter-btn" data-service="Good Moral"><i class="fa-solid fa-shield-halved"></i> Good Moral</button>
-      <button type="button" class="filter-btn" data-service="Inquiry"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
+    <div class="card">
+      <h3 class="req-header"><i class="fa-solid fa-folder-open"></i> Transcript of Records (TOR)</h3>
+      <ul class="req-list">
+        <li><i class="fa-solid fa-id-card icon-bullet"></i> Student ID / Valid Government-Issued ID</li>
+        <li><i class="fa-solid fa-file-signature icon-bullet"></i> Completed Clearance Form</li>
+        <li><i class="fa-solid fa-image icon-bullet"></i> 2x2 Official ID Picture (White Background)</li>
+      </ul>
     </div>
-
-    <!-- Requirement cards -->
-    <section class="grid" id="grid">
-
-      <article class="req-card" data-services="TOR,COE,COG,Good Moral">
-        <h3 class="req-title">Valid school ID</h3>
-        <ul class="req-list">
-          <li>Current PLMUN student or alumni ID</li>
-          <li>Government-issued ID if no school ID</li>
-        </ul>
-      </article>
-
-      <article class="req-card" data-services="TOR,COE,COG,Good Moral">
-        <h3 class="req-title">Request Form</h3>
-        <ul class="req-list">
-          <li>Completed and signed request form</li>
-          <li>Available at the registrar's office</li>
-        </ul>
-      </article>
-
-      <article class="req-card" data-services="TOR,COE,COG,Good Moral">
-        <h3 class="req-title">Payment Receipt</h3>
-        <ul class="req-list">
-          <li>Official receipt from cashier's office</li>
-          <li>Must match the document requested</li>
-        </ul>
-      </article>
-
-      <article class="req-card" data-services="TOR,COE,COG,Good Moral">
-        <h3 class="req-title">Authorization Letter</h3>
-        <ul class="req-list">
-          <li>Signed letter from the student or alumnus</li>
-          <li>Representative's valid ID required</li>
-        </ul>
-      </article>
-
-      <article class="req-card" data-services="COE,COG">
-        <h3 class="req-title">Enrollment Docs</h3>
-        <ul class="req-list">
-          <li>Assessment form / study load</li>
-          <li>Scholarship documents if applicable</li>
-        </ul>
-      </article>
-
-      <article class="req-card" data-services="Inquiry">
-        <h3 class="req-title">Inquiry</h3>
-        <ul class="req-list">
-          <li>Scholarship documents if applicable</li>
-          <li>Specific reference numbers if available</li>
-        </ul>
-      </article>
-
-      <p class="empty" id="empty" hidden>No requirements listed for this service yet.</p>
-    </section>
-
-  </main>
-
-  <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.req-card');
-    const empty = document.getElementById('empty');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const service = btn.dataset.service;
-        let visible = 0;
-
-        cards.forEach(card => {
-          const services = card.dataset.services.split(',');
-          const show = service === 'all' || services.includes(service);
-          card.hidden = !show;
-          if (show) visible++;
-        });
-
-        empty.hidden = visible !== 0;
-      });
-    });
-  </script>
+  </div>
 </body>
 </html>

@@ -2,78 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PLMUN Student Dashboard</title>
+  <title>Student Dashboard - PLMUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="studentdashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand">
+  <div class="sidebar">
+    <div>
+      <div class="brand-section">
         <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-school">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h2 class="brand-short">PLMUN</h2>
-        <span class="brand-role">Student Account</span>
+        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h1 class="brand-name">PLMUN</h1>
+        <span class="badge">Student Account</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="studentdashboard.html" class="active"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
+        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
+        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
+        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
+        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
+      </ul>
+    </div>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <h2><i class="fa-solid fa-house header-icon"></i> Student Dashboard</h2>
+      <span><i class="fa-solid fa-user"></i> Welcome, Student</span>
+    </div>
+
+    <!-- Main Metrics Grid (2x2 layout to maximize space balance) -->
+    <div class="metrics-grid">
+      <div class="card metric-card">
+        <div class="icon-box bg-green">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-value">12</span>
+          <span class="metric-label">Waiting in Queue</span>
+        </div>
       </div>
 
-      <nav class="menu">
-        <a href="studentdashboard.html" class="menu-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-        <a href="joinqueue.html" class="menu-item"><i class="fa-solid fa-list-check"></i> Join Queue</a>
-        <a href="queuestatus.html" class="menu-item"><i class="fa-solid fa-spinner"></i> Queue Status</a>
-        <a href="studentbookappointment.html" class="menu-item"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
-        <a href="notification.html" class="menu-item"><i class="fa-solid fa-bell"></i> Notification <span class="dot">2</span></a>
-        <a href="requirements.html" class="menu-item"><i class="fa-solid fa-file-lines"></i> Requirements</a>
-      </nav>
+      <div class="card metric-card">
+        <div class="icon-box bg-orange">
+          <i class="fa-solid fa-ticket"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-value">Q-006</span>
+          <span class="metric-label">My Active Ticket</span>
+        </div>
+      </div>
 
-      <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
-    </aside>
+      <div class="card metric-card">
+        <div class="icon-box bg-blue">
+          <i class="fa-solid fa-spinner"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-value">Q-011</span>
+          <span class="metric-label">Now Serving at Counter</span>
+        </div>
+      </div>
 
-    <main class="content">
-      <header class="topbar">
-        <h1><i class="fa-solid fa-house"></i> Student Dashboard</h1>
-        <span class="welcome"><i class="fa-solid fa-user"></i> Welcome, Student</span>
-      </header>
+      <div class="card metric-card">
+        <div class="icon-box bg-dark-green">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="metric-info">
+          <span class="metric-value">0 mins</span>
+          <span class="metric-label">Est. Wait Time</span>
+        </div>
+      </div>
+    </div>
 
-      <section class="panel now-serving">
-        <h2>Now Serving in Registrar</h2>
-        <div class="queue-number">Q-014</div>
-        <p class="window">Window 3: Diploma &amp; Transcript Requests</p>
-      </section>
-
-      <section class="grid">
-        <div class="panel">
+    <!-- Quick Overview Panel -->
+    <div class="card status-overview">
+      <h3><i class="fa-solid fa-circle-info"></i> Queue Status Overview</h3>
+      <div class="overview-details">
+        <div class="detail-item">
+          <i class="fa-solid fa-door-open icon-open"></i>
           <div>
-            <h3>Get New Queue Ticket</h3>
-            <p>Select your transaction type and get your digital queue number instantly.</p>
+            <strong>Registrar Status</strong>
+            <p>Open & Accepting Walk-ins</p>
           </div>
-          <a href="joinqueue.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Get Ticket</a>
         </div>
-
-        <div class="panel">
+        <div class="detail-item">
+          <i class="fa-solid fa-window-restore icon-window"></i>
           <div>
-            <h3>My Active Ticket</h3>
-            <p>You currently have no active queue tickets.</p>
+            <strong>Active Counter</strong>
+            <p>Window 3: Diploma & Transcript Requests</p>
           </div>
-          <button class="btn btn-outline" disabled><i class="fa-solid fa-eye"></i> View Status</button>
         </div>
-      </section>
-
-      <section class="stats">
-        <div class="stat">
-          <span class="stat-label"><i class="fa-solid fa-user-group"></i> Waiting in Queue</span>
-          <span class="stat-value">12</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label"><i class="fa-solid fa-ticket"></i> My Ticket</span>
-          <span class="stat-value">None</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label"><i class="fa-solid fa-calendar-check"></i> Appointments</span>
-          <span class="stat-value">0</span>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
 </body>
 </html>
