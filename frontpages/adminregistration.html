@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMUN Registrar System - Admin Registration</title>
+    <link rel="stylesheet" href="loginform.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Full-screen Background Overlay -->
+    <div class="bg-overlay"></div>
+
+    <!-- Centered Registration Card -->
+    <div class="login-card" style="max-width: 440px; padding: 36px 30px;">
+        
+        <!-- Header Brand Section -->
+        <div class="card-header" style="margin-bottom: 20px;">
+            <img src="plmunlogo.png" alt="PLMUN Logo" class="login-logo">
+            <h2>Admin Registration</h2>
+            <p>Create registrar staff account</p>
+        </div>
+
+        <!-- Admin Registration Form -->
+        <form id="adminRegisterForm" onsubmit="handleAdminRegistration(event)">
+            
+            <!-- Full Name -->
+            <div class="input-group">
+                <label for="fullName">Full name</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="fullName" placeholder="Enter full name" required>
+                </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="email" placeholder="e.g juan@registrar.edu.ph" required>
+                </div>
+            </div>
+
+            <!-- Admin Code -->
+            <div class="input-group">
+                <label for="adminCode">Admin code</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-key input-icon"></i>
+                    <input type="password" id="adminCode" placeholder="Enter secret admin code" required>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-group">
+                <label for="confirmPassword">Confirm password</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-user-plus"></i> Register as Admin!
+            </button>
+
+        </form>
+
+        <!-- Footer Link -->
+        <div class="card-footer">
+            <p>Already have an account? <a href="loginform.html">Sign in here</a></p>
+        </div>
+
+    </div>
+
+    <!-- Registration Validation Script -->
+    <script>
+        function handleAdminRegistration(event) {
+            event.preventDefault();
+            
+            const pass = document.getElementById('password').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+
+            if (pass !== confirmPass) {
+                alert('Passwords do not match! Please check and try again.');
+                return;
+            }
+
+            alert('Admin account created successfully!');
+            window.location.href = 'loginform.html';
+        }
+    </script>
+</body>
+</html>

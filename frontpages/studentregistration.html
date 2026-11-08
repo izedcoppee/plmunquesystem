@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMUN Registrar System - Student Registration</title>
+    <link rel="stylesheet" href="loginform.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Full-screen Background Overlay -->
+    <div class="bg-overlay"></div>
+
+    <!-- Centered Registration Card -->
+    <div class="login-card" style="max-width: 480px; padding: 32px 28px;">
+        
+        <!-- Header Brand Section -->
+        <div class="card-header" style="margin-bottom: 20px;">
+            <img src="plmunlogo.png" alt="PLMUN Logo" class="login-logo">
+            <h2>Student Registration</h2>
+            <p>Create your student account</p>
+        </div>
+
+        <!-- Student Registration Form -->
+        <form id="studentRegisterForm" onsubmit="handleStudentRegistration(event)">
+            
+            <!-- Student Number -->
+            <div class="input-group">
+                <label for="studentNumber">Student number</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-id-card input-icon"></i>
+                    <input type="text" id="studentNumber" placeholder="Enter student number" required>
+                </div>
+            </div>
+
+            <!-- Full Name -->
+            <div class="input-group">
+                <label for="fullName">Full name</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="fullName" placeholder="e.g Juan H. Delecruz" required>
+                </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="email" placeholder="e.g juandelacruz@plmun.edu.ph" required>
+                </div>
+            </div>
+
+            <!-- Course & Year Level (Side-by-Side Row) -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px;">
+                <div class="input-group" style="margin-bottom: 0;">
+                    <label for="course">Course</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-graduation-cap input-icon"></i>
+                        <input type="text" id="course" placeholder="e.g BSIT" required>
+                    </div>
+                </div>
+                <div class="input-group" style="margin-bottom: 0;">
+                    <label for="yearLevel">Year level</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-layer-group input-icon"></i>
+                        <select id="yearLevel" required style="width: 100%; padding: 12px 14px 12px 40px; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-dark); font-size: 14px; outline: none;">
+                            <option value="" disabled selected>Choose your year....</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-group">
+                <label for="confirmPassword">Confirm password</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-user-plus"></i> Register!
+            </button>
+
+        </form>
+
+        <!-- Footer Link -->
+        <div class="card-footer">
+            <p>Already have an account? <a href="loginform.html">Sign in here</a></p>
+        </div>
+
+    </div>
+
+    <!-- Registration Script -->
+    <script>
+        function handleStudentRegistration(event) {
+            event.preventDefault();
+            
+            const pass = document.getElementById('password').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+
+            if (pass !== confirmPass) {
+                alert('Passwords do not match! Please check and try again.');
+                return;
+            }
+
+            alert('Student account created successfully!');
+            window.location.href = 'loginform.html';
+        }
+    </script>
+</body>
+</html>
