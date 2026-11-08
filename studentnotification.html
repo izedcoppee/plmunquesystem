@@ -30,25 +30,113 @@
 
   <div class="main-content">
     <div class="top-bar">
-      <h2><i class="fa-solid fa-bell"></i> Notifications</h2>
+      <h2><i class="fa-solid fa-inbox"></i> Notifications Inbox</h2>
       <span>Stay updated with queue alerts and announcements</span>
     </div>
 
-    <div class="card notification-list">
-      <div class="notification-item">
-        <div class="icon-badge bg-green"><i class="fa-solid fa-ticket"></i></div>
-        <div>
-          <strong>Your Queue Ticket is Ready</strong>
-          <p class="notification-desc">You were issued ticket Q-006 for TOR request.</p>
+    <!-- Email-Style Inbox Container -->
+    <div class="card inbox-container">
+      
+      <!-- Inbox Controls Header Bar -->
+      <div class="inbox-header">
+        <div class="inbox-title-group">
+          <h3>Inbox</h3>
+          <span class="unread-badge">2 Unread</span>
+        </div>
+        <div class="inbox-actions">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search notifications...">
+          </div>
+          <button class="btn-secondary" title="Mark all as read">
+            <i class="fa-solid fa-envelope-open"></i> Mark all read
+          </button>
         </div>
       </div>
-      
-      <div class="notification-item border-none">
-        <div class="icon-badge bg-blue"><i class="fa-solid fa-bullhorn"></i></div>
-        <div>
-          <strong>Registrar Queue Open</strong>
-          <p class="notification-desc">Walk-in queue is now open for all students.</p>
+
+      <!-- Email Rows List -->
+      <div class="email-list">
+        
+        <!-- Email Row 1 (Unread) -->
+        <div class="email-row unread">
+          <div class="email-left">
+            <span class="unread-dot"></span>
+            <i class="fa-regular fa-star star-icon"></i>
+            <span class="email-sender">Queue Manager</span>
+          </div>
+          <div class="email-body">
+            <span class="email-subject">Your Queue Ticket is Ready</span>
+            <span class="email-preview">- You were successfully issued ticket Q-006 for your Transcript of Records (TOR) request.</span>
+          </div>
+          <div class="email-right">
+            <span class="email-time">10:42 AM</span>
+            <div class="row-actions">
+              <i class="fa-solid fa-trash-can" title="Delete"></i>
+              <i class="fa-solid fa-envelope" title="Mark as read"></i>
+            </div>
+          </div>
         </div>
+
+        <!-- Email Row 2 (Unread) -->
+        <div class="email-row unread">
+          <div class="email-left">
+            <span class="unread-dot"></span>
+            <i class="fa-solid fa-star star-icon starred"></i>
+            <span class="email-sender">PLMUN Registrar</span>
+          </div>
+          <div class="email-body">
+            <span class="email-subject">Registrar Queue Now Open</span>
+            <span class="email-preview">- Walk-in and virtual queue registration is now officially open for all students today.</span>
+          </div>
+          <div class="email-right">
+            <span class="email-time">8:00 AM</span>
+            <div class="row-actions">
+              <i class="fa-solid fa-trash-can" title="Delete"></i>
+              <i class="fa-solid fa-envelope" title="Mark as read"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Row 3 (Read) -->
+        <div class="email-row">
+          <div class="email-left">
+            <span class="unread-dot empty"></span>
+            <i class="fa-regular fa-star star-icon"></i>
+            <span class="email-sender">Appointment System</span>
+          </div>
+          <div class="email-body">
+            <span class="email-subject">Appointment Confirmation</span>
+            <span class="email-preview">- Your scheduled appointment for COE release on May 27, 2026 has been confirmed.</span>
+          </div>
+          <div class="email-right">
+            <span class="email-time">Yesterday</span>
+            <div class="row-actions">
+              <i class="fa-solid fa-trash-can" title="Delete"></i>
+              <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Row 4 (Read) -->
+        <div class="email-row">
+          <div class="email-left">
+            <span class="unread-dot empty"></span>
+            <i class="fa-regular fa-star star-icon"></i>
+            <span class="email-sender">Student Affairs</span>
+          </div>
+          <div class="email-body">
+            <span class="email-subject">Document Request Reminder</span>
+            <span class="email-preview">- Please ensure all clearance requirements are submitted before claiming your clearance documents.</span>
+          </div>
+          <div class="email-right">
+            <span class="email-time">May 5</span>
+            <div class="row-actions">
+              <i class="fa-solid fa-trash-can" title="Delete"></i>
+              <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

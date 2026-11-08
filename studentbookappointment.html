@@ -30,25 +30,184 @@
 
   <div class="main-content">
     <div class="top-bar">
-      <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment</h2>
+      <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment & Document Requests</h2>
       <span>Schedule a visit for document release or consultation</span>
     </div>
 
-    <div class="card form-card">
-      <h3 class="card-title mb-20"><i class="fa-solid fa-calendar-check"></i> Schedule Details</h3>
-      <div class="form-group">
-        <label for="app-date"><i class="fa-solid fa-calendar"></i> Select Date</label>
-        <input type="date" id="app-date" class="form-control">
+    <!-- Top Status Cards Grid (4 columns) -->
+    <div class="metrics-grid-4">
+      <div class="card metric-card">
+        <div class="icon-box bg-blue"><i class="fa-solid fa-folder-open"></i></div>
+        <div>
+          <div class="metric-value">2</div>
+          <div class="metric-label">Total Request</div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="app-time"><i class="fa-solid fa-clock"></i> Select Time Slot</label>
-        <select id="app-time" class="form-control">
-          <option>09:00 AM - 10:00 AM</option>
-          <option>10:00 AM - 11:00 AM</option>
-          <option>01:00 PM - 02:00 PM</option>
-        </select>
+      <div class="card metric-card">
+        <div class="icon-box bg-orange"><i class="fa-solid fa-spinner"></i></div>
+        <div>
+          <div class="metric-value">0</div>
+          <div class="metric-label">Processing</div>
+        </div>
       </div>
-      <button class="btn-primary mt-15"><i class="fa-solid fa-check"></i> Confirm Appointment</button>
+      <div class="card metric-card">
+        <div class="icon-box bg-yellow"><i class="fa-solid fa-clock"></i></div>
+        <div>
+          <div class="metric-value">1</div>
+          <div class="metric-label">Pending</div>
+        </div>
+      </div>
+      <div class="card metric-card">
+        <div class="icon-box bg-green"><i class="fa-solid fa-circle-check"></i></div>
+        <div>
+          <div class="metric-value">0</div>
+          <div class="metric-label">Ready to claim</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout (3 Columns: Form | Current Details | History) -->
+    <div class="appointment-grid">
+      
+      <!-- Panel 1: Request & Booking Form -->
+      <div class="card form-panel">
+        <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> New Appointment Request</h3>
+        
+        <div class="form-group">
+          <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
+          <div class="service-grid">
+            <button class="service-btn"><i class="fa-solid fa-file-contract"></i> TOR</button>
+            <button class="service-btn selected"><i class="fa-solid fa-certificate"></i> COE</button>
+            <button class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
+            <button class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
+            <button class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
+          <select id="purpose" class="form-control">
+            <option value="">Select Purpose...</option>
+            <option value="transfer">Transfer</option>
+            <option value="scholarship">Scholarship</option>
+            <option value="graduation" selected>Graduation / Enrollment</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="copies"><i class="fa-solid fa-copy"></i> No. of copies</label>
+          <input type="number" id="copies" class="form-control" value="1" min="1" max="10">
+        </div>
+
+        <div class="form-group">
+          <label for="pickup-date"><i class="fa-solid fa-calendar-day"></i> Preferred Pick-up Date <span class="sub-text">(Weekdays Only)</span></label>
+          <input type="date" id="pickup-date" class="form-control" value="2026-05-22">
+        </div>
+
+        <div class="form-group">
+          <label><i class="fa-solid fa-clock"></i> Preferred Time Slot</label>
+          <div class="time-slots-grid">
+            <button class="slot-btn selected">
+              <span>8:00 AM</span>
+              <small>50/100</small>
+            </button>
+            <button class="slot-btn">
+              <span>9:00 AM</span>
+              <small>50/100</small>
+            </button>
+            <button class="slot-btn">
+              <span>10:00 AM</span>
+              <small>50/100</small>
+            </button>
+            <button class="slot-btn">
+              <span>1:00 PM</span>
+              <small>50/100</small>
+            </button>
+            <button class="slot-btn">
+              <span>2:00 PM</span>
+              <small>50/100</small>
+            </button>
+            <button class="slot-btn">
+              <span>3:00 PM</span>
+              <small>50/100</small>
+            </button>
+          </div>
+        </div>
+
+        <button class="btn-primary mt-15"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+      </div>
+
+      <!-- Panel 2: Active Appointment Info -->
+      <div class="card summary-panel flex-column-between">
+        <div>
+          <h3 class="card-title mb-20"><i class="fa-solid fa-calendar-check"></i> Your Appointment</h3>
+          
+          <div class="appointment-summary-box">
+            <div class="summary-item">
+              <span class="summary-label">Service Type:</span>
+              <span class="summary-value highlight-green">COE</span>
+            </div>
+
+            <div class="summary-item">
+              <span class="summary-label">Purpose:</span>
+              <span class="summary-value highlight-green">Enrollment</span>
+            </div>
+
+            <div class="summary-item">
+              <span class="summary-label">No. of Copies:</span>
+              <span class="summary-value">1</span>
+            </div>
+
+            <div class="summary-item">
+              <span class="summary-label">Pick up Date:</span>
+              <span class="summary-value">5/27/2026</span>
+            </div>
+
+            <div class="summary-item">
+              <span class="summary-label">Pick up Time:</span>
+              <span class="summary-value">9:00 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-danger"><i class="fa-solid fa-xmark"></i> Cancel Appointment</button>
+      </div>
+
+      <!-- Panel 3: Request History with Filters -->
+      <div class="card history-panel">
+        <h3 class="card-title mb-15"><i class="fa-solid fa-clock-rotate-left"></i> Request History</h3>
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="tab-btn active">All</button>
+          <button class="tab-btn">Pending</button>
+          <button class="tab-btn">Processing</button>
+          <button class="tab-btn">Ready</button>
+          <button class="tab-btn">Cancelled</button>
+        </div>
+
+        <!-- History Items -->
+        <div class="history-list">
+          <div class="history-card">
+            <div class="history-header">
+              <span class="req-id">REQ-0051</span>
+              <span class="status-tag tag-cancelled">cancelled</span>
+            </div>
+            <p class="history-details">Purpose: Enrollment · Copies: 1 · Certificate of Enrollment</p>
+            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
+          </div>
+
+          <div class="history-card">
+            <div class="history-header">
+              <span class="req-id">REQ-0050</span>
+              <span class="status-tag tag-pending">pending</span>
+            </div>
+            <p class="history-details">Purpose: Enrollment · Copies: 1 · Certificate of Enrollment</p>
+            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
