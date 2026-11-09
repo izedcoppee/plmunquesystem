@@ -385,3 +385,186 @@ body {
 .email-row:hover .row-actions {
   display: flex;
 }
+
+
+:root {
+  --green-dark: #1b5e20;
+  --green-mid: #2e7d32;
+  --gold: #E0A100;
+  --gold-light: #F2B705;
+  --gold-pale: #FFF4CC;
+  --cream: #FAF6EC;
+  --sand: #E8DCC4;
+  --red: #C62828;
+  --red-pale: #FDE8E6;
+  --orange-pale: #FFF0E0;
+  --text: #1f2a1f;
+}
+
+/* Page background */
+body,
+.main-content {
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(27, 94, 32, 0.06);
+}
+
+.top-bar {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-bottom: 3px solid var(--gold);
+}
+
+/* Sidebar */
+.nav-links a:hover {
+  background: rgba(242, 183, 5, 0.18);
+}
+.nav-links a.active {
+  background: var(--cream);
+  color: var(--green-dark);
+  border-left: 4px solid var(--gold);
+}
+.badge {
+  background: rgba(242, 183, 5, 0.25);
+  color: var(--gold-light);
+}
+.btn-logout:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--green-dark);
+}
+
+/* Titles and icons */
+.card-title,
+.card-title i,
+.top-bar h2,
+.top-bar h2 i {
+  color: var(--green-dark);
+}
+.form-group label i {
+  color: var(--gold);
+}
+
+/* Metric icon boxes */
+.icon-box.bg-yellow { background: var(--gold-light); }
+.icon-box.bg-orange { background: #D9722B; }
+
+/* Service type buttons */
+.service-btn {
+  background: #fff;
+  border: 1px solid var(--sand);
+  transition: all 0.2s ease;
+}
+.service-btn:hover {
+  border-color: var(--gold);
+}
+.service-btn.selected {
+  background: var(--gold-pale);
+  border: 1.5px solid var(--gold);
+  color: var(--green-dark);
+}
+
+/* Time slots */
+.slot-btn {
+  background: #fff;
+  border: 1px solid var(--sand);
+  transition: all 0.2s ease;
+}
+.slot-btn:hover {
+  border-color: var(--gold);
+}
+.slot-btn.selected {
+  background: var(--gold-pale);
+  border: 1.5px solid var(--gold);
+  color: var(--green-dark);
+}
+
+/* Inputs */
+.form-control {
+  background: #fff;
+  border: 1px solid var(--sand);
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(224, 161, 0, 0.2);
+}
+
+/* Submit button: green, turns gold on hover */
+.btn-primary {
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+/* Appointment summary */
+.appointment-summary-box {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+}
+.highlight-green {
+  color: var(--green-dark);
+}
+
+/* Cancel button */
+.btn-danger {
+  background: #fff;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+.btn-danger:hover {
+  background: var(--red-pale);
+}
+
+/* History filter tabs */
+.filter-tabs {
+  background: var(--cream);
+}
+.tab-btn:hover:not(.active) {
+  background: var(--gold-pale);
+}
+.tab-btn.active {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+/* History cards: color by status (no HTML changes needed) */
+.history-card {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+}
+.history-card:has(.tag-pending) {
+  background: var(--gold-pale);
+  border-color: var(--gold-light);
+}
+.history-card:has(.tag-cancelled) {
+  background: var(--red-pale);
+  border-color: #F5B7B1;
+}
+.history-card:has(.tag-processing) {
+  background: var(--orange-pale);
+  border-color: #F3C892;
+}
+.history-card:has(.tag-ready) {
+  background: #E8F5E9;
+  border-color: #A5D6A7;
+}
+
+/* Status tags */
+.tag-pending    { background: #fff; color: #B07A00; border: 1px solid var(--gold); }
+.tag-cancelled  { background: #fff; color: var(--red); border: 1px solid var(--red); }
+.tag-processing { background: #fff; color: #D9722B; border: 1px solid #D9722B; }
+.tag-ready      { background: #fff; color: var(--green-mid); border: 1px solid var(--green-mid); }
