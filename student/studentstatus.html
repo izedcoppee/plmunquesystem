@@ -23,56 +23,58 @@
         </header>
 
         <!-- Fixed Collapsible Side Navigation Drawer -->
+       <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <!-- Uncropped Normal-Sized Logo Container -->
-                <div class="logo-circle-wrapper">
-                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
-                </div>
-                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
-                <h2 class="school-title">PLMUN</h2>
-                <span class="account-badge">Student Account</span>
-            </div>
+    <div class="sidebar-header">
+        <!-- Uncropped Normal-Sized Logo Container -->
+        <div class="logo-circle-wrapper">
+            <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+        </div>
+        <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+        <h2 class="school-title">PLMUN</h2>
+        <span class="account-badge">Student Account</span>
+    </div>
 
-            <nav class="sidebar-nav nav-links">
-                <a href="studentdashboard.html" class="nav-item">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="studentjoinqueue.html" class="nav-item">
-                    <i class="fa-solid fa-list-check"></i>
-                    <span>Join Queue</span>
-                </a>
-                <a href="studentstatus.html" class="nav-item active">
-                    <i class="fa-solid fa-clock"></i>
-                    <span>Queue Status</span>
-                </a>
-                <a href="studentbookappointment.html" class="nav-item">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Book Appointment</span>
-                </a>
-                <a href="studentnotification.html" class="nav-item">
-                    <i class="fa-solid fa-bell"></i>
-                    <span>Notification</span>
-                    <span class="notification-badge">2</span>
-                </a>
-                <a href="studentrequirement.html" class="nav-item">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <span>Requirements</span>
-                </a>
-                <a href="studentprofile.html" class="nav-item">
-                    <i class="fa-solid fa-user-graduate"></i>
-                    <span>Profile</span>
-                </a>
-            </nav>
+    <nav class="sidebar-nav nav-links">
+        <a href="studentdashboard.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="studentjoinqueue.html" class="nav-item">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Join Queue</span>
+        </a>
+        <!-- ACTIVE PAGE INDICATOR -->
+        <a href="studentstatus.html" class="nav-item active">
+            <i class="fa-solid fa-clock"></i>
+            <span>Queue Status</span>
+        </a>
+        <a href="studentbookappointment.html" class="nav-item">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Book Appointment</span>
+        </a>
+        <a href="studentnotification.html" class="nav-item">
+            <i class="fa-solid fa-bell"></i>
+            <span>Notification</span>
+            <span class="notification-badge">2</span>
+        </a>
+        <a href="studentrequirement.html" class="nav-item">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Requirements</span>
+        </a>
+        <a href="studentprofile.html" class="nav-item">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
 
-            <div class="sidebar-footer">
-                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Log Out</span>
-                </a>
-            </div>
-        </aside>
+    <div class="sidebar-footer">
+        <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Log Out</span>
+        </a>
+    </div>
+</aside>
 
         <!-- Mobile Dark Overlay -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -91,15 +93,36 @@
                 <div class="stat-title">Your Active Queue Number</div>
                 <div class="queue-display">Q-006</div>
                 <div class="status-badge"><i class="fa-solid fa-spinner fa-spin"></i> Waiting in Line (2 people ahead)</div>
+                
+                <!-- Leave Queue Trigger Button -->
+                <button type="button" class="btn-danger mt-20" onclick="openLeaveModal()" style="max-width: 280px;">
+                    <i class="fa-solid fa-right-from-bracket"></i> Leave Queue
+                </button>
             </div>
         </main>
     </div>
 
-    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <!-- Custom Modal Confirmation Dialog -->
+    <div class="modal-overlay" id="leaveQueueModal">
+        <div class="modal-card highlight-gold-card">
+            <div class="modal-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3>Leave Active Queue?</h3>
+            <p>Are you sure you want to leave ticket <strong>Q-006</strong>? This action cannot be undone, and you will lose your spot in line.</p>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" onclick="closeLeaveModal()">Cancel</button>
+                <button type="button" class="btn-danger" onclick="confirmLeaveQueue()">Yes, Leave Queue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer & Modal Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         const mobileOverlay = document.getElementById('mobileOverlay');
+        const leaveQueueModal = document.getElementById('leaveQueueModal');
 
         function toggleSidebar() {
             sidebar.classList.toggle('open');
@@ -109,6 +132,19 @@
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', toggleSidebar);
             mobileOverlay.addEventListener('click', toggleSidebar);
+        }
+
+        function openLeaveModal() {
+            leaveQueueModal.classList.add('show');
+        }
+
+        function closeLeaveModal() {
+            leaveQueueModal.classList.remove('show');
+        }
+
+        function confirmLeaveQueue() {
+            alert('You have successfully left the queue.');
+            window.location.href = 'studentjoinqueue.html';
         }
     </script>
 </body>

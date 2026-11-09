@@ -3,8 +3,8 @@
     --jade-green: #506E27;
     --pistachio-green: #99B757;
     --avocado-green: #729235;
-    --gold: #D4A937;              /* Gold Accent for Outlines */
-   
+    --gold: #D4A937;
+
     --bg-light: #F4F9EE;
     --white: #FFFFFF;
     --text-dark: #232B1B;
@@ -14,7 +14,6 @@
     --max-content-width: 1250px;
 }
 
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,18 +21,15 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
 }
 
-
 .dashboard-layout {
     display: flex;
     min-height: 100vh;
 }
-
 
 /* Sidebar Styling */
 .sidebar {
@@ -53,18 +49,15 @@ body {
     box-shadow: 4px 0 15px rgba(0,0,0,0.08);
 }
 
-
 .sidebar-header {
     text-align: center;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-
-/* Normal-Sized Full Logo Container */
 .logo-circle-wrapper {
     width: 100%;
-    max-width: 90px; /* Adjust this number to make it slightly smaller or larger */
+    max-width: 90px;
     height: auto;
     background: transparent;
     border-radius: 0;
@@ -75,15 +68,12 @@ body {
     box-shadow: none;
 }
 
-
-/* Normal-Sized Full Logo Image */
 .sidebar-logo {
     width: 90%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
-
 
 .school-subtitle {
     font-size: 8.5px;
@@ -92,14 +82,12 @@ body {
     letter-spacing: 0.8px;
 }
 
-
 .school-title {
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 1.2px;
     margin: 2px 0;
 }
-
 
 .account-badge {
     font-size: 11px;
@@ -108,7 +96,6 @@ body {
     border-radius: 12px;
     font-weight: 600;
 }
-
 
 /* Sidebar Navigation Links */
 .sidebar-nav {
@@ -121,11 +108,9 @@ body {
     scrollbar-width: none;
 }
 
-
 .sidebar-nav::-webkit-scrollbar {
     display: none;
 }
-
 
 .sidebar-nav .nav-item {
     display: flex;
@@ -141,12 +126,10 @@ body {
     position: relative;
 }
 
-
 .sidebar-nav .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.08);
     color: var(--white);
 }
-
 
 /* Active Nav Tab */
 .sidebar-nav .nav-item.active {
@@ -155,7 +138,6 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     border-left: 4px solid var(--gold);
 }
-
 
 .notification-badge {
     margin-left: auto;
@@ -167,12 +149,10 @@ body {
     border-radius: 10px;
 }
 
-
 .sidebar-footer {
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
-
 
 .logout-btn {
     display: flex;
@@ -187,11 +167,9 @@ body {
     transition: background-color 0.2s;
 }
 
-
 .logout-btn:hover {
     background-color: rgba(255, 0, 0, 0.2);
 }
-
 
 /* Main Content Wrapper */
 .main-content {
@@ -201,7 +179,6 @@ body {
     max-width: var(--max-content-width);
     width: 100%;
 }
-
 
 /* Mobile Header Bar */
 .mobile-top-bar {
@@ -218,7 +195,6 @@ body {
     z-index: 999;
 }
 
-
 .brand-mini {
     display: flex;
     align-items: center;
@@ -227,12 +203,10 @@ body {
     font-size: 16px;
 }
 
-
 .brand-mini img {
     width: 32px;
     height: auto;
 }
-
 
 .mobile-menu-btn {
     background: transparent;
@@ -241,7 +215,6 @@ body {
     font-size: 22px;
     cursor: pointer;
 }
-
 
 .mobile-overlay {
     position: fixed;
@@ -254,17 +227,14 @@ body {
     display: none;
 }
 
-
 .mobile-overlay.show {
     display: block;
 }
-
 
 /* Universal Gold Outline Class Applied to Every Card */
 .highlight-gold-card {
     border: 2px solid var(--gold) !important;
 }
-
 
 /* Portal Banner Section */
 .portal-banner {
@@ -278,13 +248,11 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
-
 .banner-title {
     display: flex;
     align-items: center;
     gap: 16px;
 }
-
 
 .banner-icon-box {
     font-size: 24px;
@@ -295,20 +263,17 @@ body {
     border: 1px solid var(--border-color);
 }
 
-
 .banner-title h2 {
     font-size: 20px;
     color: var(--text-dark);
     font-weight: 800;
 }
 
-
 .banner-subtitle-text {
     font-size: 13px;
     color: var(--text-muted);
     margin-top: 2px;
 }
-
 
 /* Admin Profile Pill Top Right */
 .admin-profile-pill {
@@ -320,7 +285,6 @@ body {
     padding: 6px 14px;
     border-radius: 30px;
 }
-
 
 .avatar-initials {
     width: 34px;
@@ -335,24 +299,20 @@ body {
     justify-content: center;
 }
 
-
 .admin-info-text {
     display: flex;
     flex-direction: column;
 }
-
 
 .admin-info-text strong {
     font-size: 13px;
     color: var(--text-dark);
 }
 
-
 .admin-info-text span {
     font-size: 11px;
     color: var(--text-muted);
 }
-
 
 .online-status-dot {
     width: 8px;
@@ -361,7 +321,6 @@ body {
     border-radius: 50%;
 }
 
-
 /* Stats Overview Grid */
 .stats-grid {
     display: grid;
@@ -369,7 +328,6 @@ body {
     gap: 20px;
     margin-bottom: 24px;
 }
-
 
 .stat-card {
     background-color: var(--white);
@@ -380,7 +338,6 @@ body {
     gap: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
-
 
 .stat-icon {
     width: 48px;
@@ -394,12 +351,10 @@ body {
     flex-shrink: 0;
 }
 
-
 .stat-icon.green { background-color: var(--avocado-green); }
 .stat-icon.orange { background-color: #D9822B; }
 .stat-icon.blue { background-color: #3182CE; }
 .stat-icon.dark-green { background-color: var(--moss-green); }
-
 
 .stat-details h3 {
     font-size: 24px;
@@ -407,12 +362,10 @@ body {
     color: var(--text-dark);
 }
 
-
 .stat-details p {
     font-size: 13px;
     color: var(--text-muted);
 }
-
 
 /* Content Card & Queue Table */
 .content-card {
@@ -421,7 +374,6 @@ body {
     padding: 24px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
-
 
 .card-header {
     display: flex;
@@ -432,20 +384,17 @@ body {
     gap: 16px;
 }
 
-
 .card-header h2 {
     font-size: 18px;
     color: var(--text-dark);
     font-weight: 700;
 }
 
-
 .card-subtitle-text {
     font-size: 12px;
     color: var(--text-muted);
     margin-top: 2px;
 }
-
 
 .header-action-group {
     display: flex;
@@ -454,7 +403,6 @@ body {
     flex-wrap: wrap;
 }
 
-
 /* Search Bar Styling */
 .search-box-wrapper {
     position: relative;
@@ -462,14 +410,12 @@ body {
     align-items: center;
 }
 
-
 .search-icon {
     position: absolute;
     left: 12px;
     color: #888888;
     font-size: 13px;
 }
-
 
 .table-search-input {
     padding: 9px 12px 9px 34px;
@@ -482,14 +428,12 @@ body {
     transition: border-color 0.2s;
 }
 
-
 .table-search-input:focus {
     border-color: var(--avocado-green);
     background-color: var(--white);
 }
 
-
-/* Gold Button Style for Call Next Student */
+/* Gold Button Style */
 .btn-gold {
     background-color: var(--gold);
     color: #2D240A;
@@ -506,16 +450,13 @@ body {
     box-shadow: 0 2px 6px rgba(212, 169, 55, 0.25);
 }
 
-
 .btn-gold:hover {
     opacity: 0.9;
 }
 
-
 .table-wrapper {
     overflow-x: auto;
 }
-
 
 .queue-table {
     width: 100%;
@@ -523,7 +464,6 @@ body {
     text-align: left;
     min-width: 650px;
 }
-
 
 .queue-table th {
     background-color: #F4F9EE;
@@ -535,14 +475,12 @@ body {
     border-bottom: 2px solid var(--border-color);
 }
 
-
 .queue-table td {
     padding: 14px 16px;
     font-size: 13px;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-dark);
 }
-
 
 .ticket-badge {
     background-color: #F4F9EE;
@@ -552,7 +490,6 @@ body {
     padding: 4px 10px;
     border-radius: 6px;
 }
-
 
 /* Status Badges */
 .status-badge {
@@ -565,13 +502,11 @@ body {
     gap: 6px;
 }
 
-
 .status-badge.serving {
     background-color: #EAF4DC;
     color: #35521C;
     border: 1px solid var(--pistachio-green);
 }
-
 
 .status-badge.serving .dot {
     width: 6px;
@@ -580,13 +515,11 @@ body {
     border-radius: 50%;
 }
 
-
 .status-badge.waiting {
     background-color: #FCF5E3;
     color: #9C7213;
     border: 1px solid #E6D089;
 }
-
 
 /* Action Buttons */
 .action-btn {
@@ -600,17 +533,14 @@ body {
     transition: opacity 0.2s;
 }
 
-
 .action-btn:hover {
     opacity: 0.85;
 }
-
 
 .action-btn.complete { background-color: #EAF4DC; color: #35521C; border: 1px solid var(--pistachio-green); }
 .action-btn.call-action { background-color: #E2ECF8; color: #2B6CB0; }
 .action-btn.call { background-color: #E2ECF8; color: #2B6CB0; }
 .action-btn.cancel { background-color: #FEEBC8; color: #C05621; }
-
 
 /* Table Footer Summary Bar */
 .table-footer-summary {
@@ -624,7 +554,6 @@ body {
     color: var(--text-muted);
 }
 
-
 .green-dot {
     width: 8px;
     height: 8px;
@@ -634,11 +563,9 @@ body {
     margin-right: 4px;
 }
 
-
 .system-status-text .operational {
     color: #35521C;
 }
-
 
 /* Responsive Media Queries */
 @media screen and (max-width: 992px) {

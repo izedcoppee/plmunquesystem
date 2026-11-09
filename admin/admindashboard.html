@@ -21,7 +21,6 @@
             </button>
         </header>
 
-
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
@@ -32,7 +31,6 @@
                 <h2 class="school-title">PLMUN</h2>
                 <span class="account-badge">Admin Account</span>
             </div>
-
 
             <nav class="sidebar-nav">
                 <a href="admindashboard.html" class="nav-item active">
@@ -62,19 +60,16 @@
                 </a>
             </nav>
 
-
             <div class="sidebar-footer">
-                <a href="../frontpages/loginform.html" class="logout-btn">
+                <a href="#" class="logout-btn" onclick="openConfirmModal('Sign Out', 'Are you sure you want to log out of your admin account?', function() { window.location.href = '../frontpages/loginform.html'; })">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Logout</span>
                 </a>
             </div>
         </aside>
 
-
         <!-- Mobile Dark Overlay -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
-
 
         <!-- Main Body Content Container -->
         <main class="main-content">
@@ -101,7 +96,6 @@
                     </div>
                 </div>
             </section>
-
 
             <!-- Stats Overview Grid (Every card has gold outline) -->
             <section class="stats-grid">
@@ -135,7 +129,6 @@
                 </div>
             </section>
 
-
             <!-- Active Queue Management Table (Now with Gold Outline) -->
             <section class="content-card highlight-gold-card">
                 <div class="card-header">
@@ -148,12 +141,11 @@
                             <i class="fa-solid fa-magnifying-glass search-icon"></i>
                             <input type="text" placeholder="Search student or ticket..." class="table-search-input">
                         </div>
-                        <button class="btn-gold" onclick="alert('Calling next student...')">
+                        <button class="btn-gold" onclick="openConfirmModal('Call Next Student', 'Are you sure you want to call the next student in line?', function() { alert('Calling next student...'); })">
                             <i class="fa-solid fa-bullhorn"></i> Call Next Student
                         </button>
                     </div>
                 </div>
-
 
                 <div class="table-wrapper">
                     <table class="queue-table">
@@ -177,8 +169,8 @@
                                 <td>Window 1</td>
                                 <td><span class="status-badge serving"><span class="dot"></span> Serving</span></td>
                                 <td>
-                                    <button class="action-btn complete" title="Complete"><i class="fa-solid fa-check"></i></button>
-                                    <button class="action-btn call-action" title="Audio Call"><i class="fa-solid fa-volume-high"></i></button>
+                                    <button class="action-btn complete" title="Complete" onclick="openConfirmModal('Complete Transaction', 'Mark ticket A-101 as completed?', function() { alert('Ticket marked as completed.'); })"><i class="fa-solid fa-check"></i></button>
+                                    <button class="action-btn call-action" title="Audio Call" onclick="openConfirmModal('Audio Call', 'Trigger audio announcement call for ticket A-101?', function() { alert('Audio call triggered.'); })"><i class="fa-solid fa-volume-high"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -189,8 +181,8 @@
                                 <td>Window 2</td>
                                 <td><span class="status-badge serving"><span class="dot"></span> Serving</span></td>
                                 <td>
-                                    <button class="action-btn complete" title="Complete"><i class="fa-solid fa-check"></i></button>
-                                    <button class="action-btn call-action" title="Audio Call"><i class="fa-solid fa-volume-high"></i></button>
+                                    <button class="action-btn complete" title="Complete" onclick="openConfirmModal('Complete Transaction', 'Mark ticket A-102 as completed?', function() { alert('Ticket marked as completed.'); })"><i class="fa-solid fa-check"></i></button>
+                                    <button class="action-btn call-action" title="Audio Call" onclick="openConfirmModal('Audio Call', 'Trigger audio announcement call for ticket A-102?', function() { alert('Audio call triggered.'); })"><i class="fa-solid fa-volume-high"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -201,8 +193,8 @@
                                 <td>--</td>
                                 <td><span class="status-badge waiting"><i class="fa-regular fa-clock"></i> Waiting</span></td>
                                 <td>
-                                    <button class="action-btn call" title="Call Ticket"><i class="fa-solid fa-phone"></i></button>
-                                    <button class="action-btn cancel" title="Cancel"><i class="fa-solid fa-xmark"></i></button>
+                                    <button class="action-btn call" title="Call Ticket" onclick="openConfirmModal('Call Ticket', 'Call ticket B-201 to the counter window?', function() { alert('Calling ticket B-201.'); })"><i class="fa-solid fa-phone"></i></button>
+                                    <button class="action-btn cancel" title="Cancel" onclick="openConfirmModal('Cancel Ticket', 'Are you sure you want to cancel ticket B-201?', function() { alert('Ticket cancelled.'); })"><i class="fa-solid fa-xmark"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -213,14 +205,13 @@
                                 <td>--</td>
                                 <td><span class="status-badge waiting"><i class="fa-regular fa-clock"></i> Waiting</span></td>
                                 <td>
-                                    <button class="action-btn call" title="Call Ticket"><i class="fa-solid fa-phone"></i></button>
-                                    <button class="action-btn cancel" title="Cancel"><i class="fa-solid fa-xmark"></i></button>
+                                    <button class="action-btn call" title="Call Ticket" onclick="openConfirmModal('Call Ticket', 'Call ticket B-202 to the counter window?', function() { alert('Calling ticket B-202.'); })"><i class="fa-solid fa-phone"></i></button>
+                                    <button class="action-btn cancel" title="Cancel" onclick="openConfirmModal('Cancel Ticket', 'Are you sure you want to cancel ticket B-202?', function() { alert('Ticket cancelled.'); })"><i class="fa-solid fa-xmark"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
 
                 <!-- Table Footer Summary -->
                 <div class="table-footer-summary">
@@ -231,24 +222,57 @@
         </main>
     </div>
 
+    <!-- Custom Confirmation Modal Overlay Component -->
+    <div class="modal-overlay" id="customConfirmModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;">
+        <div class="modal-card highlight-gold-card" style="background: var(--white); border-radius: 12px; padding: 30px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="font-size: 40px; color: var(--gold); margin-bottom: 15px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="modalTitle" style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">Confirm Action</h3>
+            <p id="modalMessage" style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Are you sure you want to proceed with this action?</p>
+            <div style="display: flex; gap: 12px;">
+                <button type="button" onclick="closeConfirmModal()" style="flex: 1; background: #FFFFFF; color: var(--text-dark); border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Cancel</button>
+                <button type="button" id="modalConfirmBtn" style="flex: 1; background: var(--moss-green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Confirm</button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <!-- Mobile Drawer & Confirmation Modal Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         const mobileOverlay = document.getElementById('mobileOverlay');
-
 
         function toggleSidebar() {
             sidebar.classList.toggle('open');
             mobileOverlay.classList.toggle('show');
         }
 
-
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', toggleSidebar);
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
+
+        let confirmCallback = null;
+
+        function openConfirmModal(title, message, callback) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            confirmCallback = callback;
+            document.getElementById('customConfirmModal').style.display = 'flex';
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('customConfirmModal').style.display = 'none';
+            confirmCallback = null;
+        }
+
+        document.getElementById('modalConfirmBtn').addEventListener('click', function() {
+            if (confirmCallback) {
+                confirmCallback();
+            }
+            closeConfirmModal();
+        });
     </script>
 </body>
 </html>

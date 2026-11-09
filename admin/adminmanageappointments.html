@@ -24,7 +24,6 @@
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <!-- Uncropped Normal-Sized Logo Container -->
                 <div class="logo-circle-wrapper">
                     <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
                 </div>
@@ -62,7 +61,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <a href="../frontpages/loginform.html" class="logout-btn">
+                <a href="#" class="logout-btn" onclick="openConfirmModal('Sign Out', 'Are you sure you want to log out of your admin account?', function() { window.location.href = '../frontpages/loginform.html'; })">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Logout</span>
                 </a>
@@ -101,10 +100,10 @@
             <!-- Filters & Tab Navigation Section with Gold Outline -->
             <section class="content-card highlight-gold-card" style="margin-bottom: 24px;">
                 <div class="filter-tabs-wrapper" style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                    <button class="btn-gold" style="padding: 8px 16px;">All</button>
-                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Upcoming</button>
-                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Completed</button>
-                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Missed</button>
+                    <button class="btn-gold" onclick="openConfirmModal('Filter Filter', 'Display all appointment records?', function() { alert('Filtered by All.'); })" style="padding: 8px 16px;">All</button>
+                    <button class="btn-gold" onclick="openConfirmModal('Filter Filter', 'Display upcoming appointment records?', function() { alert('Filtered by Upcoming.'); })" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Upcoming</button>
+                    <button class="btn-gold" onclick="openConfirmModal('Filter Filter', 'Display completed appointment records?', function() { alert('Filtered by Completed.'); })" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Completed</button>
+                    <button class="btn-gold" onclick="openConfirmModal('Filter Filter', 'Display missed appointment records?', function() { alert('Filtered by Missed.'); })" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Missed</button>
                 </div>
 
                 <!-- Filter Controls Grid -->
@@ -126,7 +125,7 @@
                         <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">Search Student</label>
                         <div style="display: flex; gap: 8px;">
                             <input type="text" placeholder="Search name or ID..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
-                            <button class="btn-gold" style="padding: 10px 16px;"><i class="fa-solid fa-search"></i></button>
+                            <button class="btn-gold" onclick="openConfirmModal('Search Action', 'Execute student appointment search query?', function() { alert('Search executed.'); })" style="padding: 10px 16px;"><i class="fa-solid fa-search"></i></button>
                         </div>
                     </div>
                 </div>
@@ -151,7 +150,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr onclick="openConfirmModal('Appointment Record', 'Manage appointment record for Juan Dela Cruz?', function() { alert('Selected Juan Dela Cruz appointment.'); })" style="cursor: pointer;">
                                 <td>5</td>
                                 <td>Juan Dela Cruz</td>
                                 <td>12345678</td>
@@ -160,7 +159,7 @@
                                 <td>05/25/2026</td>
                                 <td><span class="status-badge waiting" style="background:#FFF3E0; color:#ED6C02;">Pending</span></td>
                             </tr>
-                            <tr>
+                            <tr onclick="openConfirmModal('Appointment Record', 'Manage appointment record for Maria Santos?', function() { alert('Selected Maria Santos appointment.'); })" style="cursor: pointer;">
                                 <td>6</td>
                                 <td>Maria Santos</td>
                                 <td>12345678</td>
@@ -169,7 +168,7 @@
                                 <td>05/22/2026</td>
                                 <td><span class="status-badge serving" style="background:#E8F5E9; color: #2E7D32;">Completed</span></td>
                             </tr>
-                            <tr>
+                            <tr onclick="openConfirmModal('Appointment Record', 'Manage appointment record for Mark Reyes?', function() { alert('Selected Mark Reyes appointment.'); })" style="cursor: pointer;">
                                 <td>7</td>
                                 <td>Mark Reyes</td>
                                 <td>123456789</td>
@@ -178,7 +177,7 @@
                                 <td>05/22/2026</td>
                                 <td><span class="status-badge serving" style="background:#E8F5E9; color:#2E7D32;">Completed</span></td>
                             </tr>
-                            <tr>
+                            <tr onclick="openConfirmModal('Appointment Record', 'Manage appointment record for Angelica Ramos?', function() { alert('Selected Angelica Ramos appointment.'); })" style="cursor: pointer;">
                                 <td>8</td>
                                 <td>Angelica Ramos</td>
                                 <td>12345678</td>
@@ -201,10 +200,10 @@
                     <h3 style="font-size: 28px; font-weight: 800; color: var(--moss-green); margin-bottom: 8px;">--</h3>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">No appointments for today</p>
                     <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn-gold" style="background-color: #0288D1; color: white;"><i class="fa-solid fa-forward"></i> Next</button>
-                        <button class="btn-gold" style="background-color: #ED6C02; color: white;"><i class="fa-solid fa-forward-step"></i> Skip</button>
-                        <button class="btn-gold" style="background-color: #2E7D32; color: white;"><i class="fa-solid fa-check"></i> Done</button>
-                        <button class="btn-gold" style="background-color: #D32F2F; color: white;"><i class="fa-solid fa-xmark"></i> Mark Missed</button>
+                        <button class="btn-gold" onclick="openConfirmModal('Next Action', 'Call next appointment in queue?', function() { alert('Called next appointment.'); })" style="background-color: #0288D1; color: white;"><i class="fa-solid fa-forward"></i> Next</button>
+                        <button class="btn-gold" onclick="openConfirmModal('Skip Action', 'Skip current appointment?', function() { alert('Skipped current appointment.'); })" style="background-color: #ED6C02; color: white;"><i class="fa-solid fa-forward-step"></i> Skip</button>
+                        <button class="btn-gold" onclick="openConfirmModal('Done Action', 'Mark current appointment as done?', function() { alert('Marked appointment as done.'); })" style="background-color: #2E7D32; color: white;"><i class="fa-solid fa-check"></i> Done</button>
+                        <button class="btn-gold" onclick="openConfirmModal('Missed Action', 'Mark current appointment as missed?', function() { alert('Marked appointment as missed.'); })" style="background-color: #D32F2F; color: white;"><i class="fa-solid fa-xmark"></i> Mark Missed</button>
                     </div>
                 </div>
             </section>
@@ -213,20 +212,20 @@
             <section class="content-card highlight-gold-card">
                 <div class="card-header">
                     <h2>Available Time Slots - May 22, 2026</h2>
-                    <button class="btn-gold"><i class="fa-solid fa-plus"></i> Add Slot</button>
+                    <button class="btn-gold" onclick="openConfirmModal('Add Time Slot', 'Create a new appointment time slot?', function() { alert('Opening slot creator...'); })"><i class="fa-solid fa-plus"></i> Add Slot</button>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 15px;">
-                    <div style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light);">
+                    <div onclick="openConfirmModal('Manage Slot', 'Manage time slot 9:00 AM - 9:30 AM?', function() { alert('Managing slot.'); })" style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light); cursor: pointer;">
                         <p style="font-weight: 700; font-size: 13px;">9:00 AM - 9:30 AM</p>
                         <p style="font-size: 12px; color: var(--text-muted);">Transcript of Records</p>
                         <div style="margin-top: 8px; font-size: 11px; color: #2E7D32; font-weight: 700;">10/100 Booked</div>
                     </div>
-                    <div style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light);">
+                    <div onclick="openConfirmModal('Manage Slot', 'Manage time slot 9:30 AM - 10:00 AM?', function() { alert('Managing slot.'); })" style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light); cursor: pointer;">
                         <p style="font-weight: 700; font-size: 13px;">9:30 AM - 10:00 AM</p>
                         <p style="font-size: 12px; color: var(--text-muted);">Certificate of Grades</p>
                         <div style="margin-top: 8px; font-size: 11px; color: #2E7D32; font-weight: 700;">45/100 Booked</div>
                     </div>
-                    <div style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light);">
+                    <div onclick="openConfirmModal('Manage Slot', 'Manage time slot 10:00 AM - 10:30 AM?', function() { alert('Managing slot.'); })" style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light); cursor: pointer;">
                         <p style="font-weight: 700; font-size: 13px;">10:00 AM - 10:30 AM</p>
                         <p style="font-size: 12px; color: var(--text-muted);">Enrollment Form</p>
                         <div style="margin-top: 8px; font-weight: 700; color: #D32F2F; font-size: 11px;">100/100 Full</div>
@@ -236,7 +235,22 @@
         </main>
     </div>
 
-    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <!-- Custom Confirmation Modal Overlay Component -->
+    <div class="modal-overlay" id="customConfirmModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;">
+        <div class="modal-card highlight-gold-card" style="background: var(--white); border-radius: 12px; padding: 30px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="font-size: 40px; color: var(--gold); margin-bottom: 15px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="modalTitle" style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">Confirm Action</h3>
+            <p id="modalMessage" style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Are you sure you want to proceed with this action?</p>
+            <div style="display: flex; gap: 12px;">
+                <button type="button" onclick="closeConfirmModal()" style="flex: 1; background: #FFFFFF; color: var(--text-dark); border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Cancel</button>
+                <button type="button" id="modalConfirmBtn" style="flex: 1; background: var(--moss-green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer & Confirmation Modal Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
@@ -251,6 +265,27 @@
             mobileMenuBtn.addEventListener('click', toggleSidebar);
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
+
+        let confirmCallback = null;
+
+        function openConfirmModal(title, message, callback) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            confirmCallback = callback;
+            document.getElementById('customConfirmModal').style.display = 'flex';
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('customConfirmModal').style.display = 'none';
+            confirmCallback = null;
+        }
+
+        document.getElementById('modalConfirmBtn').addEventListener('click', function() {
+            if (confirmCallback) {
+                confirmCallback();
+            }
+            closeConfirmModal();
+        });
     </script>
 </body>
 </html>

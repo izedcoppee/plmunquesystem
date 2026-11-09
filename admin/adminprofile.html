@@ -25,7 +25,6 @@
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <!-- Uncropped Normal-Sized Logo Container -->
                 <div class="logo-circle-wrapper">
                     <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
                 </div>
@@ -63,7 +62,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <a href="../frontpages/loginform.html" class="logout-btn">
+                <a href="#" class="logout-btn" onclick="openConfirmModal('Sign Out', 'Are you sure you want to log out of your admin account?', function() { window.location.href = '../frontpages/loginform.html'; })">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Logout</span>
                 </a>
@@ -99,7 +98,7 @@
                 </div>
             </section>
 
-            <!-- Tab Navigation Bar with Gold Outline -->
+            <!-- Tab Navigation Bar with Gold Outline (Instant Switching) -->
             <div class="tab-bar highlight-gold-card" style="display: flex; background: var(--white); padding: 8px; border-radius: 12px; margin-bottom: 24px; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                 <button class="tab-item active" onclick="openTab(event, 'accountDetails')" style="flex: 1; padding: 10px; border: none; background: var(--bg-light); border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--text-dark);">Account Details</button>
                 <button class="tab-item" onclick="openTab(event, 'permissions')" style="flex: 1; padding: 10px; border: none; background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--text-muted);">Access & Permissions</button>
@@ -218,38 +217,38 @@
                 <div id="security" class="tab-content" style="display: none;">
                     <div class="security-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                         
-                        <!-- Change Password Form -->
+                        <!-- Change Password Form (Important Action with Popup) -->
                         <div class="security-card" style="background: var(--bg-light); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
                             <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 14px;">Update Admin Password</h3>
-                            <form onsubmit="event.preventDefault(); alert('Admin password updated successfully!');" style="display: flex; flex-direction: column; gap: 12px;">
+                            <form onsubmit="event.preventDefault(); openConfirmModal('Update Password', 'Are you sure you want to update your admin account password?', function() { alert('Admin password updated successfully!'); });" style="display: flex; flex-direction: column; gap: 12px;">
                                 <div class="form-group">
                                     <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Current Password</label>
-                                    <input type="password" placeholder="Enter current password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                    <input type="password" placeholder="Enter current password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white); color: var(--text-dark);">
                                 </div>
                                 <div class="form-group">
                                     <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">New Password</label>
-                                    <input type="password" placeholder="Enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                    <input type="password" placeholder="Enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white); color: var(--text-dark);">
                                 </div>
                                 <div class="form-group">
                                     <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Confirm New Password</label>
-                                    <input type="password" placeholder="Re-enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                    <input type="password" placeholder="Re-enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white); color: var(--text-dark);">
                                 </div>
                                 <button type="submit" class="btn-gold" style="margin-top: 6px; justify-content: center;">Update Password</button>
                             </form>
                         </div>
 
-                        <!-- Update Secret Admin Code Form -->
+                        <!-- Update Secret Admin Code Form (Important Action with Popup) -->
                         <div class="security-card" style="background: var(--bg-light); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
                             <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Secret Admin Registration Code</h3>
                             <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Code used by registrar staff to authorize new admin registration.</p>
-                            <form onsubmit="event.preventDefault(); alert('Secret Admin Code updated successfully!');" style="display: flex; flex-direction: column; gap: 12px;">
+                            <form onsubmit="event.preventDefault(); openConfirmModal('Reset Admin Code', 'Are you sure you want to reset the secret admin registration code?', function() { alert('Secret Admin Code updated successfully!'); });" style="display: flex; flex-direction: column; gap: 12px;">
                                 <div class="form-group">
                                     <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Current Admin Code</label>
-                                    <input type="password" value="PLMUN2026" readonly style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background-color: #EAEAEA;">
+                                    <input type="password" value="PLMUN2026" readonly style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background-color: #EAEAEA; color: var(--text-dark);">
                                 </div>
                                 <div class="form-group">
                                     <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">New Admin Secret Code</label>
-                                    <input type="password" placeholder="Enter new secret code" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                    <input type="password" placeholder="Enter new secret code" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white); color: var(--text-dark);">
                                 </div>
                                 <button type="submit" class="btn-gold" style="margin-top: 6px; justify-content: center; background-color: var(--moss-green); color: white;">Reset Admin Code</button>
                             </form>
@@ -262,7 +261,22 @@
         </main>
     </div>
 
-    <!-- Mobile Drawer & Tab Switching Script -->
+    <!-- Custom Confirmation Modal Overlay Component -->
+    <div class="modal-overlay" id="customConfirmModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;">
+        <div class="modal-card highlight-gold-card" style="background: var(--white); border-radius: 12px; padding: 30px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="font-size: 40px; color: var(--gold); margin-bottom: 15px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="modalTitle" style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">Confirm Action</h3>
+            <p id="modalMessage" style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Are you sure you want to proceed with this action?</p>
+            <div style="display: flex; gap: 12px;">
+                <button type="button" onclick="closeConfirmModal()" style="flex: 1; background: #FFFFFF; color: var(--text-dark); border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Cancel</button>
+                <button type="button" id="modalConfirmBtn" style="flex: 1; background: var(--moss-green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer, Instant Tab Switching & Confirmation Modal Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
@@ -278,6 +292,28 @@
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
 
+        let confirmCallback = null;
+
+        function openConfirmModal(title, message, callback) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            confirmCallback = callback;
+            document.getElementById('customConfirmModal').style.display = 'flex';
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('customConfirmModal').style.display = 'none';
+            confirmCallback = null;
+        }
+
+        document.getElementById('modalConfirmBtn').addEventListener('click', function() {
+            if (confirmCallback) {
+                confirmCallback();
+            }
+            closeConfirmModal();
+        });
+
+        // Instant tab switching without popups
         function openTab(evt, tabName) {
             const tabContents = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContents.length; i++) {
