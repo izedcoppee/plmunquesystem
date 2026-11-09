@@ -8,86 +8,95 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="dashboard-layout">
+        
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Admin</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
 
-    <!-- Main Navigation Header -->
-    <header class="main-header">
-        <div class="header-top">
-            <div class="header-top-inner">
-                <div class="brand-info">
-                    <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-                    <div class="brand-text">
-                        <span class="brand-title">PLMUN</span>
-                        <span class="brand-subtitle">Registrar System</span>
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Admin Account</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admindashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="adminmanageappointments.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Manage Appointment</span>
+                </a>
+                <a href="adminqueuemanagement.html" class="nav-item">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span>Queue Management</span>
+                </a>
+                <a href="adminnotification.html" class="nav-item active">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                </a>
+                <a href="adminreports.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Report</span>
+                </a>
+                <a href="adminprofile.html" class="nav-item">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Main Body Content Container -->
+        <main class="main-content">
+            
+            <!-- Portal Banner -->
+            <section class="portal-banner">
+                <div class="banner-title">
+                    <i class="fa-solid fa-bullhorn banner-icon"></i>
+                    <div>
+                        <h2>Notification & Announcements</h2>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 500;">Compose and send announcements to students by type</p>
                     </div>
                 </div>
-
-                <div class="header-actions">
-                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+                <div class="banner-breadcrumb">
+                    <div class="admin-profile-pill">
+                        <span class="avatar-initials">AO</span>
+                        <div class="admin-info-text">
+                            <strong>Admin Officer</strong>
+                            <span>Registrar Window 1</span>
+                        </div>
+                        <span class="online-status-dot"></span>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Centered Horizontal Navigation Bar -->
-        <nav class="desktop-navbar">
-            <div class="navbar-inner">
-                <a href="admindashboard.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-                <a href="adminmanageappointments.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
-                <a href="adminqueuemanagement.html" class="nav-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
-                <a href="adminnotification.html" class="nav-item active"><i class="fa-solid fa-bell"></i> Notification</a>
-                <a href="adminreports.html" class="nav-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
-                <a href="loginform.html" class="nav-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Slide-Out Drawer & Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <aside class="mobile-drawer" id="mobileDrawer">
-        <div class="drawer-header">
-            <div class="brand-info">
-                <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-                <span class="brand-title">PLMUN</span>
-            </div>
-            <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
-        </div>
-        <nav class="drawer-menu">
-            <a href="admindashboard.html" class="drawer-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-            <a href="adminmanageappointments.html" class="drawer-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
-            <a href="adminqueuemanagement.html" class="drawer-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
-            <a href="adminnotification.html" class="drawer-item active"><i class="fa-solid fa-bell"></i> Notification</a>
-            <a href="adminreports.html" class="drawer-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
-            <a href="loginform.html" class="drawer-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-        </nav>
-    </aside>
-
-    <!-- Centered Page Content Container -->
-    <div class="container">
-        
-        <!-- Portal Banner -->
-        <section class="portal-banner">
-            <div class="banner-title">
-                <i class="fa-solid fa-bullhorn banner-icon"></i>
-                <div>
-                    <h2>Notification & Announcements</h2>
-                    <p style="color: var(--text-muted); font-size: 13px; font-weight: 500;">Compose and send announcements to students by type</p>
-                </div>
-            </div>
-            <div class="banner-breadcrumb">
-                <i class="fa-solid fa-user-shield"></i> <span class="highlight">Admin Officer</span>
-            </div>
-        </section>
-
-        <!-- Main Content Grid -->
-        <main class="main-content">
+            </section>
 
             <!-- Compose Announcement Form Section -->
             <section class="content-card" style="margin-bottom: 24px;">
                 <div class="card-header" style="margin-bottom: 20px;">
                     <h2>Send Announcement</h2>
                 </div>
-
                 <form onsubmit="event.preventDefault(); alert('Announcement sent successfully!');" style="display: flex; flex-direction: column; gap: 16px;">
                     <div style="display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 15px;">
                         <label style="font-weight: 700; font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Send To :</label>
@@ -98,7 +107,6 @@
                             <option>Queue Waitlisted Students</option>
                         </select>
                     </div>
-
                     <div style="display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 15px;">
                         <label style="font-weight: 700; font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Type :</label>
                         <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
@@ -108,19 +116,16 @@
                             <option>Registrar Advisory</option>
                         </select>
                     </div>
-
                     <div style="display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 15px;">
                         <label style="font-weight: 700; font-size: 13px; color: var(--text-muted); text-transform: uppercase;">Title :</label>
-                        <input type="text" placeholder="Enter announcement title..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px;">
+                        <input type="text" placeholder="Enter announcement title..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
                     </div>
-
                     <div style="display: grid; grid-template-columns: 140px 1fr; align-items: flex-start; gap: 15px;">
                         <label style="font-weight: 700; font-size: 13px; color: var(--text-muted); text-transform: uppercase; padding-top: 8px;">Message :</label>
-                        <textarea rows="4" placeholder="Enter detailed announcement message..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; resize: vertical;"></textarea>
+                        <textarea rows="4" placeholder="Enter detailed announcement message..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; resize: vertical; background: var(--white); color: var(--text-dark);"></textarea>
                     </div>
-
                     <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                        <button type="submit" class="btn-primary" style="padding: 12px 30px; background-color: var(--primary-green);">
+                        <button type="submit" class="btn-primary" style="padding: 12px 30px; background-color: var(--sidebar-bg);">
                             <i class="fa-solid fa-paper-plane"></i> SEND
                         </button>
                     </div>
@@ -132,7 +137,6 @@
                 <div class="card-header" style="margin-bottom: 20px;">
                     <h2>Recent Announcement History</h2>
                 </div>
-
                 <div class="table-wrapper">
                     <table class="queue-table">
                         <thead>
@@ -160,30 +164,24 @@
                     </table>
                 </div>
             </section>
-
         </main>
     </div>
 
     <!-- Mobile Drawer JS Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
-        const mobileDrawer = document.getElementById('mobileDrawer');
+        const sidebar = document.getElementById('sidebar');
         const mobileOverlay = document.getElementById('mobileOverlay');
 
-        function openDrawer() {
-            mobileDrawer.classList.add('open');
-            mobileOverlay.classList.add('show');
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
         }
 
-        function closeDrawer() {
-            mobileDrawer.classList.remove('open');
-            mobileOverlay.classList.remove('show');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
         }
-
-        mobileMenuBtn.addEventListener('click', openDrawer);
-        closeDrawerBtn.addEventListener('click', closeDrawer);
-        mobileOverlay.addEventListener('click', closeDrawer);
     </script>
 </body>
 </html>
