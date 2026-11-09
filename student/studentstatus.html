@@ -1,47 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Queue Status - PLMUN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="studentstatus.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Status - PLMUN Student Portal</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="studentstatus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <div>
-      <div class="brand-section">
-        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h1 class="brand-name">PLMUN</h1>
-        <span class="badge">Student Account</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
-        <li><a href="studentstatus.html" class="active"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
-        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
-        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
-        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
-      </ul>
-    </div>
-    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-  </div>
+    <div class="dashboard-layout">
+        
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Student</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
 
-  <div class="main-content">
-    <div class="top-bar">
-      <h2><i class="fa-solid fa-clock"></i> Live Queue Status</h2>
-      <span>Track live transactions in real-time</span>
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Student Account</span>
+            </div>
+
+            <nav class="sidebar-nav nav-links">
+                <a href="studentdashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item active">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+                <a href="studentprofile.html" class="nav-item">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="top-bar highlight-gold-card">
+                <h2><i class="fa-solid fa-clock"></i> Live Queue Status</h2>
+                <span>Track live transactions in real-time</span>
+            </div>
+
+            <div class="card live-status-card highlight-gold-card">
+                <div class="icon-box bg-orange icon-large">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+                <div class="stat-title">Your Active Queue Number</div>
+                <div class="queue-display">Q-006</div>
+                <div class="status-badge"><i class="fa-solid fa-spinner fa-spin"></i> Waiting in Line (2 people ahead)</div>
+            </div>
+        </main>
     </div>
 
-    <div class="card live-status-card">
-      <div class="icon-box bg-orange icon-large">
-        <i class="fa-solid fa-ticket"></i>
-      </div>
-      <div class="stat-title">Your Active Queue Number</div>
-      <div class="queue-display">Q-006</div>
-      <div class="status-badge"><i class="fa-solid fa-spinner fa-spin"></i> Waiting in Line (2 people ahead)</div>
-    </div>
-  </div>
+    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
+        }
+    </script>
 </body>
 </html>

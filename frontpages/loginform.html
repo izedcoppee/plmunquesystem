@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLMUN Registrar System - Login</title>
+    <title>PLMUN Registrar System Login</title>
     <link rel="stylesheet" href="loginform.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <!-- Full-screen Background Overlay -->
     <div class="bg-overlay"></div>
 
-    <!-- Centered Login Card -->
-    <div class="login-card">
-        
+    <!-- Centered Login Card with Gold Outline -->
+    <div class="login-card highlight-gold-card" style="border: 2px solid var(--gold, #E0A100) !important;">
         <!-- Header Brand Section -->
         <div class="card-header">
             <img src="plmunlogo.png" alt="PLMUN Logo" class="login-logo">
@@ -24,17 +22,16 @@
 
         <!-- Student / Admin Role Tabs -->
         <div class="tab-navigation">
-            <button class="tab-btn active" id="studentTabBtn" onclick="switchTab('student')">
+            <button type="button" class="tab-btn active" id="studentTabBtn" onclick="switchTab('student')">
                 <i class="fa-solid fa-user-graduate"></i> Student
             </button>
-            <button class="tab-btn" id="adminTabBtn" onclick="switchTab('admin')">
+            <button type="button" class="tab-btn" id="adminTabBtn" onclick="switchTab('admin')">
                 <i class="fa-solid fa-user-shield"></i> Admin
             </button>
         </div>
 
         <!-- Form Section -->
         <form id="loginForm" onsubmit="handleLogin(event)">
-            
             <!-- Username / ID Field -->
             <div class="input-group">
                 <label id="idLabel" for="username">Student Number</label>
@@ -57,14 +54,12 @@
             <button type="submit" class="submit-btn" id="submitBtn">
                 <i class="fa-solid fa-right-to-bracket"></i> Sign In
             </button>
-
         </form>
 
         <!-- Dynamic Footer Registration Link -->
         <div class="card-footer">
             <p>Don't have an account? <a href="studentregistration.html" id="registerLink">Register here</a></p>
         </div>
-
     </div>
 
     <!-- Tab Switcher Script -->
@@ -86,14 +81,14 @@
                 portalTitle.textContent = 'PLMUN Student Portal';
                 idLabel.textContent = 'Student Number';
                 usernameInput.placeholder = 'Enter Student Number';
-                registerLink.href = 'studentregistration.html'; // Connects to Student Registration Page
+                registerLink.href = 'studentregistration.html';
             } else {
                 adminBtn.classList.add('active');
                 studentBtn.classList.remove('active');
                 portalTitle.textContent = 'PLMUN Admin Portal';
                 idLabel.textContent = 'Admin Username / Email';
                 usernameInput.placeholder = 'Enter Admin Account';
-                registerLink.href = 'adminregistration.html'; // Connects to Admin Registration Page
+                registerLink.href = 'adminregistration.html';
             }
         }
 

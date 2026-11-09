@@ -1,7 +1,7 @@
-/* ==================== COLOR & RESET VARIABLES ==================== */
 :root {
     --primary-green: #14470B;
     --primary-hover: #0E3307;
+    --gold: #E0A100;
     --white: #FFFFFF;
     --bg-light: #F4F6F4;
     --text-dark: #1F241E;
@@ -17,26 +17,42 @@
 }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    background-image: url('schoolbg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 20px;
 }
 
-/* ==================== WELCOME CARD CONTAINER ==================== */
+/* Background Overlay */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Welcome Card Container */
 .welcome-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
     padding: 20px;
 }
 
 .welcome-card {
     background-color: var(--white);
-    border: 2px solid var(--primary-green);
     border-radius: 12px;
     padding: 50px 40px;
     max-width: 520px;
@@ -46,7 +62,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* ==================== BRANDING SECTION ==================== */
 .brand-logo-img {
     width: 85px;
     height: auto;
@@ -76,7 +91,6 @@ body {
     border-radius: 2px;
 }
 
-/* ==================== CONTENT SECTION ==================== */
 .welcome-content .welcome-heading {
     font-size: 22px;
     color: var(--primary-green);
@@ -92,7 +106,6 @@ body {
     margin-bottom: 35px;
 }
 
-/* ==================== BUTTONS & ACTIONS ==================== */
 .btn-get-started {
     background-color: var(--primary-green);
     color: var(--white);
@@ -119,7 +132,6 @@ body {
     transform: translateY(0);
 }
 
-/* Responsive Scaling */
 @media (max-width: 480px) {
     .welcome-card {
         padding: 35px 20px;

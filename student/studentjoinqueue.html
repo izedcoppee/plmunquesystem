@@ -1,127 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Join Queue - PLMUN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="studentjoinqueue.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Queue - PLMUN Registrar</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="studentjoinqueue.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <div>
-      <div class="brand-section">
-        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h1 class="brand-name">PLMUN</h1>
-        <span class="badge">Student Account</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-        <li><a href="studentjoinqueue.html" class="active"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
-        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
-        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
-        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
-        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
-      </ul>
-    </div>
-    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-  </div>
-
-  <div class="main-content">
-    <div class="top-bar">
-      <h2><i class="fa-solid fa-list-check"></i> Join Queue</h2>
-      <span>Get a virtual queue number for registrar services</span>
-    </div>
-
-    <!-- Header Stats Row -->
-    <div class="metrics-grid">
-      <div class="card metric-card">
-        <div class="icon-box bg-blue"><i class="fa-solid fa-desktop"></i></div>
-        <div>
-          <div class="metric-value">Q-011</div>
-          <div class="metric-label">Now Serving</div>
-        </div>
-      </div>
-      <div class="card metric-card">
-        <div class="icon-box bg-green"><i class="fa-solid fa-door-open"></i></div>
-        <div>
-          <div class="metric-value">Open</div>
-          <div class="metric-label">Queue Status</div>
-        </div>
-      </div>
-      <div class="card metric-card">
-        <div class="icon-box bg-orange"><i class="fa-solid fa-hourglass-half"></i></div>
-        <div>
-          <div class="metric-value">0 mins</div>
-          <div class="metric-label">Est. Wait Time</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Split Content Area -->
-    <div class="grid-2">
-      <div class="card">
-        <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> Transaction Request</h3>
+    <div class="dashboard-layout">
         
-        <!-- Service Type -->
-        <div class="form-group">
-          <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
-          <div class="service-grid">
-            <button class="service-btn selected"><i class="fa-solid fa-file-contract"></i> TOR</button>
-            <button class="service-btn"><i class="fa-solid fa-certificate"></i> COE</button>
-            <button class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
-            <button class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
-            <button class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
-            <button class="service-btn"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
-          </div>
-        </div>
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Student</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
 
-        <!-- Transaction Type -->
-        <div class="form-group">
-          <label for="trans-type"><i class="fa-solid fa-list"></i> Transaction Type</label>
-          <select id="trans-type" class="form-control">
-            <option value="">Select type...</option>
-            <option selected>New Request</option>
-            <option>Follow-up</option>
-          </select>
-        </div>
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Student Account</span>
+            </div>
 
-        <!-- Purpose (Updated 3 Options) -->
-        <div class="form-group">
-          <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
-          <select id="purpose" class="form-control">
-            <option value="">Select purpose...</option>
-            <option value="transfer">Transfer</option>
-            <option value="scholarship" selected>Scholarship</option>
-            <option value="graduation">Graduation</option>
-          </select>
-        </div>
+            <nav class="sidebar-nav nav-links">
+                <a href="studentdashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item active">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+            </nav>
 
-        <button class="btn-primary mt-15"><i class="fa-solid fa-ticket"></i> Get Queue Number</button>
-      </div>
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
 
-      <div class="card flex-column-between">
-        <div>
-          <h3 class="card-title mb-20"><i class="fa-solid fa-id-card"></i> Current Queue Information</h3>
-          <div class="ticket-box">
-            <span class="ticket-label">Your Current Number</span>
-            <span class="ticket-number">Q-006</span>
-          </div>
-          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Service Type:</strong> TOR</p>
-          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Transaction Type:</strong> New Request</p>
-          <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Purpose:</strong> Scholarship</p>
-        </div>
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
 
-        <div class="mt-20">
-          <label class="input-label mb-5">Remarks (optional)</label>
-          <div class="remarks-row">
-            <input type="text" class="form-control" placeholder="Enter remarks...">
-            <button class="btn-primary btn-auto"><i class="fa-solid fa-paper-plane"></i> Send</button>
-          </div>
-        </div>
-      </div>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="top-bar highlight-gold-card">
+                <h2><i class="fa-solid fa-list-check"></i> Join Queue</h2>
+                <span>Get a virtual queue number for registrar services</span>
+            </div>
+
+            <!-- Header Stats Row -->
+            <div class="metrics-grid">
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-blue"><i class="fa-solid fa-desktop"></i></div>
+                    <div>
+                        <div class="metric-value">Q-011</div>
+                        <div class="metric-label">Now Serving</div>
+                    </div>
+                </div>
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-green"><i class="fa-solid fa-door-open"></i></div>
+                    <div>
+                        <div class="metric-value">Open</div>
+                        <div class="metric-label">Queue Status</div>
+                    </div>
+                </div>
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-orange"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div>
+                        <div class="metric-value">0 mins</div>
+                        <div class="metric-label">Est. Wait Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Split Content Area -->
+            <div class="grid-2">
+                <div class="card highlight-gold-card">
+                    <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> Transaction Request</h3>
+                    
+                    <!-- Service Type -->
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
+                        <div class="service-grid">
+                            <button type="button" class="service-btn selected"><i class="fa-solid fa-file-contract"></i> TOR</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-certificate"></i> COE</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-circle-question"></i> Inquiry</button>
+                        </div>
+                    </div>
+
+                    <!-- Transaction Type -->
+                    <div class="form-group">
+                        <label for="trans-type"><i class="fa-solid fa-list"></i> Transaction Type</label>
+                        <select id="trans-type" class="form-control">
+                            <option value="">Select type...</option>
+                            <option value="new" selected>New Request</option>
+                            <option value="followup">Follow-up</option>
+                        </select>
+                    </div>
+
+                    <!-- Purpose -->
+                    <div class="form-group">
+                        <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
+                        <select id="purpose" class="form-control">
+                            <option value="">Select purpose...</option>
+                            <option value="transfer">Transfer</option>
+                            <option value="scholarship" selected>Scholarship</option>
+                            <option value="graduation">Graduation</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary mt-15"><i class="fa-solid fa-ticket"></i> Get Queue Number</button>
+                </div>
+
+                <div class="card flex-column-between highlight-gold-card">
+                    <div>
+                        <h3 class="card-title mb-20"><i class="fa-solid fa-id-card"></i> Queue Information</h3>
+                        <div class="ticket-box">
+                            <span class="ticket-label">Your Current Number</span>
+                            <span class="ticket-number">Q-006</span>
+                        </div>
+                        <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Service Type:</strong> TOR</p>
+                        <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Transaction Type:</strong> New Request</p>
+                        <p class="info-row"><i class="fa-solid fa-check-circle"></i> <strong>Purpose:</strong> Scholarship</p>
+                    </div>
+                    <div class="mt-20">
+                        <label class="input-label mb-5">Remarks (optional)</label>
+                        <div class="remarks-row">
+                            <input type="text" class="form-control" placeholder="Enter remarks...">
+                            <button type="button" class="btn-primary btn-auto"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </div>
+
+    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
+        }
+    </script>
 </body>
 </html>

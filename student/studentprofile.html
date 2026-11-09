@@ -4,226 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLMUN Student Portal - Student Profile</title>
+    <link rel="stylesheet" href="admindashboard.css">
     <link rel="stylesheet" href="studentprofile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Header Navbar -->
-    <header class="header-bar">
-        <div class="header-brand">
-            <img src="../frontpages/plmunlogo.png" alt="PLMUN Logo">
-            <div>
-                <h1>PLMUN STUDENT PORTAL</h1>
-                <p>PAMANTASAN NG LUNGSOD NG MUNTINLUPA</p>
-            </div>
-        </div>
-        <nav class="header-nav">
-            <a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="../frontpages/loginform.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-        </nav>
-    </header>
-
-    <!-- Main Content Container -->
-    <main class="container">
+    <div class="dashboard-layout">
         
-        <!-- Profile Banner Header -->
-        <div class="profile-banner">
-            <div class="banner-title">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <div>
-                    <h2>Student Profile</h2>
-                    <span>BSIT</span>
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Student</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Student Account</span>
+            </div>
+
+            <nav class="sidebar-nav nav-links">
+                <a href="studentdashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+                <a href="studentprofile.html" class="nav-item active">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Main Content Container -->
+        <main class="main-content">
+            
+            <!-- Profile Banner Header -->
+            <div class="profile-banner highlight-gold-card" style="background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--gold); border: 1px solid var(--border-color);">
+                <div class="banner-title" style="display: flex; align-items: center; gap: 16px;">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 32px; color: var(--primary-green);"></i>
+                    <div>
+                        <h2 style="font-size: 22px; color: var(--text-dark); font-weight: 800;">Student Profile</h2>
+                        <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">BSIT</span>
+                    </div>
+                </div>
+                <div class="breadcrumb" style="font-size: 13px; color: var(--text-muted);">
+                    <a href="studentdashboard.html" style="color: var(--primary-green); text-decoration: none; font-weight: 600;"><i class="fa-solid fa-house"></i></a> / <span>Nina Rose Abucayon</span>
                 </div>
             </div>
-            <div class="breadcrumb">
-                <a href="studentdashboard.html"><i class="fa-solid fa-house"></i></a> / <span>Nina Rose Abucayon</span>
+
+            <!-- Navigation Tabs -->
+            <div class="tab-bar" style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius); display: flex; overflow-x: auto;">
+                <button class="tab-item active" onclick="openTab(event, 'contactInfo')">Contact Info</button>
+                <button class="tab-item" onclick="openTab(event, 'security')">Security</button>
+                <button class="tab-item" onclick="openTab(event, 'qrCode')">QR Code</button>
+                <button class="tab-item" onclick="openTab(event, 'setPhoto')">Set Profile Photo</button>
             </div>
-        </div>
 
-        <!-- Navigation Tabs -->
-        <div class="tab-bar">
-            <button class="tab-item active" onclick="openTab(event, 'contactInfo')">Contact Info</button>
-            <button class="tab-item" onclick="openTab(event, 'security')">Security</button>
-            <button class="tab-item" onclick="openTab(event, 'qrCode')">QR Code</button>
-            <button class="tab-item" onclick="openTab(event, 'setPhoto')">Set Profile Photo</button>
-        </div>
-
-        <!-- Tab Body Content -->
-        <div class="content-panel">
-            <p class="notice-text">Contact the Office of the University Registrar if you need to update your data.</p>
-
-            <!-- TAB 1: Contact Info -->
-            <div id="contactInfo" class="tab-content active">
-                <div class="profile-grid">
-                    
-                    <!-- Column 1: Personal Details -->
-                    <div class="grid-column">
-                        <h3>Personal Details</h3>
-                        <div class="data-item">
-                            <div class="data-label">Firstname</div>
-                            <div class="data-value">Nina Rose</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Middlename</div>
-                            <div class="data-value">--</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Lastname</div>
-                            <div class="data-value">Abucayon</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Suffix</div>
-                            <div class="data-value">--</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Gender</div>
-                            <div class="data-value">Female</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Birth Date</div>
-                            <div class="data-value">--</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Birth Place</div>
-                            <div class="data-value">Muntinlupa City</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Civil Status</div>
-                            <div class="data-value">Single</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Citizenship</div>
-                            <div class="data-value">Filipino</div>
-                        </div>
-                    </div>
-
-                    <!-- Column 2: Contact Details -->
-                    <div class="grid-column">
-                        <h3>Contact Details</h3>
-                        <div class="data-item">
-                            <div class="data-label">Contact Number</div>
-                            <div class="data-value">+63 912 345 6789</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Email Address</div>
-                            <div class="data-value">abucayon.nina@plmun.edu.ph</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Recovery Email Address</div>
-                            <div class="data-value">--</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Present Address</div>
-                            <div class="data-value">Muntinlupa City, Metro Manila</div>
-                        </div>
+            <!-- Tab Body Content -->
+            <div class="content-panel card highlight-gold-card">
+                <p class="notice-text">Contact the Office of the University Registrar if you need to update your data.</p>
+                
+                <!-- TAB 1: Contact Info -->
+                <div id="contactInfo" class="tab-content active">
+                    <div class="profile-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
                         
-                        <h3 class="section-divider-title">Standing</h3>
-                        <div class="data-item">
-                            <div class="data-label">Status</div>
-                            <div class="data-value status-highlight">Officially Enrolled</div>
+                        <!-- Column 1: Personal Details -->
+                        <div class="grid-column">
+                            <h3>Personal Details</h3>
+                            <div class="data-item"><div class="data-label">Firstname</div><div class="data-value">Nina Rose</div></div>
+                            <div class="data-item"><div class="data-label">Middlename</div><div class="data-value">--</div></div>
+                            <div class="data-item"><div class="data-label">Lastname</div><div class="data-value">Abucayon</div></div>
+                            <div class="data-item"><div class="data-label">Suffix</div><div class="data-value">--</div></div>
+                            <div class="data-item"><div class="data-label">Gender</div><div class="data-value">Female</div></div>
+                            <div class="data-item"><div class="data-label">Birth Date</div><div class="data-value">--</div></div>
+                            <div class="data-item"><div class="data-label">Birth Place</div><div class="data-value">Muntinlupa City</div></div>
+                            <div class="data-item"><div class="data-label">Civil Status</div><div class="data-value">Single</div></div>
+                            <div class="data-item"><div class="data-label">Citizenship</div><div class="data-value">Filipino</div></div>
                         </div>
-                    </div>
 
-                    <!-- Column 3: Program of Study -->
-                    <div class="grid-column">
-                        <h3>Program of Study</h3>
-                        <div class="data-item">
-                            <div class="data-label">Major</div>
-                            <div class="data-value">Bachelor of Science in Information Technology</div>
+                        <!-- Column 2: Contact Details -->
+                        <div class="grid-column">
+                            <h3>Contact Details</h3>
+                            <div class="data-item"><div class="data-label">Contact Number</div><div class="data-value">+63 912 345 6789</div></div>
+                            <div class="data-item"><div class="data-label">Email Address</div><div class="data-value">abucayon.nina@plmun.edu.ph</div></div>
+                            <div class="data-item"><div class="data-label">Recovery Email</div><div class="data-value">--</div></div>
+                            <div class="data-item"><div class="data-label">Present Address</div><div class="data-value">Muntinlupa City, Metro Manila</div></div>
+                            
+                            <h3 class="section-divider-title" style="margin-top: 24px;">Standing</h3>
+                            <div class="data-item"><div class="data-label">Status</div><div class="data-value status-highlight">Officially Enrolled</div></div>
                         </div>
-                        <div class="data-item">
-                            <div class="data-label">Curriculum</div>
-                            <div class="data-value">BSIT 2024-2025</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Student Number</div>
-                            <div class="data-value student-number-highlight">24175178</div>
-                        </div>
-                    </div>
 
+                        <!-- Column 3: Program of Study -->
+                        <div class="grid-column">
+                            <h3>Program of Study</h3>
+                            <div class="data-item"><div class="data-label">Major</div><div class="data-value">Bachelor of Science in Information Technology</div></div>
+                            <div class="data-item"><div class="data-label">Curriculum</div><div class="data-value">BSIT 2024-2025</div></div>
+                            <div class="data-item"><div class="data-label">Student Number</div><div class="data-value student-number-highlight">24175178</div></div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
 
-            <!-- TAB 2: Security -->
-            <div id="security" class="tab-content">
-                <div class="security-container">
-                    <h3>Update/Change PIN Number</h3>
-                    <p class="security-desc">Passwords provide the first line of defense against unauthorized access to your account. You should maintain strong passwords for all accounts.</p>
-
-                    <form onsubmit="event.preventDefault(); alert('PIN number successfully updated!');">
-                        <div class="form-group">
-                            <label for="currentPin">Current PIN Number</label>
-                            <input type="password" id="currentPin" placeholder="••••" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="newPin">New PIN Number</label>
-                            <input type="password" id="newPin" placeholder="Enter new PIN" required>
-                            <small class="pin-hint">*Minimum of 6 digits</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirmPin">Confirm New PIN Number</label>
-                            <input type="password" id="confirmPin" placeholder="Re-enter new PIN" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Captcha Challenge</label>
-                            <div class="captcha-box">
-                                <div class="captcha-img">92699</div>
-                                <input type="text" placeholder="Enter code" class="captcha-input" required>
+                <!-- TAB 2: Security -->
+                <div id="security" class="tab-content" style="display: none;">
+                    <div class="security-container">
+                        <h3>Update/Change PIN Number</h3>
+                        <p class="security-desc">Passwords provide the first line of defense against unauthorized access to your account. You should maintain strong passwords for all accounts.</p>
+                        <form onsubmit="event.preventDefault(); alert('PIN number successfully updated!');">
+                            <div class="form-group">
+                                <label for="currentPin">Current PIN Number</label>
+                                <input type="password" id="currentPin" class="form-control" placeholder="...." required>
                             </div>
+                            <div class="form-group">
+                                <label for="newPin">New PIN Number</label>
+                                <input type="password" id="newPin" class="form-control" placeholder="Enter new PIN" required>
+                                <small class="pin-hint">*Minimum of 6 digits</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPin">Confirm New PIN Number</label>
+                                <input type="password" id="confirmPin" class="form-control" placeholder="Re-enter new PIN" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Captcha Challenge</label>
+                                <div class="captcha-box">
+                                    <div class="captcha-img">92699</div>
+                                    <input type="text" placeholder="Enter code" class="form-control captcha-input" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: auto; padding: 10px 20px;">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- TAB 3: QR Code -->
+                <div id="qrCode" class="tab-content" style="display: none;">
+                    <div class="center-card">
+                        <div class="qr-placeholder">
+                            <i class="fa-solid fa-qrcode"></i>
                         </div>
-
-                        <button type="submit" class="btn-save">Save Changes</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- TAB 3: QR Code -->
-            <div id="qrCode" class="tab-content">
-                <div class="center-card">
-                    <div class="qr-placeholder">
-                        <i class="fa-solid fa-qrcode"></i>
+                        <h3 class="qr-title" style="color: var(--primary-green); margin-bottom: 4px;">Student Number: 24175178</h3>
+                        <p class="qr-sub">Use this QR Code at registrar queue kiosks for quick verification.</p>
                     </div>
-                    <h3 class="qr-title">Student Number: 24175178</h3>
-                    <p class="qr-sub">Use this QR Code at registrar queue kiosks for quick verification.</p>
                 </div>
-            </div>
 
-            <!-- TAB 4: Set Profile Photo -->
-            <div id="setPhoto" class="tab-content">
-                <div class="center-card">
-                    <div class="avatar-preview">
-                        <i class="fa-solid fa-user"></i>
+                <!-- TAB 4: Set Profile Photo -->
+                <div id="setPhoto" class="tab-content" style="display: none;">
+                    <div class="center-card">
+                        <div class="avatar-preview">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <form onsubmit="event.preventDefault(); alert('Profile photo updated successfully!');">
+                            <input type="file" accept="image/*" class="file-input" required><br>
+                            <button type="submit" class="btn-primary" style="width: auto; padding: 10px 20px;">Upload Photo</button>
+                        </form>
                     </div>
-                    <form onsubmit="event.preventDefault(); alert('Profile photo updated successfully!');">
-                        <input type="file" accept="image/*" class="file-input" required>
-                        <br>
-                        <button type="submit" class="btn-save">Upload Photo</button>
-                    </form>
                 </div>
-            </div>
 
-        </div>
-    </main>
+            </div>
+        </main>
+    </div>
 
     <!-- Tab Switching Script -->
     <script>
         function openTab(evt, tabName) {
             const tabContents = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
                 tabContents[i].classList.remove("active");
             }
-
             const tabItems = document.getElementsByClassName("tab-item");
             for (let i = 0; i < tabItems.length; i++) {
                 tabItems[i].classList.remove("active");
             }
-
+            document.getElementById(tabName).style.display = "block";
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
+        }
+
+        // Mobile Drawer Toggle Script
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
         }
     </script>
 </body>

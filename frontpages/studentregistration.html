@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <!-- Full-screen Background Overlay -->
     <div class="bg-overlay"></div>
 
-    <!-- Centered Registration Card -->
-    <div class="login-card" style="max-width: 480px; padding: 32px 28px;">
-        
+    <!-- Centered Registration Card with Gold Outline -->
+    <div class="login-card highlight-gold-card" style="max-width: 480px; padding: 32px 28px; border: 2px solid var(--gold, #E0A100) !important;">
         <!-- Header Brand Section -->
         <div class="card-header" style="margin-bottom: 20px;">
             <img src="plmunlogo.png" alt="PLMUN Logo" class="login-logo">
@@ -24,7 +22,6 @@
 
         <!-- Student Registration Form -->
         <form id="studentRegisterForm" onsubmit="handleStudentRegistration(event)">
-            
             <!-- Student Number -->
             <div class="input-group">
                 <label for="studentNumber">Student number</label>
@@ -39,7 +36,7 @@
                 <label for="fullName">Full name</label>
                 <div class="input-wrapper">
                     <i class="fa-solid fa-user input-icon"></i>
-                    <input type="text" id="fullName" placeholder="e.g Juan H. Delecruz" required>
+                    <input type="text" id="fullName" placeholder="e.g. Juan H. Delacruz" required>
                 </div>
             </div>
 
@@ -48,7 +45,7 @@
                 <label for="email">Email address</label>
                 <div class="input-wrapper">
                     <i class="fa-solid fa-envelope input-icon"></i>
-                    <input type="email" id="email" placeholder="e.g juandelacruz@plmun.edu.ph" required>
+                    <input type="email" id="email" placeholder="e.g. juandelacruz@plmun.edu.ph" required>
                 </div>
             </div>
 
@@ -58,7 +55,7 @@
                     <label for="course">Course</label>
                     <div class="input-wrapper">
                         <i class="fa-solid fa-graduation-cap input-icon"></i>
-                        <input type="text" id="course" placeholder="e.g BSIT" required>
+                        <input type="text" id="course" placeholder="e.g. BSIT" required>
                     </div>
                 </div>
                 <div class="input-group" style="margin-bottom: 0;">
@@ -98,29 +95,25 @@
             <button type="submit" class="submit-btn">
                 <i class="fa-solid fa-user-plus"></i> Register!
             </button>
-
         </form>
 
         <!-- Footer Link -->
-        <div class="card-footer">
+        <div class="card-footer" style="margin-top: 20px; text-align: center;">
             <p>Already have an account? <a href="loginform.html">Sign in here</a></p>
         </div>
-
     </div>
 
     <!-- Registration Script -->
     <script>
         function handleStudentRegistration(event) {
             event.preventDefault();
-            
             const pass = document.getElementById('password').value;
             const confirmPass = document.getElementById('confirmPassword').value;
-
+            
             if (pass !== confirmPass) {
                 alert('Passwords do not match! Please check and try again.');
                 return;
             }
-
             alert('Student account created successfully!');
             window.location.href = 'loginform.html';
         }

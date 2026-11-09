@@ -1,144 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Notifications - PLMUN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="studentnotification.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - PLMUN Student Portal</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="studentnotification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <div>
-      <div class="brand-section">
-        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h1 class="brand-name">PLMUN</h1>
-        <span class="badge">Student Account</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
-        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
-        <li><a href="studentbookappointment.html"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
-        <li><a href="studentnotification.html" class="active"><i class="fa-solid fa-bell"></i> Notification</a></li>
-        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
-      </ul>
-    </div>
-    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-  </div>
-
-  <div class="main-content">
-    <div class="top-bar">
-      <h2><i class="fa-solid fa-inbox"></i> Notifications Inbox</h2>
-      <span>Stay updated with queue alerts and announcements</span>
-    </div>
-
-    <!-- Email-Style Inbox Container -->
-    <div class="card inbox-container">
-      
-      <!-- Inbox Controls Header Bar -->
-      <div class="inbox-header">
-        <div class="inbox-title-group">
-          <h3>Inbox</h3>
-          <span class="unread-badge">2 Unread</span>
-        </div>
-        <div class="inbox-actions">
-          <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search notifications...">
-          </div>
-          <button class="btn-secondary" title="Mark all as read">
-            <i class="fa-solid fa-envelope-open"></i> Mark all read
-          </button>
-        </div>
-      </div>
-
-      <!-- Email Rows List -->
-      <div class="email-list">
+    <div class="dashboard-layout">
         
-        <!-- Email Row 1 (Unread) -->
-        <div class="email-row unread">
-          <div class="email-left">
-            <span class="unread-dot"></span>
-            <i class="fa-regular fa-star star-icon"></i>
-            <span class="email-sender">Queue Manager</span>
-          </div>
-          <div class="email-body">
-            <span class="email-subject">Your Queue Ticket is Ready</span>
-            <span class="email-preview">- You were successfully issued ticket Q-006 for your Transcript of Records (TOR) request.</span>
-          </div>
-          <div class="email-right">
-            <span class="email-time">10:42 AM</span>
-            <div class="row-actions">
-              <i class="fa-solid fa-trash-can" title="Delete"></i>
-              <i class="fa-solid fa-envelope" title="Mark as read"></i>
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Student</span>
             </div>
-          </div>
-        </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
 
-        <!-- Email Row 2 (Unread) -->
-        <div class="email-row unread">
-          <div class="email-left">
-            <span class="unread-dot"></span>
-            <i class="fa-solid fa-star star-icon starred"></i>
-            <span class="email-sender">PLMUN Registrar</span>
-          </div>
-          <div class="email-body">
-            <span class="email-subject">Registrar Queue Now Open</span>
-            <span class="email-preview">- Walk-in and virtual queue registration is now officially open for all students today.</span>
-          </div>
-          <div class="email-right">
-            <span class="email-time">8:00 AM</span>
-            <div class="row-actions">
-              <i class="fa-solid fa-trash-can" title="Delete"></i>
-              <i class="fa-solid fa-envelope" title="Mark as read"></i>
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Student Account</span>
             </div>
-          </div>
-        </div>
 
-        <!-- Email Row 3 (Read) -->
-        <div class="email-row">
-          <div class="email-left">
-            <span class="unread-dot empty"></span>
-            <i class="fa-regular fa-star star-icon"></i>
-            <span class="email-sender">Appointment System</span>
-          </div>
-          <div class="email-body">
-            <span class="email-subject">Appointment Confirmation</span>
-            <span class="email-preview">- Your scheduled appointment for COE release on May 27, 2026 has been confirmed.</span>
-          </div>
-          <div class="email-right">
-            <span class="email-time">Yesterday</span>
-            <div class="row-actions">
-              <i class="fa-solid fa-trash-can" title="Delete"></i>
-              <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+            <nav class="sidebar-nav nav-links">
+                <a href="studentdashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item active">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+                <a href="studentprofile.html" class="nav-item">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
             </div>
-          </div>
-        </div>
+        </aside>
 
-        <!-- Email Row 4 (Read) -->
-        <div class="email-row">
-          <div class="email-left">
-            <span class="unread-dot empty"></span>
-            <i class="fa-regular fa-star star-icon"></i>
-            <span class="email-sender">Student Affairs</span>
-          </div>
-          <div class="email-body">
-            <span class="email-subject">Document Request Reminder</span>
-            <span class="email-preview">- Please ensure all clearance requirements are submitted before claiming your clearance documents.</span>
-          </div>
-          <div class="email-right">
-            <span class="email-time">May 5</span>
-            <div class="row-actions">
-              <i class="fa-solid fa-trash-can" title="Delete"></i>
-              <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="top-bar highlight-gold-card">
+                <h2><i class="fa-solid fa-inbox"></i> Notifications Inbox</h2>
+                <span>Stay updated with queue alerts and announcements</span>
             </div>
-          </div>
-        </div>
 
-      </div>
+            <!-- Email-Style Inbox Container -->
+            <div class="card inbox-container highlight-gold-card">
+                <!-- Inbox Controls Header Bar -->
+                <div class="inbox-header">
+                    <div class="inbox-title-group">
+                        <h3>Inbox</h3>
+                        <span class="unread-badge">2 Unread</span>
+                    </div>
+                    <div class="inbox-actions">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search notifications...">
+                        </div>
+                        <button class="btn-secondary" title="Mark all as read">
+                            <i class="fa-solid fa-envelope-open"></i> Mark all read
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Email Rows List -->
+                <div class="email-list">
+                    <!-- Email Row 1 (Unread) -->
+                    <div class="email-row unread">
+                        <div class="email-left">
+                            <span class="unread-dot"></span>
+                            <i class="fa-regular fa-star star-icon"></i>
+                            <span class="email-sender">Queue Manager</span>
+                        </div>
+                        <div class="email-body">
+                            <span class="email-subject">Your Queue Ticket is Ready</span>
+                            <span class="email-preview">- You were successfully issued ticket Q-006 for your Transcript of Records (TOR) request[cite: 121].</span>
+                        </div>
+                        <div class="email-right">
+                            <span class="email-time">10:42 AM</span>
+                            <div class="row-actions">
+                                <i class="fa-solid fa-trash-can" title="Delete"></i>
+                                <i class="fa-solid fa-envelope" title="Mark as read"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Row 2 (Unread) -->
+                    <div class="email-row unread">
+                        <div class="email-left">
+                            <span class="unread-dot"></span>
+                            <i class="fa-solid fa-star star-icon starred"></i>
+                            <span class="email-sender">PLMUN Registrar</span>
+                        </div>
+                        <div class="email-body">
+                            <span class="email-subject">Registrar Queue Now Open</span>
+                            <span class="email-preview">- Walk-in and virtual queue registration is now officially open for all students today[cite: 121].</span>
+                        </div>
+                        <div class="email-right">
+                            <span class="email-time">8:00 AM</span>
+                            <div class="row-actions">
+                                <i class="fa-solid fa-trash-can" title="Delete"></i>
+                                <i class="fa-solid fa-envelope" title="Mark as read"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Row 3 (Read) -->
+                    <div class="email-row">
+                        <div class="email-left">
+                            <span class="unread-dot empty"></span>
+                            <i class="fa-regular fa-star star-icon"></i>
+                            <span class="email-sender">Appointment System</span>
+                        </div>
+                        <div class="email-body">
+                            <span class="email-subject">Appointment Confirmation</span>
+                            <span class="email-preview">- Your scheduled appointment for COE release on May 27, 2026 has been confirmed[cite: 122].</span>
+                        </div>
+                        <div class="email-right">
+                            <span class="email-time">Yesterday</span>
+                            <div class="row-actions">
+                                <i class="fa-solid fa-trash-can" title="Delete"></i>
+                                <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Row 4 (Read) -->
+                    <div class="email-row">
+                        <div class="email-left">
+                            <span class="unread-dot empty"></span>
+                            <i class="fa-regular fa-star star-icon"></i>
+                            <span class="email-sender">Student Affairs</span>
+                        </div>
+                        <div class="email-body">
+                            <span class="email-subject">Document Request Reminder</span>
+                            <span class="email-preview">- Please ensure all clearance requirements are submitted before claiming your clearance documents[cite: 123].</span>
+                        </div>
+                        <div class="email-right">
+                            <span class="email-time">May 5</span>
+                            <div class="row-actions">
+                                <i class="fa-solid fa-trash-can" title="Delete"></i>
+                                <i class="fa-regular fa-envelope" title="Mark as unread"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </div>
+
+    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
+        }
+    </script>
 </body>
 </html>

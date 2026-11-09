@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLMUN Registrar Queue System - Welcome</title>
+    <title>PLMUN Registrar Queue System Welcome</title>
     <link rel="stylesheet" href="welcomepage.css">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Full-screen Background Overlay with schoolbg.webp -->
+    <div class="bg-overlay"></div>
 
     <main class="welcome-container">
-        <div class="welcome-card">
-            
+        <!-- Added highlight-gold-card for the gold outline -->
+        <div class="welcome-card highlight-gold-card" style="position: relative; z-index: 2; border: 2px solid var(--gold, #E0A100) !important;">
             <!-- Institution Header -->
             <div class="brand-section">
                 <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo-img">
@@ -25,19 +27,17 @@
             <div class="welcome-content">
                 <h2 class="welcome-heading">Welcome to the PLMUN Registrar Queue System</h2>
                 <p class="welcome-description">
-                   Joining the queues, Manage student queues, appointments, and notifications — all in one place.
+                    Joining the queues, Manage student queues, appointments, and notifications all in one place[cite: 136].
                 </p>
             </div>
 
-            <!-- Action Area -->
+            <!-- Action Area Connected to Login Page -->
             <div class="welcome-actions">
-                <button class="btn-get-started" onclick="alert('Proceeding to Login...')">
+                <button class="btn-get-started" onclick="window.location.href='loginform.html'">
                     Get Started <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
-
         </div>
     </main>
-
 </body>
 </html>
