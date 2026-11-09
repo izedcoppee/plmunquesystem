@@ -13,7 +13,7 @@
         <!-- Mobile Top Header Bar -->
         <header class="mobile-top-bar">
             <div class="brand-mini">
-                <img src="../plmunlogo.png" alt="PLMUN Logo">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
                 <span>PLMUN Admin</span>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
@@ -24,7 +24,10 @@
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <img src="../plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
                 <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
                 <h2 class="school-title">PLMUN</h2>
                 <span class="account-badge">Admin Account</span>
@@ -46,6 +49,7 @@
                 <a href="adminnotification.html" class="nav-item">
                     <i class="fa-solid fa-bell"></i>
                     <span>Notification</span>
+                    <span class="notification-badge">4</span>
                 </a>
                 <a href="adminreports.html" class="nav-item">
                     <i class="fa-solid fa-file-invoice"></i>
@@ -71,13 +75,15 @@
         <!-- Main Body Content Container -->
         <main class="main-content">
             
-            <!-- Portal Banner -->
-            <section class="portal-banner">
+            <!-- Portal Banner with Gold Outline -->
+            <section class="portal-banner highlight-gold-card">
                 <div class="banner-title">
-                    <i class="fa-solid fa-list-ol banner-icon"></i>
+                    <div class="banner-icon-box">
+                        <i class="fa-solid fa-list-ol"></i>
+                    </div>
                     <div>
                         <h2>Queue Management</h2>
-                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 500;">Monitor live queue flow, call students, and manage counter statuses</p>
+                        <p class="banner-subtitle-text">Monitor live queue flow, call students, and manage counter statuses</p>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
@@ -85,30 +91,30 @@
                 </div>
             </section>
 
-            <!-- Real-time Queue Stat Overview -->
+            <!-- Real-time Queue Stat Overview with Gold Outlines -->
             <section class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card highlight-gold-card">
                     <div class="stat-icon orange"><i class="fa-solid fa-user-clock"></i></div>
                     <div class="stat-details">
                         <h3>0</h3>
                         <p>Total Waiting</p>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card highlight-gold-card">
                     <div class="stat-icon blue"><i class="fa-solid fa-user-gear"></i></div>
                     <div class="stat-details">
                         <h3 style="font-size: 18px; line-height: 1.4;">None</h3>
                         <p>Now Serving</p>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card highlight-gold-card">
                     <div class="stat-icon green"><i class="fa-solid fa-user-check"></i></div>
                     <div class="stat-details">
                         <h3>0</h3>
                         <p>Served Today</p>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card highlight-gold-card">
                     <div class="stat-icon dark-green" style="background-color: #D32F2F;"><i class="fa-solid fa-user-slash"></i></div>
                     <div class="stat-details">
                         <h3>0</h3>
@@ -117,33 +123,33 @@
                 </div>
             </section>
 
-            <!-- Counter Control Panel (Now Serving) -->
-            <section class="content-card" style="margin-bottom: 24px;">
+            <!-- Counter Control Panel (Now Serving) with Gold Outline -->
+            <section class="content-card highlight-gold-card" style="margin-bottom: 24px;">
                 <div class="card-header" style="margin-bottom: 12px;">
                     <h2>Now Serving Control Panel</h2>
                 </div>
                 <div style="text-align: center; padding: 24px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color);">
-                    <h3 style="font-size: 32px; font-weight: 800; color: var(--primary-green); margin-bottom: 6px; letter-spacing: 2px;">----</h3>
+                    <h3 style="font-size: 32px; font-weight: 800; color: var(--moss-green); margin-bottom: 6px; letter-spacing: 2px;">----</h3>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">No student currently being served</p>
                     <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn-primary" style="background-color: #2E7D32;"><i class="fa-solid fa-circle-check"></i> Done</button>
-                        <button class="btn-primary" style="background-color: var(--sidebar-bg);"><i class="fa-solid fa-bullhorn"></i> Call Next</button>
-                        <button class="btn-primary" style="background-color: #ED6C02;"><i class="fa-solid fa-forward"></i> Skip</button>
-                        <button class="btn-primary" style="background-color: #0288D1;"><i class="fa-solid fa-check-double"></i> Mark As Served</button>
-                        <button class="btn-primary" style="background-color: #D32F2F;"><i class="fa-solid fa-user-xmark"></i> Mark Missed</button>
+                        <button class="btn-gold" style="background-color: #2E7D32; color: white;"><i class="fa-solid fa-circle-check"></i> Done</button>
+                        <button class="btn-gold" style="background-color: var(--moss-green); color: white;"><i class="fa-solid fa-bullhorn"></i> Call Next</button>
+                        <button class="btn-gold" style="background-color: #ED6C02; color: white;"><i class="fa-solid fa-forward"></i> Skip</button>
+                        <button class="btn-gold" style="background-color: #0288D1; color: white;"><i class="fa-solid fa-check-double"></i> Mark As Served</button>
+                        <button class="btn-gold" style="background-color: #D32F2F; color: white;"><i class="fa-solid fa-user-xmark"></i> Mark Missed</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Waiting Queue Live Table Section -->
-            <section class="content-card">
+            <!-- Waiting Queue Live Table Section with Gold Outline -->
+            <section class="content-card highlight-gold-card">
                 <div class="card-header" style="flex-wrap: wrap; gap: 12px;">
                     <div>
                         <h2>Waiting Queue <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">(0 Students)</span></h2>
                     </div>
                     <div style="display: flex; gap: 8px; width: 100%; max-width: 320px;">
                         <input type="text" placeholder="Search queue # or name..." style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
-                        <button class="btn-primary"><i class="fa-solid fa-search"></i></button>
+                        <button class="btn-gold"><i class="fa-solid fa-search"></i></button>
                     </div>
                 </div>
                 <div class="table-wrapper">

@@ -24,7 +24,10 @@
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
                 <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
                 <h2 class="school-title">PLMUN</h2>
                 <span class="account-badge">Admin Account</span>
@@ -46,6 +49,7 @@
                 <a href="adminnotification.html" class="nav-item">
                     <i class="fa-solid fa-bell"></i>
                     <span>Notification</span>
+                    <span class="notification-badge">4</span>
                 </a>
                 <a href="adminreports.html" class="nav-item">
                     <i class="fa-solid fa-file-invoice"></i>
@@ -71,10 +75,12 @@
         <!-- Main Body Content Container -->
         <main class="main-content">
             
-            <!-- Portal Banner -->
-            <section class="portal-banner">
+            <!-- Portal Banner with Gold Outline -->
+            <section class="portal-banner highlight-gold-card">
                 <div class="banner-title">
-                    <i class="fa-solid fa-calendar-days banner-icon"></i>
+                    <div class="banner-icon-box">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
                     <div>
                         <h2>Manage Appointments</h2>
                         <p class="banner-subtitle-text">View and manage all student appointments</p>
@@ -85,31 +91,31 @@
                         <span class="avatar-initials">AO</span>
                         <div class="admin-info-text">
                             <strong>Admin Officer</strong>
-                            <span>Registrar Window 1</span>
+                            <span>Counter Window #1</span>
                         </div>
                         <span class="online-status-dot"></span>
                     </div>
                 </div>
             </section>
 
-            <!-- Filters & Tab Navigation Section -->
-            <section class="content-card" style="margin-bottom: 24px;">
+            <!-- Filters & Tab Navigation Section with Gold Outline -->
+            <section class="content-card highlight-gold-card" style="margin-bottom: 24px;">
                 <div class="filter-tabs-wrapper" style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                    <button class="btn-primary" style="background-color: var(--primary-green);">All</button>
-                    <button class="btn-primary" style="background-color: #6c757d;">Upcoming</button>
-                    <button class="btn-primary" style="background-color: #6c757d;">Completed</button>
-                    <button class="btn-primary" style="background-color: #6c757d;">Missed</button>
+                    <button class="btn-gold" style="padding: 8px 16px;">All</button>
+                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Upcoming</button>
+                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Completed</button>
+                    <button class="btn-gold" style="background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); padding: 8px 16px;">Missed</button>
                 </div>
-                
+
                 <!-- Filter Controls Grid -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; align-items: flex-end;">
                     <div>
                         <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">Filter by Date</label>
-                        <input type="date" value="2026-05-22" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px;">
+                        <input type="date" value="2026-05-22" style="width: 100%; border-radius: 6px; padding: 10px; border: 1px solid var(--border-color); font-size: 14px; background: var(--white); color: var(--text-dark);">
                     </div>
                     <div>
                         <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">Filter by Service</label>
-                        <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white);">
+                        <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
                             <option>Select Purpose</option>
                             <option>Certificate of Enrollment</option>
                             <option>Transcript of Records (TOR)</option>
@@ -119,15 +125,15 @@
                     <div>
                         <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">Search Student</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="text" placeholder="Search name or ID..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px;">
-                            <button class="btn-primary" style="padding: 10px 16px;"><i class="fa-solid fa-search"></i></button>
+                            <input type="text" placeholder="Search name or ID..." style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 14px; background: var(--white); color: var(--text-dark);">
+                            <button class="btn-gold" style="padding: 10px 16px;"><i class="fa-solid fa-search"></i></button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Appointments Table Section -->
-            <section class="content-card" style="margin-bottom: 24px;">
+            <!-- Appointments Table Section with Gold Outline -->
+            <section class="content-card highlight-gold-card" style="margin-bottom: 24px;">
                 <div class="card-header">
                     <h2>Appointments List</h2>
                 </div>
@@ -147,7 +153,7 @@
                         <tbody>
                             <tr>
                                 <td>5</td>
-                                <td>qwertyu</td>
+                                <td>Juan Dela Cruz</td>
                                 <td>12345678</td>
                                 <td>Certificate of Enrollment</td>
                                 <td>3:04 PM</td>
@@ -156,28 +162,28 @@
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td>qwertyu</td>
+                                <td>Maria Santos</td>
                                 <td>12345678</td>
                                 <td>Certificate of Enrollment</td>
                                 <td>8:30 AM</td>
                                 <td>05/22/2026</td>
-                                <td><span class="status-badge serving" style="background:#E8F5E9; color:#2E7D32;">Completed</span></td>
+                                <td><span class="status-badge serving" style="background:#E8F5E9; color: #2E7D32;">Completed</span></td>
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>asdfgh</td>
+                                <td>Mark Reyes</td>
                                 <td>123456789</td>
                                 <td>Verification Request</td>
-                                <td>2:00 AM</td>
+                                <td>2:00 PM</td>
                                 <td>05/22/2026</td>
                                 <td><span class="status-badge serving" style="background:#E8F5E9; color:#2E7D32;">Completed</span></td>
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td>qwertyu</td>
+                                <td>Angelica Ramos</td>
                                 <td>12345678</td>
                                 <td>Certificate of Enrollment</td>
-                                <td>1:00 AM</td>
+                                <td>1:00 PM</td>
                                 <td>05/22/2026</td>
                                 <td><span class="status-badge" style="background:#FFEBEE; color:#D32F2F;">Missed</span></td>
                             </tr>
@@ -186,34 +192,34 @@
                 </div>
             </section>
 
-            <!-- Now Serving Control Section -->
-            <section class="content-card" style="margin-bottom: 24px;">
+            <!-- Now Serving Control Section with Gold Outline -->
+            <section class="content-card highlight-gold-card" style="margin-bottom: 24px;">
                 <div class="card-header" style="margin-bottom: 15px;">
                     <h2>Now Serving</h2>
                 </div>
                 <div style="text-align: center; padding: 20px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-color);">
-                    <h3 style="font-size: 28px; font-weight: 800; color: var(--primary-green); margin-bottom: 8px;">-</h3>
+                    <h3 style="font-size: 28px; font-weight: 800; color: var(--moss-green); margin-bottom: 8px;">--</h3>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">No appointments for today</p>
                     <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn-primary" style="background-color: #0288D1;"><i class="fa-solid fa-forward"></i> Next</button>
-                        <button class="btn-primary" style="background-color: #ED6C02;"><i class="fa-solid fa-forward-step"></i> Skip</button>
-                        <button class="btn-primary" style="background-color: #2E7D32;"><i class="fa-solid fa-check"></i> Done</button>
-                        <button class="btn-primary" style="background-color: #D32F2F;"><i class="fa-solid fa-xmark"></i> Mark Missed</button>
+                        <button class="btn-gold" style="background-color: #0288D1; color: white;"><i class="fa-solid fa-forward"></i> Next</button>
+                        <button class="btn-gold" style="background-color: #ED6C02; color: white;"><i class="fa-solid fa-forward-step"></i> Skip</button>
+                        <button class="btn-gold" style="background-color: #2E7D32; color: white;"><i class="fa-solid fa-check"></i> Done</button>
+                        <button class="btn-gold" style="background-color: #D32F2F; color: white;"><i class="fa-solid fa-xmark"></i> Mark Missed</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Available Time Slots Section -->
-            <section class="content-card">
+            <!-- Available Time Slots Section with Gold Outline -->
+            <section class="content-card highlight-gold-card">
                 <div class="card-header">
                     <h2>Available Time Slots - May 22, 2026</h2>
-                    <button class="btn-primary"><i class="fa-solid fa-plus"></i> Add Slot</button>
+                    <button class="btn-gold"><i class="fa-solid fa-plus"></i> Add Slot</button>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 15px;">
                     <div style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light);">
                         <p style="font-weight: 700; font-size: 13px;">9:00 AM - 9:30 AM</p>
                         <p style="font-size: 12px; color: var(--text-muted);">Transcript of Records</p>
-                        <div style="margin-top: 8px; font-size: 11px; color: #2E7D32; font-weight: 700;">1/100 Booked</div>
+                        <div style="margin-top: 8px; font-size: 11px; color: #2E7D32; font-weight: 700;">10/100 Booked</div>
                     </div>
                     <div style="padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-light);">
                         <p style="font-weight: 700; font-size: 13px;">9:30 AM - 10:00 AM</p>

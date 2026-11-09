@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="dashboard-layout">
-        
+       
         <!-- Mobile Top Header Bar -->
         <header class="mobile-top-bar">
             <div class="brand-mini">
@@ -21,6 +21,7 @@
             </button>
         </header>
 
+
         <!-- Fixed Collapsible Side Navigation Drawer -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
@@ -31,6 +32,7 @@
                 <h2 class="school-title">PLMUN</h2>
                 <span class="account-badge">Admin Account</span>
             </div>
+
 
             <nav class="sidebar-nav">
                 <a href="admindashboard.html" class="nav-item active">
@@ -60,6 +62,7 @@
                 </a>
             </nav>
 
+
             <div class="sidebar-footer">
                 <a href="../frontpages/loginform.html" class="logout-btn">
                     <i class="fa-solid fa-right-from-bracket"></i>
@@ -68,12 +71,14 @@
             </div>
         </aside>
 
+
         <!-- Mobile Dark Overlay -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
 
+
         <!-- Main Body Content Container -->
         <main class="main-content">
-            
+           
             <!-- Portal Banner (Now with Gold Outline) -->
             <section class="portal-banner highlight-gold-card">
                 <div class="banner-title">
@@ -96,6 +101,7 @@
                     </div>
                 </div>
             </section>
+
 
             <!-- Stats Overview Grid (Every card has gold outline) -->
             <section class="stats-grid">
@@ -129,6 +135,7 @@
                 </div>
             </section>
 
+
             <!-- Active Queue Management Table (Now with Gold Outline) -->
             <section class="content-card highlight-gold-card">
                 <div class="card-header">
@@ -146,6 +153,7 @@
                         </button>
                     </div>
                 </div>
+
 
                 <div class="table-wrapper">
                     <table class="queue-table">
@@ -213,6 +221,7 @@
                     </table>
                 </div>
 
+
                 <!-- Table Footer Summary -->
                 <div class="table-footer-summary">
                     <span>Showing active queue records for Pamantasan ng Lungsod ng Muntinlupa</span>
@@ -222,16 +231,19 @@
         </main>
     </div>
 
+
     <!-- Mobile Drawer & Sidebar Toggle Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         const mobileOverlay = document.getElementById('mobileOverlay');
 
+
         function toggleSidebar() {
             sidebar.classList.toggle('open');
             mobileOverlay.classList.toggle('show');
         }
+
 
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', toggleSidebar);

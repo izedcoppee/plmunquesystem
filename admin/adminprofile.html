@@ -3,265 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLMUN Registrar Admin Profile</title>
+    <title>PLMUN Registrar - Admin Profile</title>
     <link rel="stylesheet" href="admindashboard.css">
     <link rel="stylesheet" href="adminprofile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Main Navigation Header (Matching admindashboard.html) -->
-    <header class="main-header">
-        <div class="header-top">
-            <div class="header-top-inner">
-                <div class="brand-info">
-                    <img src="../plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-                    <div class="brand-text">
-                        <span class="brand-title">PLMUN</span>
-                        <span class="brand-subtitle">PAMANTASAN NG LUNGSOD NG MUNTINLUPA</span>
-                    </div>
-                </div>
-                <div class="header-actions">
-                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Centered Horizontal Navigation Bar -->
-        <nav class="desktop-navbar">
-            <div class="navbar-inner">
-                <a href="admindashboard.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-                <a href="adminmanageappointments.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
-                <a href="adminqueuemanagement.html" class="nav-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
-                <a href="adminnotification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-                <a href="adminreports.html" class="nav-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
-                <a href="adminprofile.html" class="nav-item active"><i class="fa-solid fa-user-shield"></i> Profile</a>
-                <a href="../frontpages/loginform.html" class="nav-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Slide-Out Drawer -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <aside class="mobile-drawer" id="mobileDrawer">
-        <div class="drawer-header">
-            <div class="brand-info">
-                <img src="../plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-                <span class="brand-title">PLMUN</span>
-            </div>
-            <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
-        </div>
-        <nav class="drawer-menu">
-            <a href="admindashboard.html" class="drawer-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-            <a href="adminmanageappointments.html" class="drawer-item"><i class="fa-solid fa-calendar-check"></i> Manage Appointment</a>
-            <a href="adminqueuemanagement.html" class="drawer-item"><i class="fa-solid fa-list-ol"></i> Queue Management</a>
-            <a href="adminnotification.html" class="drawer-item"><i class="fa-solid fa-bell"></i> Notification</a>
-            <a href="adminreports.html" class="drawer-item"><i class="fa-solid fa-file-invoice"></i> Report</a>
-            <a href="adminprofile.html" class="drawer-item active"><i class="fa-solid fa-user-shield"></i> Profile</a>
-            <a href="../frontpages/loginform.html" class="drawer-item logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-        </nav>
-    </aside>
-
-    <!-- Main Page Content Container -->
-    <div class="container">
+    <div class="dashboard-layout">
         
-        <!-- Portal Banner / Header -->
-        <section class="portal-banner">
-            <div class="banner-title">
-                <i class="fa-solid fa-user-shield banner-icon"></i>
-                <div>
-                    <h2>Admin Profile & Staff Settings</h2>
-                    <span style="font-size: 13px; color: var(--text-muted);">Manage administrative account credentials, system access, and security</span>
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Admin</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
                 </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Admin Account</span>
             </div>
-            <div class="banner-breadcrumb">
-                <i class="fa-solid fa-user-shield"></i> <span class="highlight">Admin Officer</span>
+
+            <nav class="sidebar-nav">
+                <a href="admindashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="adminmanageappointments.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Manage Appointment</span>
+                </a>
+                <a href="adminqueuemanagement.html" class="nav-item">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span>Queue Management</span>
+                </a>
+                <a href="adminnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">4</span>
+                </a>
+                <a href="adminreports.html" class="nav-item">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span>Report</span>
+                </a>
+                <a href="adminprofile.html" class="nav-item active">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
             </div>
-        </section>
+        </aside>
 
-        <!-- Tab Navigation Bar -->
-        <div class="tab-bar">
-            <button class="tab-item active" onclick="openTab(event, 'accountDetails')">Account Details</button>
-            <button class="tab-item" onclick="openTab(event, 'permissions')">Access & Permissions</button>
-            <button class="tab-item" onclick="openTab(event, 'security')">Security & Authentication</button>
-        </div>
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
 
-        <!-- Main Content Panel -->
-        <div class="content-panel">
+        <!-- Main Body Content Container -->
+        <main class="main-content">
             
-            <!-- TAB 1: Account Details -->
-            <div id="accountDetails" class="tab-content active">
-                <div class="profile-grid">
-                    
-                    <!-- Left Avatar Card -->
-                    <div class="admin-card text-center">
-                        <div class="admin-avatar">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3>Registrar Admin</h3>
-                        <span class="role-badge">System Administrator</span>
-                        <div class="status-indicator">
-                            <span class="status-dot"></span> Active Staff Account
-                        </div>
+            <!-- Portal Banner with Gold Outline -->
+            <section class="portal-banner highlight-gold-card">
+                <div class="banner-title">
+                    <div class="banner-icon-box">
+                        <i class="fa-solid fa-user-shield"></i>
                     </div>
-
-                    <!-- Right Details Column -->
-                    <div class="grid-column">
-                        <h3>Officer Information</h3>
-                        <div class="data-item">
-                            <div class="data-label">Full Name</div>
-                            <div class="data-value">Registrar Administrative Officer</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Username / Account ID</div>
-                            <div class="data-value">admin_reg01</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Email Address</div>
-                            <div class="data-value">admin.registrar@plmun.edu.ph</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Department</div>
-                            <div class="data-value">Office of the University Registrar</div>
-                        </div>
-                        <div class="data-item">
-                            <div class="data-label">Assigned Counter / Window</div>
-                            <div class="data-value">Window 1 - Transcripts & Certifications</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- TAB 2: Access & Permissions -->
-            <div id="permissions" class="tab-content">
-                <div class="permissions-container">
-                    <h3>System Permissions & Module Access</h3>
-                    <p class="section-desc">Active authorization settings granted to this administrator account.</p>
-
-                    <div class="permissions-grid">
-                        <div class="perm-card">
-                            <i class="fa-solid fa-users-gear perm-icon"></i>
-                            <div>
-                                <h4>Queue Management Controls</h4>
-                                <p>Call next student, skip tickets, update window status, and clear queue.</p>
-                            </div>
-                            <span class="perm-tag active">Enabled</span>
-                        </div>
-
-                        <div class="perm-card">
-                            <i class="fa-solid fa-calendar-check perm-icon"></i>
-                            <div>
-                                <h4>Appointment Approvals</h4>
-                                <p>Review, approve, reschedule, or cancel pending student appointments.</p>
-                            </div>
-                            <span class="perm-tag active">Enabled</span>
-                        </div>
-
-                        <div class="perm-card">
-                            <i class="fa-solid fa-bullhorn perm-icon"></i>
-                            <div>
-                                <h4>Broadcast Announcements</h4>
-                                <p>Send real-time alerts and system notifications to student dashboards.</p>
-                            </div>
-                            <span class="perm-tag active">Enabled</span>
-                        </div>
-
-                        <div class="perm-card">
-                            <i class="fa-solid fa-chart-pie perm-icon"></i>
-                            <div>
-                                <h4>Generate Analytics & Reports</h4>
-                                <p>Export queue summaries, peak traffic reports, and service logs.</p>
-                            </div>
-                            <span class="perm-tag active">Enabled</span>
-                        </div>
+                    <div>
+                        <h2>Admin Profile & Staff Settings</h2>
+                        <p class="banner-subtitle-text">Manage administrative account credentials, system access, and security</p>
                     </div>
                 </div>
+                <div class="banner-breadcrumb">
+                    <div class="admin-profile-pill">
+                        <span class="avatar-initials">AO</span>
+                        <div class="admin-info-text">
+                            <strong>Admin Officer</strong>
+                            <span>Counter Window #1</span>
+                        </div>
+                        <span class="online-status-dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab Navigation Bar with Gold Outline -->
+            <div class="tab-bar highlight-gold-card" style="display: flex; background: var(--white); padding: 8px; border-radius: 12px; margin-bottom: 24px; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                <button class="tab-item active" onclick="openTab(event, 'accountDetails')" style="flex: 1; padding: 10px; border: none; background: var(--bg-light); border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--text-dark);">Account Details</button>
+                <button class="tab-item" onclick="openTab(event, 'permissions')" style="flex: 1; padding: 10px; border: none; background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--text-muted);">Access & Permissions</button>
+                <button class="tab-item" onclick="openTab(event, 'security')" style="flex: 1; padding: 10px; border: none; background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--text-muted);">Security & Authentication</button>
             </div>
 
-            <!-- TAB 3: Security & Authentication -->
-            <div id="security" class="tab-content">
-                <div class="security-grid">
-                    
-                    <!-- Change Password Form -->
-                    <div class="security-card">
-                        <h3>Update Admin Password</h3>
-                        <form onsubmit="event.preventDefault(); alert('Admin password updated successfully!');">
-                            <div class="form-group">
-                                <label for="currentAdminPass">Current Password</label>
-                                <input type="password" id="currentAdminPass" placeholder="Enter current password" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="newAdminPass">New Password</label>
-                                <input type="password" id="newAdminPass" placeholder="Enter new password" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmAdminPass">Confirm New Password</label>
-                                <input type="password" id="confirmAdminPass" placeholder="Re-enter new password" required>
-                            </div>
-                            <button type="submit" class="btn-save">Update Password</button>
-                        </form>
-                    </div>
-
-                    <!-- Update Secret Admin Code Form -->
-                    <div class="security-card">
-                        <h3>Secret Admin Registration Code</h3>
-                        <p class="section-desc">Code used by registrar staff to authorize new admin registration.</p>
+            <!-- Main Content Panel with Gold Outline -->
+            <div class="content-panel content-card highlight-gold-card">
+                
+                <!-- TAB 1: Account Details -->
+                <div id="accountDetails" class="tab-content active" style="display: block;">
+                    <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
                         
-                        <form onsubmit="event.preventDefault(); alert('Secret Admin Code updated successfully!');">
-                            <div class="form-group">
-                                <label for="currentCode">Current Admin Code</label>
-                                <input type="password" id="currentCode" value="PLMUN2026" required readonly style="background-color: #EAEAEA;">
+                        <!-- Left Avatar Card -->
+                        <div class="admin-card text-center" style="background: var(--bg-light); padding: 24px; border-radius: 10px; border: 1px solid var(--border-color); text-align: center;">
+                            <div class="admin-avatar" style="width: 70px; height: 70px; background: var(--avocado-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 15px auto;">
+                                <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <div class="form-group">
-                                <label for="newCode">New Admin Secret Code</label>
-                                <input type="password" id="newCode" placeholder="Enter new secret code" required>
+                            <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-dark);">Registrar Admin</h3>
+                            <span class="role-badge" style="background: #EAF4DC; color: #35521C; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px;">System Administrator</span>
+                            <div class="status-indicator" style="font-size: 13px; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                <span class="status-dot" style="width: 8px; height: 8px; background: var(--pistachio-green); border-radius: 50%;"></span> Active Staff Account
                             </div>
-                            <button type="submit" class="btn-save btn-secondary">Reset Admin Code</button>
-                        </form>
+                        </div>
+
+                        <!-- Right Details Column -->
+                        <div class="grid-column" style="display: flex; flex-direction: column; gap: 14px;">
+                            <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Officer Information</h3>
+                            
+                            <div class="data-item" style="background: var(--bg-light); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div class="data-label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Full Name</div>
+                                <div class="data-value" style="font-size: 14px; font-weight: 600; color: var(--text-dark); margin-top: 2px;">Registrar Administrative Officer</div>
+                            </div>
+
+                            <div class="data-item" style="background: var(--bg-light); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div class="data-label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Username / Account ID</div>
+                                <div class="data-value" style="font-size: 14px; font-weight: 600; color: var(--text-dark); margin-top: 2px;">admin_reg01</div>
+                            </div>
+
+                            <div class="data-item" style="background: var(--bg-light); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div class="data-label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Email Address</div>
+                                <div class="data-value" style="font-size: 14px; font-weight: 600; color: var(--text-dark); margin-top: 2px;">admin.registrar@plmun.edu.ph</div>
+                            </div>
+
+                            <div class="data-item" style="background: var(--bg-light); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div class="data-label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Department</div>
+                                <div class="data-value" style="font-size: 14px; font-weight: 600; color: var(--text-dark); margin-top: 2px;">Office of the University Registrar</div>
+                            </div>
+
+                            <div class="data-item" style="background: var(--bg-light); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <div class="data-label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Assigned Counter / Window</div>
+                                <div class="data-value" style="font-size: 14px; font-weight: 600; color: var(--text-dark); margin-top: 2px;">Window 1 Transcripts & Certifications</div>
+                            </div>
+                        </div>
+
                     </div>
-
                 </div>
+
+                <!-- TAB 2: Access & Permissions -->
+                <div id="permissions" class="tab-content" style="display: none;">
+                    <div class="permissions-container">
+                        <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">System Permissions & Module Access</h3>
+                        <p class="section-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Active authorization settings granted to this administrator account.</p>
+                        
+                        <div class="permissions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                            
+                            <div class="perm-card" style="background: var(--bg-light); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+                                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                    <i class="fa-solid fa-users-gear" style="font-size: 20px; color: var(--moss-green); margin-top: 2px;"></i>
+                                    <div>
+                                        <h4 style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px;">Queue Management Controls</h4>
+                                        <p style="font-size: 12px; color: var(--text-muted);">Call next student, skip tickets, update window status, and clear queue.</p>
+                                    </div>
+                                </div>
+                                <span class="perm-tag active" style="background: #EAF4DC; color: #35521C; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; align-self: flex-start;">Enabled</span>
+                            </div>
+
+                            <div class="perm-card" style="background: var(--bg-light); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+                                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                    <i class="fa-solid fa-calendar-check" style="font-size: 20px; color: var(--moss-green); margin-top: 2px;"></i>
+                                    <div>
+                                        <h4 style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px;">Appointment Approvals</h4>
+                                        <p style="font-size: 12px; color: var(--text-muted);">Review, approve, reschedule, or cancel pending student appointments.</p>
+                                    </div>
+                                </div>
+                                <span class="perm-tag active" style="background: #EAF4DC; color: #35521C; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; align-self: flex-start;">Enabled</span>
+                            </div>
+
+                            <div class="perm-card" style="background: var(--bg-light); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+                                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                    <i class="fa-solid fa-bullhorn" style="font-size: 20px; color: var(--moss-green); margin-top: 2px;"></i>
+                                    <div>
+                                        <h4 style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px;">Broadcast Announcements</h4>
+                                        <p style="font-size: 12px; color: var(--text-muted);">Send real-time alerts and system notifications to student dashboards.</p>
+                                    </div>
+                                </div>
+                                <span class="perm-tag active" style="background: #EAF4DC; color: #35521C; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; align-self: flex-start;">Enabled</span>
+                            </div>
+
+                            <div class="perm-card" style="background: var(--bg-light); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+                                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                    <i class="fa-solid fa-chart-pie" style="font-size: 20px; color: var(--moss-green); margin-top: 2px;"></i>
+                                    <div>
+                                        <h4 style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px;">Generate Analytics & Reports</h4>
+                                        <p style="font-size: 12px; color: var(--text-muted);">Export queue summaries, peak traffic reports, and service logs.</p>
+                                    </div>
+                                </div>
+                                <span class="perm-tag active" style="background: #EAF4DC; color: #35521C; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; align-self: flex-start;">Enabled</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Security & Authentication -->
+                <div id="security" class="tab-content" style="display: none;">
+                    <div class="security-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        
+                        <!-- Change Password Form -->
+                        <div class="security-card" style="background: var(--bg-light); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 14px;">Update Admin Password</h3>
+                            <form onsubmit="event.preventDefault(); alert('Admin password updated successfully!');" style="display: flex; flex-direction: column; gap: 12px;">
+                                <div class="form-group">
+                                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Current Password</label>
+                                    <input type="password" placeholder="Enter current password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">New Password</label>
+                                    <input type="password" placeholder="Enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Confirm New Password</label>
+                                    <input type="password" placeholder="Re-enter new password" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                </div>
+                                <button type="submit" class="btn-gold" style="margin-top: 6px; justify-content: center;">Update Password</button>
+                            </form>
+                        </div>
+
+                        <!-- Update Secret Admin Code Form -->
+                        <div class="security-card" style="background: var(--bg-light); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <h3 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Secret Admin Registration Code</h3>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Code used by registrar staff to authorize new admin registration.</p>
+                            <form onsubmit="event.preventDefault(); alert('Secret Admin Code updated successfully!');" style="display: flex; flex-direction: column; gap: 12px;">
+                                <div class="form-group">
+                                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Current Admin Code</label>
+                                    <input type="password" value="PLMUN2026" readonly style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background-color: #EAEAEA;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">New Admin Secret Code</label>
+                                    <input type="password" placeholder="Enter new secret code" required style="width: 100%; padding: 9px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--white);">
+                                </div>
+                                <button type="submit" class="btn-gold" style="margin-top: 6px; justify-content: center; background-color: var(--moss-green); color: white;">Reset Admin Code</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-
-        </div>
-
+        </main>
     </div>
 
-    <!-- Mobile Drawer JS & Tab Switching Script -->
+    <!-- Mobile Drawer & Tab Switching Script -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
-        const mobileDrawer = document.getElementById('mobileDrawer');
+        const sidebar = document.getElementById('sidebar');
         const mobileOverlay = document.getElementById('mobileOverlay');
 
-        function openDrawer() {
-            mobileDrawer.classList.add('open');
-            mobileOverlay.classList.add('show');
-        }
-        function closeDrawer() {
-            mobileDrawer.classList.remove('open');
-            mobileOverlay.classList.remove('show');
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
         }
 
-        mobileMenuBtn.addEventListener('click', openDrawer);
-        closeDrawerBtn.addEventListener('click', closeDrawer);
-        mobileOverlay.addEventListener('click', closeDrawer);
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
+        }
 
         function openTab(evt, tabName) {
             const tabContents = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
                 tabContents[i].classList.remove("active");
             }
 
             const tabItems = document.getElementsByClassName("tab-item");
             for (let i = 0; i < tabItems.length; i++) {
+                tabItems[i].style.background = "transparent";
+                tabItems[i].style.color = "var(--text-muted)";
                 tabItems[i].classList.remove("active");
             }
 
+            document.getElementById(tabName).style.display = "block";
             document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.style.background = "var(--bg-light)";
+            evt.currentTarget.style.color = "var(--text-dark)";
             evt.currentTarget.classList.add("active");
         }
     </script>
