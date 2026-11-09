@@ -1,214 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Book Appointment - PLMUN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="studentbookappointment.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - PLMUN</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="studentbookappointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <div>
-      <div class="brand-section">
-        <img src="plmunlogo.png" alt="PLMUN Logo" class="brand-logo">
-        <p class="brand-title">Pamantasan ng Lungsod ng Muntinlupa</p>
-        <h1 class="brand-name">PLMUN</h1>
-        <span class="badge">Student Account</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="studentdashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-        <li><a href="studentjoinqueue.html"><i class="fa-solid fa-list-check"></i> Join Queue</a></li>
-        <li><a href="studentstatus.html"><i class="fa-solid fa-clock"></i> Queue Status</a></li>
-        <li><a href="studentbookappointment.html" class="active"><i class="fa-solid fa-calendar-days"></i> Book Appointment</a></li>
-        <li><a href="studentnotification.html"><i class="fa-solid fa-bell"></i> Notification</a></li>
-        <li><a href="studentrequirement.html"><i class="fa-solid fa-file-lines"></i> Requirements</a></li>
-      </ul>
-    </div>
-    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-  </div>
-
-  <div class="main-content">
-    <div class="top-bar">
-      <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment & Document Requests</h2>
-      <span>Schedule a visit for document release or consultation</span>
-    </div>
-
-    <!-- Top Status Cards Grid (4 columns) -->
-    <div class="metrics-grid-4">
-      <div class="card metric-card">
-        <div class="icon-box bg-blue"><i class="fa-solid fa-folder-open"></i></div>
-        <div>
-          <div class="metric-value">2</div>
-          <div class="metric-label">Total Request</div>
-        </div>
-      </div>
-      <div class="card metric-card">
-        <div class="icon-box bg-orange"><i class="fa-solid fa-spinner"></i></div>
-        <div>
-          <div class="metric-value">0</div>
-          <div class="metric-label">Processing</div>
-        </div>
-      </div>
-      <div class="card metric-card">
-        <div class="icon-box bg-yellow"><i class="fa-solid fa-clock"></i></div>
-        <div>
-          <div class="metric-value">1</div>
-          <div class="metric-label">Pending</div>
-        </div>
-      </div>
-      <div class="card metric-card">
-        <div class="icon-box bg-green"><i class="fa-solid fa-circle-check"></i></div>
-        <div>
-          <div class="metric-value">0</div>
-          <div class="metric-label">Ready to claim</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content Layout (3 Columns: Form | Current Details | History) -->
-    <div class="appointment-grid">
-      
-      <!-- Panel 1: Request & Booking Form -->
-      <div class="card form-panel">
-        <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> New Appointment Request</h3>
+    <div class="dashboard-layout">
         
-        <div class="form-group">
-          <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
-          <div class="service-grid">
-            <button class="service-btn"><i class="fa-solid fa-file-contract"></i> TOR</button>
-            <button class="service-btn selected"><i class="fa-solid fa-certificate"></i> COE</button>
-            <button class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
-            <button class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
-            <button class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
-          <select id="purpose" class="form-control">
-            <option value="">Select Purpose...</option>
-            <option value="transfer">Transfer</option>
-            <option value="scholarship">Scholarship</option>
-            <option value="graduation" selected>Graduation / Enrollment</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="copies"><i class="fa-solid fa-copy"></i> No. of copies</label>
-          <input type="number" id="copies" class="form-control" value="1" min="1" max="10">
-        </div>
-
-        <div class="form-group">
-          <label for="pickup-date"><i class="fa-solid fa-calendar-day"></i> Preferred Pick-up Date <span class="sub-text">(Weekdays Only)</span></label>
-          <input type="date" id="pickup-date" class="form-control" value="2026-05-22">
-        </div>
-
-        <div class="form-group">
-          <label><i class="fa-solid fa-clock"></i> Preferred Time Slot</label>
-          <div class="time-slots-grid">
-            <button class="slot-btn selected">
-              <span>8:00 AM</span>
-              <small>50/100</small>
+        <!-- Mobile Top Header Bar -->
+        <header class="mobile-top-bar">
+            <div class="brand-mini">
+                <img src="plmunlogo.png" alt="PLMUN Logo">
+                <span>PLMUN Student</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="slot-btn">
-              <span>9:00 AM</span>
-              <small>50/100</small>
-            </button>
-            <button class="slot-btn">
-              <span>10:00 AM</span>
-              <small>50/100</small>
-            </button>
-            <button class="slot-btn">
-              <span>1:00 PM</span>
-              <small>50/100</small>
-            </button>
-            <button class="slot-btn">
-              <span>2:00 PM</span>
-              <small>50/100</small>
-            </button>
-            <button class="slot-btn">
-              <span>3:00 PM</span>
-              <small>50/100</small>
-            </button>
-          </div>
-        </div>
+        </header>
 
-        <button class="btn-primary mt-15"><i class="fa-solid fa-paper-plane"></i> Submit</button>
-      </div>
-
-      <!-- Panel 2: Active Appointment Info -->
-      <div class="card summary-panel flex-column-between">
-        <div>
-          <h3 class="card-title mb-20"><i class="fa-solid fa-calendar-check"></i> Your Appointment</h3>
-          
-          <div class="appointment-summary-box">
-            <div class="summary-item">
-              <span class="summary-label">Service Type:</span>
-              <span class="summary-value highlight-green">COE</span>
+        <!-- Fixed Collapsible Side Navigation Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Uncropped Normal-Sized Logo Container -->
+                <div class="logo-circle-wrapper">
+                    <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
+                </div>
+                <p class="school-subtitle">Pamantasan ng Lungsod ng Muntinlupa</p>
+                <h2 class="school-title">PLMUN</h2>
+                <span class="account-badge">Student Account</span>
             </div>
 
-            <div class="summary-item">
-              <span class="summary-label">Purpose:</span>
-              <span class="summary-value highlight-green">Enrollment</span>
+            <nav class="sidebar-nav nav-links">
+                <a href="studentdashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item active">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Mobile Dark Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="top-bar highlight-gold-card">
+                <h2><i class="fa-solid fa-calendar-plus"></i> Book Appointment & Document Requests</h2>
+                <span>Schedule a visit for document release or consultation</span>
             </div>
 
-            <div class="summary-item">
-              <span class="summary-label">No. of Copies:</span>
-              <span class="summary-value">1</span>
+            <!-- Top Status Cards Grid (4 columns) -->
+            <div class="metrics-grid-4 stats-grid">
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-blue"><i class="fa-solid fa-folder-open"></i></div>
+                    <div>
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Total Request</div>
+                    </div>
+                </div>
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-orange"><i class="fa-solid fa-spinner"></i></div>
+                    <div>
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Processing</div>
+                    </div>
+                </div>
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-yellow"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <div class="metric-value">1</div>
+                        <div class="metric-label">Pending</div>
+                    </div>
+                </div>
+                <div class="card metric-card highlight-gold-card">
+                    <div class="icon-box bg-green"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Ready to claim</div>
+                    </div>
+                </div>
             </div>
 
-            <div class="summary-item">
-              <span class="summary-label">Pick up Date:</span>
-              <span class="summary-value">5/27/2026</span>
+            <!-- Main Content Layout (3 Columns) -->
+            <div class="appointment-grid">
+                <!-- Panel 1: Request & Booking Form -->
+                <div class="card form-panel highlight-gold-card">
+                    <h3 class="card-title"><i class="fa-solid fa-pen-to-square"></i> New Appointment Request</h3>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-layer-group"></i> Service Type</label>
+                        <div class="service-grid">
+                            <button type="button" class="service-btn"><i class="fa-solid fa-file-contract"></i> TOR</button>
+                            <button type="button" class="service-btn selected"><i class="fa-solid fa-certificate"></i> COE</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-graduation-cap"></i> COG</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-award"></i> Good Moral</button>
+                            <button type="button" class="service-btn"><i class="fa-solid fa-user-plus"></i> Enrollment</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose"><i class="fa-solid fa-bullseye"></i> Purpose</label>
+                        <select id="purpose" class="form-control">
+                            <option value="">Select Purpose...</option>
+                            <option value="transfer">Transfer</option>
+                            <option value="scholarship">Scholarship</option>
+                            <option value="graduation" selected>Graduation / Enrollment</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="copies"><i class="fa-solid fa-copy"></i> No. of copies</label>
+                        <input type="number" id="copies" class="form-control" value="1" min="1" max="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-date"><i class="fa-solid fa-calendar-day"></i> Preferred Pick-up Date <span class="sub-text"> (Weekdays Only)</span></label>
+                        <input type="date" id="pickup-date" class="form-control" value="2026-05-22">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-clock"></i> Preferred Time Slot</label>
+                        <div class="time-slots-grid">
+                            <button type="button" class="slot-btn selected">
+                                <span>8:00 AM</span>
+                                <small>50/100</small>
+                            </button>
+                            <button type="button" class="slot-btn">
+                                <span>9:00 AM</span>
+                                <small>50/100</small>
+                            </button>
+                            <button type="button" class="slot-btn">
+                                <span>10:00 AM</span>
+                                <small>50/100</small>
+                            </button>
+                            <button type="button" class="slot-btn">
+                                <span>1:00 PM</span>
+                                <small>50/100</small>
+                            </button>
+                            <button type="button" class="slot-btn">
+                                <span>2:00 PM</span>
+                                <small>50/100</small>
+                            </button>
+                            <button type="button" class="slot-btn">
+                                <span>3:00 PM</span>
+                                <small>50/100</small>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary mt-15"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+                </div>
+
+                <!-- Panel 2: Active Appointment Info -->
+                <div class="card summary-panel flex-column-between highlight-gold-card">
+                    <div>
+                        <h3 class="card-title mb-20"><i class="fa-solid fa-calendar-check"></i> Your Appointment</h3>
+                        <div class="appointment-summary-box">
+                            <div class="summary-item">
+                                <span class="summary-label">Service Type:</span>
+                                <span class="summary-value highlight-green">COE</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Purpose:</span>
+                                <span class="summary-value highlight-green">Enrollment</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">No. of Copies:</span>
+                                <span class="summary-value">1</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Pick up Date:</span>
+                                <span class="summary-value">5/27/2026</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Pick up Time:</span>
+                                <span class="summary-value">9:00 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-danger"><i class="fa-solid fa-xmark"></i> Cancel Appointment</button>
+                </div>
+
+                <!-- Panel 3: Request History with Filters -->
+                <div class="card history-panel highlight-gold-card">
+                    <h3 class="card-title mb-15"><i class="fa-solid fa-clock-rotate-left"></i> Request History</h3>
+                    <div class="filter-tabs">
+                        <button type="button" class="tab-btn active">All</button>
+                        <button type="button" class="tab-btn">Pending</button>
+                        <button type="button" class="tab-btn">Processing</button>
+                        <button type="button" class="tab-btn">Ready</button>
+                        <button type="button" class="tab-btn">Cancelled</button>
+                    </div>
+                    <div class="history-list">
+                        <div class="history-card">
+                            <div class="history-header">
+                                <span class="req-id">REQ-0051</span>
+                                <span class="status-tag tag-cancelled">cancelled</span>
+                            </div>
+                            <p class="history-details">Purpose: Enrollment<br>Copies: 1<br>Certificate of Enrollment</p>
+                            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
+                        </div>
+                        <div class="history-card">
+                            <div class="history-header">
+                                <span class="req-id">REQ-0050</span>
+                                <span class="status-tag tag-pending">pending</span>
+                            </div>
+                            <p class="history-details">Purpose: Enrollment<br>Copies: 1<br>Certificate of Enrollment</p>
+                            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="summary-item">
-              <span class="summary-label">Pick up Time:</span>
-              <span class="summary-value">9:00 AM</span>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn-danger"><i class="fa-solid fa-xmark"></i> Cancel Appointment</button>
-      </div>
-
-      <!-- Panel 3: Request History with Filters -->
-      <div class="card history-panel">
-        <h3 class="card-title mb-15"><i class="fa-solid fa-clock-rotate-left"></i> Request History</h3>
-        
-        <!-- Filter Tabs -->
-        <div class="filter-tabs">
-          <button class="tab-btn active">All</button>
-          <button class="tab-btn">Pending</button>
-          <button class="tab-btn">Processing</button>
-          <button class="tab-btn">Ready</button>
-          <button class="tab-btn">Cancelled</button>
-        </div>
-
-        <!-- History Items -->
-        <div class="history-list">
-          <div class="history-card">
-            <div class="history-header">
-              <span class="req-id">REQ-0051</span>
-              <span class="status-tag tag-cancelled">cancelled</span>
-            </div>
-            <p class="history-details">Purpose: Enrollment · Copies: 1 · Certificate of Enrollment</p>
-            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
-          </div>
-
-          <div class="history-card">
-            <div class="history-header">
-              <span class="req-id">REQ-0050</span>
-              <span class="status-tag tag-pending">pending</span>
-            </div>
-            <p class="history-details">Purpose: Enrollment · Copies: 1 · Certificate of Enrollment</p>
-            <span class="history-date"><i class="fa-regular fa-clock"></i> Submitted: May 22, 2026</span>
-          </div>
-        </div>
-      </div>
-
+        </main>
     </div>
-  </div>
+
+    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleSidebar);
+            mobileOverlay.addEventListener('click', toggleSidebar);
+        }
+    </script>
 </body>
 </html>
