@@ -98,8 +98,6 @@
             <div class="tab-bar" style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius); display: flex; overflow-x: auto;">
                 <button class="tab-item active" onclick="openTab(event, 'contactInfo')">Contact Info</button>
                 <button class="tab-item" onclick="openTab(event, 'security')">Security</button>
-                <button class="tab-item" onclick="openTab(event, 'qrCode')">QR Code</button>
-                <button class="tab-item" onclick="openTab(event, 'setPhoto')">Set Profile Photo</button>
             </div>
 
             <!-- Tab Body Content -->
@@ -178,30 +176,6 @@
                     </div>
                 </div>
 
-                <!-- TAB 3: QR Code -->
-                <div id="qrCode" class="tab-content" style="display: none;">
-                    <div class="center-card">
-                        <div class="qr-placeholder">
-                            <i class="fa-solid fa-qrcode"></i>
-                        </div>
-                        <h3 class="qr-title" style="color: var(--primary-green); margin-bottom: 4px;">Student Number: 24175178</h3>
-                        <p class="qr-sub">Use this QR Code at registrar queue kiosks for quick verification.</p>
-                    </div>
-                </div>
-
-                <!-- TAB 4: Set Profile Photo -->
-                <div id="setPhoto" class="tab-content" style="display: none;">
-                    <div class="center-card">
-                        <div class="avatar-preview">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <form onsubmit="event.preventDefault(); alert('Profile photo updated successfully!');">
-                            <input type="file" accept="image/*" class="file-input" required><br>
-                            <button type="submit" class="btn-primary" style="width: auto; padding: 10px 20px;">Upload Photo</button>
-                        </form>
-                    </div>
-                </div>
-
             </div>
         </main>
     </div>
@@ -238,5 +212,6 @@
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
     </script>
+    <script src="../assets/app.js" defer></script>
 </body>
 </html>
