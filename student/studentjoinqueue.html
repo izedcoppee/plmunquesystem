@@ -185,6 +185,15 @@
             mobileMenuBtn.addEventListener('click', toggleSidebar);
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
+
+        // Highlight the clicked service button (one selected at a time)
+        const serviceButtons = document.querySelectorAll('.service-grid .service-btn');
+        serviceButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                serviceButtons.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
     </script>
 </body>
 </html>

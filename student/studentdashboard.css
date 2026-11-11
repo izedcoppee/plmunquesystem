@@ -388,4 +388,26 @@ body {
     .metrics-grid, .overview-details {
         grid-template-columns: 1fr;
     }
+/* Universal Gold Outline Card */
+.highlight-gold-card {
+    border: 2px solid var(--gold) !important;
+}
+
+/* Clickable Interactive Card Selection Effects */
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.clickable-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+/* Active clicked state featuring a glowing gold border outline */
+.clickable-card.card-selected {
+    border: 2px solid var(--gold) !important;
+    background-color: #FDFCF7 !important;
+    box-shadow: 0 0 0 4px rgba(212, 169, 55, 0.22) !important;
+}
 }

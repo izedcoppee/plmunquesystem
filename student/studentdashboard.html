@@ -25,7 +25,6 @@
         <!-- Fixed Collapsible Side Navigation Drawer -->
          <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <!-- Uncropped Normal-Sized Logo Container -->
                 <div class="logo-circle-wrapper">
                     <img src="plmunlogo.png" alt="PLMUN Logo" class="sidebar-logo">
                 </div>
@@ -35,36 +34,36 @@
             </div>
 
             <nav class="sidebar-nav nav-links">
-    <a href="studentdashboard.html" class="nav-item active">
-        <i class="fa-solid fa-house"></i>
-        <span>Dashboard</span>
-    </a>
-    <a href="studentjoinqueue.html" class="nav-item">
-        <i class="fa-solid fa-list-check"></i>
-        <span>Join Queue</span>
-    </a>
-    <a href="studentstatus.html" class="nav-item">
-        <i class="fa-solid fa-clock"></i>
-        <span>Queue Status</span>
-    </a>
-    <a href="studentbookappointment.html" class="nav-item">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span>Book Appointment</span>
-    </a>
-    <a href="studentnotification.html" class="nav-item">
-        <i class="fa-solid fa-bell"></i>
-        <span>Notification</span>
-        <span class="notification-badge">2</span>
-    </a>
-    <a href="studentrequirement.html" class="nav-item">
-        <i class="fa-solid fa-file-lines"></i>
-        <span>Requirements</span>
-    </a>
-    <a href="studentprofile.html" class="nav-item">
-        <i class="fa-solid fa-user-graduate"></i>
-        <span>Profile</span>
-    </a>
-</nav>
+                <a href="studentdashboard.html" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="studentjoinqueue.html" class="nav-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Join Queue</span>
+                </a>
+                <a href="studentstatus.html" class="nav-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Queue Status</span>
+                </a>
+                <a href="studentbookappointment.html" class="nav-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="studentnotification.html" class="nav-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification</span>
+                    <span class="notification-badge">2</span>
+                </a>
+                <a href="studentrequirement.html" class="nav-item">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Requirements</span>
+                </a>
+                <a href="studentprofile.html" class="nav-item">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
 
             <div class="sidebar-footer">
                 <a href="../frontpages/loginform.html" class="logout-btn btn-logout">
@@ -73,19 +72,18 @@
                 </a>
             </div>
         </aside>
-        <!-- Mobile Dark Overlay -->
         <div class="mobile-overlay" id="mobileOverlay"></div>
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <div class="top-bar highlight-gold-card">
+            <div class="top-bar highlight-gold-card clickable-card">
                 <h2><i class="fa-solid fa-house header-icon"></i> Student Dashboard</h2>
                 <span><i class="fa-solid fa-user"></i> Welcome, Student</span>
             </div>
 
-            <!-- Main Metrics Grid (2x2 layout to maximize space balance) -->
+            <!-- Main Metrics Grid -->
             <div class="metrics-grid">
-                <div class="card metric-card highlight-gold-card">
+                <div class="card metric-card highlight-gold-card clickable-card">
                     <div class="icon-box bg-green">
                         <i class="fa-solid fa-users"></i>
                     </div>
@@ -94,7 +92,7 @@
                         <span class="metric-label">Waiting in Queue</span>
                     </div>
                 </div>
-                <div class="card metric-card highlight-gold-card">
+                <div class="card metric-card highlight-gold-card clickable-card">
                     <div class="icon-box bg-orange">
                         <i class="fa-solid fa-ticket"></i>
                     </div>
@@ -103,7 +101,7 @@
                         <span class="metric-label">My Active Ticket</span>
                     </div>
                 </div>
-                <div class="card metric-card highlight-gold-card">
+                <div class="card metric-card highlight-gold-card clickable-card">
                     <div class="icon-box bg-blue">
                         <i class="fa-solid fa-spinner"></i>
                     </div>
@@ -112,7 +110,7 @@
                         <span class="metric-label">Now Serving at Counter</span>
                     </div>
                 </div>
-                <div class="card metric-card highlight-gold-card">
+                <div class="card metric-card highlight-gold-card clickable-card">
                     <div class="icon-box bg-dark-green">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
@@ -124,7 +122,7 @@
             </div>
 
             <!-- Quick Overview Panel -->
-            <div class="card status-overview highlight-gold-card">
+            <div class="card status-overview highlight-gold-card clickable-card">
                 <h3><i class="fa-solid fa-circle-info"></i> Queue Status Overview</h3>
                 <div class="overview-details">
                     <div class="detail-item">
@@ -146,7 +144,7 @@
         </main>
     </div>
 
-    <!-- Mobile Drawer & Sidebar Toggle Script -->
+    <!-- Script controls for Sidebar & Clickable Gold Card Selection -->
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
@@ -161,6 +159,18 @@
             mobileMenuBtn.addEventListener('click', toggleSidebar);
             mobileOverlay.addEventListener('click', toggleSidebar);
         }
+
+        // Card Outline Click Selection Effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableCards = document.querySelectorAll(".clickable-card");
+            clickableCards.forEach(card => {
+                card.addEventListener("click", function (e) {
+                    // Prevent toggling if user clicked an interactive input inside the card
+                    if(e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'BUTTON') return;
+                    this.classList.toggle("card-selected");
+                });
+            });
+        });
     </script>
 </body>
 </html>
